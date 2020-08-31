@@ -1,0 +1,20 @@
+.facebook-style-btn {
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 1.0rem;
+  padding: 6px 12px;
+}
+
+.facebook-style-dark {
+  -moz-box-shadow: inset 0px 1px 0px 0px #4d73bf;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #4d73bf;
+  box-shadow: inset 0px 1px 0px 0px #4d73bf;
+  background: #4267b2;
+  border: 1px solid #4267b2;
+  color: #fff;
+  text-shadow: 0 1px 0px #3359a5;
+}
+
+.facebook-style-dark:hover {
+  background: #2b54a7;
+}

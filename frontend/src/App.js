@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import HomePage from './components/homepage';
+import LoginForm from './components/loginForm';
+import loginImage from './'
+import logo from './images/logo.png'
+import './styles/main.css'
+import './styles/util.css'
 
-function App() {
+const App = () => {
+  const handleLoginForm = ()=>  {
+    return
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div align='center'>
+      <HomePage/>
+      <span></span>
+      <img src={logo} align='center' class='img'/>
+      <LoginForm />
     </div>
   );
-}
+};
 
 export default App;
