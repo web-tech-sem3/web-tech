@@ -1,22 +1,26 @@
-import React from 'react';
-import HomePage from './components/homepage';
+import React, { useState } from 'react';
 import LoginForm from './components/loginForm';
-import loginImage from './'
-import logo from './images/logo.png'
-import './styles/main.css'
-import './styles/util.css'
+import logo from './images/logo.png';
+import background from './images/background.jpg';
+import AboutUs from './components/aboutUs'
+import HomePage from './components/homepage'
+import HomeDrawer from './components/drawer.js'
 
 const App = () => {
-  const handleLoginForm = ()=>  {
-    return
-  }
-
+  const handleLoginForm = () => {
+    return;
+  };
   return (
-    <div align='center'>
-      <HomePage/>
-      <span></span>
-      <img src={logo} align='center' class='img'/>
-      <LoginForm />
+    <div
+      style={{
+        backgroundImage: `url(${background})`,
+        height: '150vh',
+        backgroundSize: 'cover',
+        
+      }}>
+        <HomeDrawer/>
+        <HomePage/>
+
     </div>
   );
 };

@@ -1,64 +1,64 @@
 import React, { useState } from 'react';
-import '../styles/util.css';
-import '../styles/main.css';
+import {
+  Card,
+  CardContent,
+  Container,
+  makeStyles,
+  Box,
+  Button,
+  TextField,
+  Typography,
+} from '@material-ui/core';
+import logo from '../images/logo.png';
+import { red } from '@material-ui/core/colors';
+import '../styles/loginform.css';
+import balsamiqBold from '../fonts/balsamiq/BalsamiqSans-Bold.ttf';
 
 const LoginForm = props => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
-  const handleUserameChange = () => {
-    return;
+
+  const handleUsernameChange = event => {
+    event.preventDefault();
+    setUsername(event.target.value);
+  };
+  const handlePasswordChange = event => {
+    event.preventDefault();
+    setPassword(event.target.value);
   };
 
   return (
-    <div class="limiter">
-      <div
-        class="container-login100"
-      >
-        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-          <form class="login100-form validate-form">
-            <span class="login100-form-title p-b-49">Login</span>
-
-            <div
-              class="wrap-input100 validate-input m-b-23"
-              data-validate="Username is reauired"
-            >
-              <span class="label-input100">Username</span>
-              <input
-                class="input100"
-                type="text"
-                name="username"
-                placeholder="Type your username"
-              />
-              <span class="focus-input100" data-symbol="&#xf206;"></span>
-            </div>
-
-            <div
-              class="wrap-input100 validate-input"
-              data-validate="Password is required"
-            >
-              <span class="label-input100">Password</span>
-              <input
-                class="input100"
-                type="password"
-                name="pass"
-                placeholder="Type your password"
-              />
-              <span class="focus-input100" data-symbol="&#xf190;"></span>
-            </div>
+    <div align='center'>
+      <div>
+        <h2 class={{ font: balsamiqBold }}>Login Form</h2>
+        <p>&nbsp;</p>
+      </div>
+      <Card class={{ minWidth: 420 }} variant="outlined">
+        <CardContent>
+          <form onSubmit={props.handleLoginSubmit}>
             <div>
-              <p>
-
-              </p>
-            </div>
-            <div class="container-login100-form-btn">
-              <div class="wrap-login100-form-btn">
-                <div class="login100-form-bgbtn"></div>
-                <button class="login100-form-btn">Login</button>
+              <div>
+                <p>&nbsp;</p>
+                <TextField type="text" required label="Username" fullWidth />
               </div>
+
+              <p>&nbsp;</p>
+              <div>
+                <TextField
+                  type="password"
+                  required
+                  label="Password"
+                  fullWidth
+                />
+              </div>
+              <p>&nbsp;</p>
+              <Button type="submit" class="login-btn">
+                Login
+              </Button>
             </div>
           </form>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };
