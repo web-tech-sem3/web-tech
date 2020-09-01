@@ -2,15 +2,9 @@ import React, { useState } from 'react';
 import {
   Card,
   CardContent,
-  Container,
-  makeStyles,
-  Box,
   Button,
   TextField,
-  Typography,
 } from '@material-ui/core';
-import logo from '../images/logo.png';
-import { red } from '@material-ui/core/colors';
 import '../styles/loginform.css';
 import balsamiqBold from '../fonts/balsamiq/BalsamiqSans-Bold.ttf';
 
@@ -21,9 +15,11 @@ const LoginForm = props => {
   const handleUsernameChange = event => {
     event.preventDefault();
     setUsername(event.target.value);
+    console.log(username)
   };
   const handlePasswordChange = event => {
     event.preventDefault();
+    console.log(password)
     setPassword(event.target.value);
   };
 
@@ -39,7 +35,7 @@ const LoginForm = props => {
             <div>
               <div>
                 <p>&nbsp;</p>
-                <TextField type="text" required label="Username" fullWidth />
+                <TextField type="text" required label="Username" fullWidth onChange={handleUsernameChange}/>
               </div>
 
               <p>&nbsp;</p>
@@ -49,6 +45,7 @@ const LoginForm = props => {
                   required
                   label="Password"
                   fullWidth
+                  onChange={handlePasswordChange}
                 />
               </div>
               <p>&nbsp;</p>

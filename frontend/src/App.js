@@ -4,7 +4,6 @@ import logo from './images/logo.png';
 import background from './images/background.jpg';
 import AboutUs from './components/aboutUs'
 import HomePage from './components/homepage'
-import HomeDrawer from './components/drawer.js'
 
 const App = () => {
   const handleLoginForm = () => {
@@ -14,13 +13,11 @@ const App = () => {
     <div
       style={{
         backgroundImage: `url(${background})`,
-        height: '150vh',
+        height: '170vh',
         backgroundSize: 'cover',
         
       }}>
-        <HomeDrawer/>
         <HomePage/>
-
     </div>
   );
 };
