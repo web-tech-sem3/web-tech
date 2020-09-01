@@ -15,9 +15,9 @@ const App = () => {
         backgroundImage: `url(${background})`,
         height: '170vh',
         backgroundSize: 'cover',
-        
+        position: 'relative'
       }}>
-        <HomePage/>
+        <LoginForm/>
     </div>
   );
 };
