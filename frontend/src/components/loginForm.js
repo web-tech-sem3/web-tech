@@ -21,7 +21,7 @@ const LoginForm = props => {
   return (
     <div align="center">
       <h2 class={{ font: balsamiqBold }}>Login Form</h2>
-      <div class="reg_form">
+      <div class="form">
         <div class="details">
           <form onSubmit={props.handleLoginSubmit}>
             <div>

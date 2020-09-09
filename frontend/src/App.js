@@ -18,7 +18,7 @@ const App = () => {
         backgroundSize: 'cover',
         position: 'relative'
       }}>
-        <SignUpForm/>
+        <LoginForm/>
     </div>
   );
 };
