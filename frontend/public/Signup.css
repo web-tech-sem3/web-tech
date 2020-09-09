@@ -1,0 +1,80 @@
+#FormImage {
+    width: 100px;
+    height: 100vh;
+    display: inline-block;
+    overflow: hidden;
+    background: url("https://images.hdqwalls.com/download/white-cube-pattern-4k-bu-720x1280.jpg");
+
+
+}
+
+#form {
+    display: inline-block;
+    margin-left: 20px;
+
+    width: 350px;
+    height: 100vh;
+    overflow: hidden;
+    top: 20px;
+    position: absolute;
+
+}
+#form input {
+    display: inline-block;
+    width: 80%;
+    padding: 0 20px;
+    margin: 20px;
+    line-height: 50px;
+    height: 50px;
+    background: white;
+    border: solid 1px #e6e6e6;
+    border-bottom-width: 3px;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: 'Merriweather', serif;
+}
+
+#form input:hover{
+    border: 2px solid black;
+}
+
+#FormWrap {
+    border: 1px solid blueviolet;
+    display: inline-block;
+    width: 50vw;
+    height: 100vh;
+    margin: 0 0 0 0;
+    left: 0;
+    top: 0;
+    position: absolute;
+
+    background:
+            radial-gradient(black 3px, transparent 4px),
+            radial-gradient(black 3px, transparent 4px),
+            linear-gradient(#fff 4px, transparent 0),
+            linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+            linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+            #fff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+
+    opacity: 80%;
+}
+
+body {
+    background: url("background.jpg");
+    position: relative;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1 {
+    font-family: 'Merriweather', serif;
+    background: white;
+    display: inline-block;
+}
