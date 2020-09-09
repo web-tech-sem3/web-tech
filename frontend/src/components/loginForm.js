@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Card, CardContent, Button, TextField } from '@material-ui/core';
 import '../styles/loginform.css';
 import balsamiqBold from '../fonts/balsamiq/BalsamiqSans-Bold.ttf';
-import '../styles/reg_form.css';
 
 const LoginForm = props => {
   const [username, setUsername] = useState(null);

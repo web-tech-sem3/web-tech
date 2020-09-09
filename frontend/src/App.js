@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import LoginForm from './components/loginForm';
 import logo from './images/logo.png';
+import SignUpForm from './components/signUpForm'
 import background from './images/background.jpg';
 import AboutUs from './components/aboutUs'
 import HomePage from './components/homepage'
@@ -17,7 +18,7 @@ const App = () => {
         backgroundSize: 'cover',
         position: 'relative'
       }}>
-        <HomePage/>
+        <SignUpForm/>
     </div>
   );
 };
