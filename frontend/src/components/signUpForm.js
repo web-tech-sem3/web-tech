@@ -19,7 +19,9 @@ const SignUpForm = () => {
             <input type="password" placeholder="Confirm your password" />
             <div className="buttons">
               <div className="container">
+                <a href="" className="btn effect01" target="_blank" >
                   <span>SignUp</span>
+                </a>
               </div>
             </div>
           </form>
