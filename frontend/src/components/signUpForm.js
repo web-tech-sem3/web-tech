@@ -9,7 +9,7 @@ const SignUpForm = () => {
           <img />
         </div>
         <div id="form">
-          <h1>Create Account</h1>
+          <h1 id='Heading'>Create Account</h1>
           <form action="">
             <input type="text" placeholder="Enter your name" />
             <input type="date" placeholder="Enter your DOB" />

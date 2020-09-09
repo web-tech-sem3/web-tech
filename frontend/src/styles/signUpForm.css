@@ -13,8 +13,8 @@
 #form {
   display: inline-block;
   margin-left: 20px;
-  left: 20px;
-  width: 450px;
+  right: 10vw;
+  width: 30vw;
   height: 100vh;
   overflow: hidden;
   top: 20px;
@@ -187,4 +187,10 @@ h1 {
   right: 30vw;
   top: 20vh;
   line-height: 50px;
+}
+
+#Heading {
+ left: 9vw;
+  position: absolute;
+  z-index: 10;
 }
