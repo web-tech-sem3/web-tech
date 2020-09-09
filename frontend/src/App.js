@@ -17,7 +17,7 @@ const App = () => {
         backgroundSize: 'cover',
         position: 'relative'
       }}>
-        <LoginForm/>
+        <HomePage/>
     </div>
   );
 };
