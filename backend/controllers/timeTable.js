@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
   });
   const savedTable = await timeTableItem.save();
   await user.save();
-  res.json(savedBlog);
+  res.json(savedTable);
 });
 
 module.exports = router;
