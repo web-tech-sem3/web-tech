@@ -1,24 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AboutUs from './components/aboutUs';
+import HomePage from './components/homepage';
+import Dashboard from './components/dashboard';
 import LoginForm from './components/loginForm';
-import logo from './images/logo.png';
-import SignUpForm from './components/signUpForm'
+import Navbar from './components/navbar';
+import SignUpForm from './components/signUpForm';
 import background from './images/background.jpg';
-import AboutUs from './components/aboutUs'
-import HomePage from './components/homepage'
 
 const App = () => {
-  const handleLoginForm = () => {
-    return;
-  };
   return (
     <div
       style={{
         backgroundImage: `url(${background})`,
         height: '170vh',
         backgroundSize: 'cover',
-        position: 'relative'
-      }}>
-        <SignUpForm/>
+        position: 'relative',
+      }}
+    >
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+
+          <Route path="/about">
+            <AboutUs />
+          </Route>
+          <Route path="/signup">
+            <SignUpForm />
+          </Route>
+          <Route path="/login">
+            <LoginForm />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 };

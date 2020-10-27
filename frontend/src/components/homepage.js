@@ -1,30 +1,22 @@
-import React, { useState } from 'react';
-import KalamBold from '../fonts/kalam/Kalam-Bold.ttf';
-import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import kachraa from '../images/kachraa.jpg';
-import babu from '../images/babu_bhaiya.jpg';
-import ak from '../images/akshay.jpg';
-import suniel from '../images/suniel.jpg';
-import rajpal from '../images/rajpal.jpg';
-import { ThemeProvider } from '@material-ui/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import { Drawer, IconButton } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import { createMuiTheme } from '@material-ui/core/styles';
-import lightGreen from '@material-ui/core/colors/lightGreen';
-import HomeIcon from '@material-ui/icons/Home';
-import InfoIcon from '@material-ui/icons/Info';
-import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import CardMedia from '@material-ui/core/CardMedia';
+import { Link } from 'react-router-dom';
+import lightGreen from '@material-ui/core/colors/lightGreen';
+import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
+import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+import { ThemeProvider } from '@material-ui/styles';
+import React from 'react';
+import KalamBold from '../fonts/kalam/Kalam-Bold.ttf';
+import ak from '../images/akshay.jpg';
+import babu from '../images/babu_bhaiya.jpg';
+import kachraa from '../images/kachraa.jpg';
+import rajpal from '../images/rajpal.jpg';
+import suniel from '../images/suniel.jpg';
 
 const NameCard = props => {
   const classes = useStyles();
@@ -90,17 +82,6 @@ const useStyles = makeStyles(theme => ({
 const HomePage = () => {
   const classes = useStyles();
 
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const anchor = 'left';
-
   const theme = createMuiTheme({
     palette: {
       primary: lightGreen,
@@ -111,74 +92,7 @@ const HomePage = () => {
     <ThemeProvider theme={theme}>
       <React.Fragment>
         <CssBaseline />
-        <AppBar position="relative">
-          <Toolbar>
-            <IconButton
-              onClick={() => {
-                handleOpen();
-              }}
-              align="left"
-              style={{
-                width: 100,
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Drawer variant="persistent" anchor={anchor} open={open}>
-              <IconButton
-                onClick={() => {
-                  handleClose();
-                }}
-              >
-                <ArrowBackIosIcon />
-                Back
-              </IconButton>
 
-              <p>&nbsp;</p>
-              <p></p>
-              <div>
-                <IconButton
-                  onClick={() => {
-                    console.log('gotoHomePage');
-                  }}
-                >
-                  <HomeIcon />
-                  Home Page
-                </IconButton>
-              </div>
-              <p>&nbsp;</p>
-              <div>
-                <IconButton
-                  onClick={() => {
-                    console.log('gotoAbout');
-                  }}
-                >
-                  <InfoIcon
-                    onClick={() => {
-                      console.log('gotoInfo');
-                    }}
-                  />
-                  About Us
-                </IconButton>
-              </div>
-
-              <p>&nbsp;</p>
-              <div>
-                <IconButton
-                  onClick={() => {
-                    console.log('loggedOut');
-                  }}
-                >
-                  <ExitToAppRoundedIcon />
-                  Logout
-                </IconButton>
-              </div>
-            </Drawer>
-            <Typography variant="h6" color="inherit" noWrap>
-              U_Table - HomePage
-            </Typography>
-          </Toolbar>
-        </AppBar>
         <main>
           <div className={classes.heroContent}>
             <Container maxWidth="sm">
@@ -192,14 +106,18 @@ const HomePage = () => {
               <div className={classes.heroButtons}>
                 <Grid container spacing={2} justify="center">
                   <Grid item>
-                    <Button variant="contained" color="primary">
-                      Login
-                    </Button>
+                    <Link to="/login">
+                      <Button variant="contained" color="primary">
+                        Login
+                      </Button>
+                    </Link>
                   </Grid>
                   <Grid item>
-                    <Button variant="outlined" color="primary">
-                      SignUp
-                    </Button>
+                    <Link to="/signup">
+                      <Button variant="outlined" color="primary">
+                        SignUp
+                      </Button>
+                    </Link>
                   </Grid>
                 </Grid>
               </div>
