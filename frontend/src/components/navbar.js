@@ -1,14 +1,14 @@
-import { Drawer, IconButton } from '@material-ui/core';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
-import HomeIcon from '@material-ui/icons/Home';
-import InfoIcon from '@material-ui/icons/Info';
-import MenuIcon from '@material-ui/icons/Menu';
-import React, { useState } from 'react';
-import { Link, Switch } from 'react-router-dom';
+import { Drawer, IconButton } from "@material-ui/core";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
+import HomeIcon from "@material-ui/icons/Home";
+import InfoIcon from "@material-ui/icons/Info";
+import MenuIcon from "@material-ui/icons/Menu";
+import React, { useState } from "react";
+import { Link, Switch } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -20,7 +20,7 @@ const Navbar = () => {
     setOpen(false);
   };
 
-  const anchor = 'left';
+  const anchor = "left";
   return (
     <div>
       <AppBar position="relative">
@@ -34,7 +34,7 @@ const Navbar = () => {
               width: 100,
             }}
           >
-            <MenuIcon />
+            <MenuIcon color="secondary" />
           </IconButton>
           <Switch>
             <Drawer variant="persistent" anchor={anchor} open={open}>
@@ -74,9 +74,7 @@ const Navbar = () => {
               </div>
             </Drawer>
           </Switch>
-          <Typography variant="h6" color="inherit" noWrap>
-            U_Table - Solution for your time worries!
-          </Typography>
+          <h1>U_TABLE</h1>
         </Toolbar>
       </AppBar>
     </div>

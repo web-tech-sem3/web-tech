@@ -1,0 +1,36 @@
+.h1 {
+  color: #111;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 6rem;
+  /* margin: 0 0 0; */
+  /* padding: 20px 30px; */
+  text-align: center;
+  text-transform: uppercase;
+  margin: 10px;
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  /* align-self: baseline; */
+  flex-wrap: wrap;
+  height: 40vh;
+  align-content: center;
+  /* border: 1px black solid; */
+}
+
+.why {
+  width: 50%;
+  color: black;
+  font-weight: 500;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.2rem;
+  /* line-height: 24px; */
+  margin: 10px;
+  text-align: justify;
+  text-justify: inter-word;
+}

@@ -1,17 +1,15 @@
 import React from 'react';
-import '../styles/signUpForm.css';
+import '../styles/signUpForm.css'
 
 const SignUpForm = () => {
   return (
     <div id="container">
-      <br />
-      <br />
       <div id="FormWrap">
         <div id="FormImage">
           <img />
         </div>
         <div id="form">
-          <h1 id="Heading">Create Account</h1>
+          <h1 id='Heading'>Create Account</h1>
           <form action="">
             <input type="text" placeholder="Enter your name" />
             <input type="date" placeholder="Enter your DOB" />
@@ -21,7 +19,7 @@ const SignUpForm = () => {
             <input type="password" placeholder="Confirm your password" />
             <div className="buttons">
               <div className="container">
-                <a href="" className="btn effect01" target="_blank">
+                <a href="" className="btn effect01" target="_blank" >
                   <span>SignUp</span>
                 </a>
               </div>
