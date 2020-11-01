@@ -9,6 +9,24 @@ import InfoIcon from "@material-ui/icons/Info";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useState } from "react";
 import { Link, Switch } from "react-router-dom";
+import { red } from "@material-ui/core/colors";
+import styled from "styled-components";
+import Css from "../styles/Navbar.module.css";
+import Logo from "../images/logo.png";
+import { CgHomeAlt } from "react-icons/cg";
+import { BsInfoCircle } from "react-icons/bs";
+const Options = styled.h1`
+  font-size: 1rem;
+  color: red;
+  &:hover {
+  }
+`;
+
+const Header = styled.h3`
+  color: white;
+  letter-spacing: 0.4em;
+  background: pink;
+`;
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -23,7 +41,7 @@ const Navbar = () => {
   const anchor = "left";
   return (
     <div>
-      <AppBar position="relative">
+      <AppBar position="relative" color="white">
         <Toolbar>
           <IconButton
             onClick={() => {
@@ -45,36 +63,64 @@ const Navbar = () => {
 
               <p>&nbsp;</p>
               <p></p>
-              <div>
+              <div className={Css.Opt}>
                 <Link to="/home">
-                  <IconButton onClick={handleClose}>
-                    <HomeIcon />
-                    Home Page
-                  </IconButton>
+                  <button
+                    onClick={handleClose}
+                    style={{
+                      background: "inherit",
+                      display: "flex",
+                      color: "#574d68",
+                    }}
+                  >
+                    {/* <HomeIcon /> */}
+                    <CgHomeAlt size="2em" />
+                    <Options style={{ marginLeft: "5px" }}>Home</Options>
+                  </button>
                 </Link>
               </div>
-              <p>&nbsp;</p>
-              <div>
+              {/* <p>&nbsp;</p> */}
+              <div className={Css.Opt}>
                 <Link to="/about">
-                  <IconButton onClick={handleClose}>
-                    <InfoIcon />
-                    About Us
-                  </IconButton>
+                  <button
+                    onClick={handleClose}
+                    style={{
+                      background: "inherit",
+                      display: "flex",
+                      color: "#574d68",
+                    }}
+                  >
+                    <BsInfoCircle size="2em" />
+                    <Options style={{ marginLeft: "5px" }}>Info</Options>
+                  </button>
                 </Link>
               </div>
 
               <p>&nbsp;</p>
-              <div>
+              {/* <div>
                 <Link to="/login">
                   <IconButton onClick={handleClose}>
                     <ExitToAppRoundedIcon />
                     Logout
                   </IconButton>
                 </Link>
-              </div>
+              </div> */}
             </Drawer>
           </Switch>
-          <h1>U_TABLE</h1>
+          <div className={Css.headerContainer}>
+            <div className={Css.heading}>
+              <Header>U_Table</Header>
+            </div>
+            <div className={Css.Rhead}>
+              <div className={Css.logo}>
+                <img src={Logo}></img>
+              </div>
+              <div className={Css.btnContainer}>
+                <button className={Css.btn}>Login</button>
+                <button className={Css.btn}>SignUp</button>
+              </div>
+            </div>
+          </div>
         </Toolbar>
       </AppBar>
     </div>

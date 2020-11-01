@@ -94,7 +94,7 @@ const HomePage = () => {
   const theme = createMuiTheme({
     palette: {
       primary: { main: "#f6a5c0" },
-      secondary: { main: "#0044ff" },
+      secondary: { main: "#000000" },
     },
   });
 

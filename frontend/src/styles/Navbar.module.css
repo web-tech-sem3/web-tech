@@ -1,0 +1,41 @@
+.headerContainer {
+  display: flex;
+  width: 100vw;
+  justify-content: flex-start;
+}
+
+.Rhead {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.btnContainer {
+  display: flex;
+}
+
+.btn {
+  color: white;
+  width: 5vw;
+  margin: 0 1%;
+  background: black;
+  padding: 0;
+  height: 80%;
+  transition: all ease 0.5s;
+}
+
+.btn:hover {
+  color: black;
+  background: white;
+  border: 1px solid grey;
+}
+
+.logo img {
+  height: 7vh;
+  margin-right: 35vw;
+  margin-left: 2vw;
+}
+
+.Opt {
+  background: beige;
+}

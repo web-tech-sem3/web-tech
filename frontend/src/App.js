@@ -9,6 +9,7 @@ import SignUpForm from "./components/signUpForm";
 import background from "./images/background.jpg";
 import Trial from "./components/Trial";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Nav from "./components/NewNavbar";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
     >
       <Router>
         <Navbar />
+        {/* <Nav /> */}
         <Switch>
           <Route path="/dashboard">
             <Dashboard />
