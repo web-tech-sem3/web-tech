@@ -1,20 +1,20 @@
-import { Drawer, IconButton } from "@material-ui/core";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
-import HomeIcon from "@material-ui/icons/Home";
-import InfoIcon from "@material-ui/icons/Info";
-import MenuIcon from "@material-ui/icons/Menu";
-import React, { useState } from "react";
-import { Link, Switch } from "react-router-dom";
-import { red } from "@material-ui/core/colors";
-import styled from "styled-components";
-import Css from "../styles/Navbar.module.css";
-import Logo from "../images/logo.png";
-import { CgHomeAlt } from "react-icons/cg";
-import { BsInfoCircle } from "react-icons/bs";
+import { Drawer, IconButton } from '@material-ui/core';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
+import HomeIcon from '@material-ui/icons/Home';
+import InfoIcon from '@material-ui/icons/Info';
+import MenuIcon from '@material-ui/icons/Menu';
+import React, { useState } from 'react';
+import { Link, Switch } from 'react-router-dom';
+import { red } from '@material-ui/core/colors';
+import styled from 'styled-components';
+import Css from '../styles/Navbar.module.css';
+import Logo from '../images/logo.png';
+import { CgHomeAlt } from 'react-icons/cg';
+import { BsInfoCircle } from 'react-icons/bs';
 const Options = styled.h1`
   font-size: 1rem;
   color: red;
@@ -38,10 +38,10 @@ const Navbar = () => {
     setOpen(false);
   };
 
-  const anchor = "left";
+  const anchor = 'left';
   return (
     <div>
-      <AppBar position="relative" color="white">
+      <AppBar position="fixed" color="white">
         <Toolbar>
           <IconButton
             onClick={() => {
@@ -68,14 +68,14 @@ const Navbar = () => {
                   <button
                     onClick={handleClose}
                     style={{
-                      background: "inherit",
-                      display: "flex",
-                      color: "#574d68",
+                      background: 'inherit',
+                      display: 'flex',
+                      color: '#574d68',
                     }}
                   >
                     {/* <HomeIcon /> */}
                     <CgHomeAlt size="2em" />
-                    <Options style={{ marginLeft: "5px" }}>Home</Options>
+                    <Options style={{ marginLeft: '5px' }}>Home</Options>
                   </button>
                 </Link>
               </div>
@@ -85,13 +85,13 @@ const Navbar = () => {
                   <button
                     onClick={handleClose}
                     style={{
-                      background: "inherit",
-                      display: "flex",
-                      color: "#574d68",
+                      background: 'inherit',
+                      display: 'flex',
+                      color: '#574d68',
                     }}
                   >
                     <BsInfoCircle size="2em" />
-                    <Options style={{ marginLeft: "5px" }}>Info</Options>
+                    <Options style={{ marginLeft: '5px' }}>Info</Options>
                   </button>
                 </Link>
               </div>
@@ -116,13 +116,21 @@ const Navbar = () => {
                 <img src={Logo}></img>
               </div>
               <div className={Css.btnContainer}>
-                <button className={Css.btn}>Login</button>
-                <button className={Css.btn}>SignUp</button>
+                <Link to="/login">
+                  <button className={Css.btn}>Login</button>
+                </Link>
+                &nbsp;&nbsp;&nbsp;
+                <Link to="/signup">
+                  <button className={Css.btn}>SignUp</button>
+                </Link>
               </div>
             </div>
           </div>
         </Toolbar>
       </AppBar>
+
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
     </div>
   );
 };
