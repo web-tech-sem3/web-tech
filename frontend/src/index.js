@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import 'fontsource-roboto';
-import TimeTable from './components/dashboard';
 
 ReactDOM.render(
   <React.StrictMode>
-    <TimeTable />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

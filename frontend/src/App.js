@@ -33,6 +33,9 @@ const App = () => {
           <Route path="/login">
             <LoginForm />
           </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
           <Route path="/">
             <HomePage />
           </Route>
