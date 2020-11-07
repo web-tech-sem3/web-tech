@@ -63,36 +63,21 @@ const Navbar = () => {
 
               <p>&nbsp;</p>
               <p></p>
-              <div className={Css.Opt}>
+              <div>
                 <Link to="/home">
-                  <button
-                    onClick={handleClose}
-                    style={{
-                      background: 'inherit',
-                      display: 'flex',
-                      color: '#574d68',
-                    }}
-                  >
-                    {/* <HomeIcon /> */}
-                    <CgHomeAlt size="2em" />
-                    <Options style={{ marginLeft: '5px' }}>Home</Options>
-                  </button>
+                  <IconButton onClick={handleClose}>
+                    <HomeIcon />
+                    Home
+                  </IconButton>
                 </Link>
               </div>
-              {/* <p>&nbsp;</p> */}
-              <div className={Css.Opt}>
+              <p>&nbsp;</p>
+              <div>
                 <Link to="/about">
-                  <button
-                    onClick={handleClose}
-                    style={{
-                      background: 'inherit',
-                      display: 'flex',
-                      color: '#574d68',
-                    }}
-                  >
-                    <BsInfoCircle size="2em" />
-                    <Options style={{ marginLeft: '5px' }}>Info</Options>
-                  </button>
+                  <IconButton onClick={handleClose}>
+                    <InfoIcon />
+                    About Us
+                  </IconButton>
                 </Link>
               </div>
 
