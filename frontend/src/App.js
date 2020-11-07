@@ -6,8 +6,6 @@ import Dashboard from './components/dashboard';
 import LoginForm from './components/loginForm';
 import Navbar from './components/navbar';
 import SignUpForm from './components/signUpForm';
-import background from './images/background.jpg';
-import Trial from './components/Trial';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
