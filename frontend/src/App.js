@@ -1,14 +1,14 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import AboutUs from "./components/aboutUs";
-import HomePage from "./components/homepage";
-import Dashboard from "./components/dashboard";
-import LoginForm from "./components/loginForm";
-import Navbar from "./components/navbar";
-import SignUpForm from "./components/signUpForm";
-import background from "./images/background.jpg";
-import Trial from "./components/Trial";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AboutUs from './components/aboutUs';
+import HomePage from './components/homepage';
+import Dashboard from './components/dashboard';
+import LoginForm from './components/loginForm';
+import Navbar from './components/navbar';
+import SignUpForm from './components/signUpForm';
+import background from './images/background.jpg';
+import Trial from './components/Trial';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
@@ -22,12 +22,10 @@ const App = () => {
     >
       <Router>
         <Navbar />
-       
         <Switch>
           <Route path="/dashboard">
             <Dashboard />
           </Route>
-
           <Route path="/about">
             <AboutUs />
           </Route>
