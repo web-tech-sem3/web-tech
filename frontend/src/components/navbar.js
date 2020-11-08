@@ -1,23 +1,20 @@
-import { Button, Drawer, IconButton } from '@material-ui/core';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
-import ThumbsUpDownIcon from '@material-ui/icons/ThumbsUpDown';
-import HomeIcon from '@material-ui/icons/Home';
-import InfoIcon from '@material-ui/icons/Info';
-import MenuIcon from '@material-ui/icons/Menu';
-import React, { useState } from 'react';
-import { Link, Switch } from 'react-router-dom';
-import PersonIcon from '@material-ui/icons/Person';
-import { red } from '@material-ui/core/colors';
-import styled from 'styled-components';
-import Css from '../styles/Navbar.module.css';
-import Logo from '../images/logo.png';
-import { CgHomeAlt } from 'react-icons/cg';
-import { BsInfoCircle } from 'react-icons/bs';
+import { Drawer, IconButton } from "@material-ui/core";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ExitToAppRoundedIcon from "@material-ui/icons/ExitToAppRounded";
+import HomeIcon from "@material-ui/icons/Home";
+import InfoIcon from "@material-ui/icons/Info";
+import MenuIcon from "@material-ui/icons/Menu";
+import React, { useState } from "react";
+import { Link, Switch } from "react-router-dom";
+import { red } from "@material-ui/core/colors";
+import styled from "styled-components";
+import Css from "../styles/Navbar.module.css";
+import Logo from "../images/logo.png";
+import { CgHomeAlt } from "react-icons/cg";
+import { BsInfoCircle } from "react-icons/bs";
 const Options = styled.h1`
   font-size: 1rem;
   color: red;
@@ -41,16 +38,16 @@ const Navbar = () => {
     setOpen(false);
   };
 
-  const anchor = 'left';
+  const anchor = "left";
   return (
-    <div align="center">
-      <AppBar position="fixed" color="white">
+    <div>
+      <AppBar position="relative" color="white">
         <Toolbar>
           <IconButton
             onClick={() => {
               handleOpen();
             }}
-            align="center"
+            align="left"
             style={{
               width: 100,
             }}
@@ -66,41 +63,48 @@ const Navbar = () => {
 
               <p>&nbsp;</p>
               <p></p>
-              <div>
+              <div className={Css.Opt}>
                 <Link to="/home">
-                  <IconButton onClick={handleClose}>
-                    <HomeIcon />
-                    Home
-                  </IconButton>
+                  <button
+                    onClick={handleClose}
+                    style={{
+                      background: "inherit",
+                      display: "flex",
+                      color: "#574d68",
+                    }}
+                  >
+                    {/* <HomeIcon /> */}
+                    <CgHomeAlt size="2em" />
+                    <Options style={{ marginLeft: "5px" }}>Home</Options>
+                  </button>
                 </Link>
               </div>
-              <p>&nbsp;</p>
-              <div>
-                <Link to="/dashboard">
-                  <IconButton onClick={handleClose}>
-                    <DashboardIcon />
-                    Dashboard
-                  </IconButton>
-                </Link>
-              </div>
-              <p>&nbsp;</p>
-              <div>
-                <Link to="/rate">
-                  <IconButton onClick={handleClose}>
-                    <ThumbsUpDownIcon />
-                    Review
-                  </IconButton>
-                </Link>
-              </div>
-              <p>&nbsp;</p>
-              <div>
+              {/* <p>&nbsp;</p> */}
+              <div className={Css.Opt}>
                 <Link to="/about">
-                  <IconButton onClick={handleClose}>
-                    <InfoIcon />
-                    About Us
-                  </IconButton>
+                  <button
+                    onClick={handleClose}
+                    style={{
+                      background: "inherit",
+                      display: "flex",
+                      color: "#574d68",
+                    }}
+                  >
+                    <BsInfoCircle size="2em" />
+                    <Options style={{ marginLeft: "5px" }}>Info</Options>
+                  </button>
                 </Link>
               </div>
+
+              <p>&nbsp;</p>
+              {/* <div>
+                <Link to="/login">
+                  <IconButton onClick={handleClose}>
+                    <ExitToAppRoundedIcon />
+                    Logout
+                  </IconButton>
+                </Link>
+              </div> */}
             </Drawer>
           </Switch>
           <div className={Css.headerContainer}>
@@ -113,23 +117,16 @@ const Navbar = () => {
               </div>
               <div className={Css.btnContainer}>
                 <Link to="/login">
-<<<<<<< HEAD
                   <button className={Css.btn}>Login</button>
                 </Link>
                 <Link to="/signup">
                   <button className={Css.btn}>SignUp</button>
-=======
-                  <Button type="secondary">Logout</Button>
->>>>>>> 39d7ae8b3f4a06ccc5dbed3962c5b6fa610bca4f
                 </Link>
               </div>
             </div>
           </div>
         </Toolbar>
       </AppBar>
-
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
     </div>
   );
 };
