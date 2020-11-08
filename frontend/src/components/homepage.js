@@ -1,33 +1,33 @@
-import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import { Link } from "react-router-dom";
-import lightGreen from "@material-ui/core/colors/lightGreen";
-import Container from "@material-ui/core/Container";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Grid from "@material-ui/core/Grid";
-import { createMuiTheme, makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import { ThemeProvider } from "@material-ui/styles";
-import React from "react";
-import KalamBold from "../fonts/kalam/Kalam-Bold.ttf";
-import ak from "../images/akshay.jpg";
-import babu from "../images/babu_bhaiya.jpg";
-import kachraa from "../images/kachraa.jpg";
-import rajpal from "../images/rajpal.jpg";
-import suniel from "../images/suniel.jpg";
-import home1 from "../images/reHome1.jpg";
-import home2 from "../images/reHome2.jpg";
-import home3 from "../images/reHome3.png";
-import cover from "../images/cover2.jpg";
-import styled from "styled-components";
-import { Carousel } from "react-bootstrap";
-import { blue } from "@material-ui/core/colors";
-import { keyframes } from "styled-components";
-import stylescss from "../styles/homepage.module.css";
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import { Link } from 'react-router-dom';
+import lightGreen from '@material-ui/core/colors/lightGreen';
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import { ThemeProvider } from '@material-ui/styles';
+import React from 'react';
+import KalamBold from '../fonts/kalam/Kalam-Bold.ttf';
+import ak from '../images/akshay.jpg';
+import babu from '../images/babu_bhaiya.jpg';
+import kachraa from '../images/kachraa.jpg';
+import rajpal from '../images/rajpal.jpg';
+import suniel from '../images/suniel.jpg';
+import home1 from '../images/reHome1.jpg';
+import home2 from '../images/reHome2.jpg';
+import home3 from '../images/reHome3.png';
+import cover from '../images/cover2.jpg';
+import styled from 'styled-components';
+import { Carousel } from 'react-bootstrap';
+import { blue } from '@material-ui/core/colors';
+import { keyframes } from 'styled-components';
+import stylescss from '../styles/homepage.module.css';
 
-const NameCard = (props) => {
+const NameCard = props => {
   const classes = useStyles();
   return (
     <Grid item key={props.name} xs={12} sm={6} md={4}>
@@ -51,14 +51,14 @@ const NameCard = (props) => {
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
+      {'Copyright © '}
       U_Table {new Date().getFullYear()}
-      {"."}
+      {'.'}
     </Typography>
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   icon: {
     marginRight: theme.spacing(2),
   },
@@ -73,12 +73,12 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(8),
   },
   card: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: "56.25%", // 16:9
+    paddingTop: '56.25%', // 16:9
   },
   cardContent: {
     flexGrow: 1,
@@ -93,8 +93,8 @@ const HomePage = () => {
 
   const theme = createMuiTheme({
     palette: {
-      primary: { main: "#f6a5c0" },
-      secondary: { main: "#000000" },
+      primary: { main: '#f6a5c0' },
+      secondary: { main: '#000000' },
     },
   });
 
@@ -135,7 +135,6 @@ const HomePage = () => {
     animation: ${MoveIn} 1s linear;
     transition: all ease 0.5s;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
-
     &:hover {
       transform: translateY(-2vh);
       transition: all ease 0.5s;
@@ -152,7 +151,7 @@ const HomePage = () => {
         <CssBaseline />
 
         <main>
-          <div className={classes.heroContent}>
+          <div align="center" className={classes.heroContent}>
             <Container maxWidth="sm">
               <TitleWrapper>
                 <Title>U_Table</Title>
@@ -163,7 +162,7 @@ const HomePage = () => {
           </div>
 
           <Carousel
-            style={{ width: "60vw", left: "20vw", marginBottom: "12vh" }}
+            style={{ width: '60vw', left: '20vw', marginBottom: '12vh' }}
           >
             <Carousel.Item>
               <img className="d-block w-100" src={home1} alt="First slide" />
