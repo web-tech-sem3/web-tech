@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AboutUs from './components/aboutUs';
 import HomePage from './components/homepage';
@@ -7,8 +7,14 @@ import LoginForm from './components/loginForm';
 import Navbar from './components/navbar';
 import SignUpForm from './components/signUpForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import RatingPage from './components/rating';
 
 const App = () => {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    setUser(null);
+  }, []);
+
   return (
     <div
     // style={{
@@ -19,8 +25,11 @@ const App = () => {
     // }}
     >
       <Router>
-        <Navbar />
+        {user ? <Navbar /> : <LoginForm setUser={setUser} />}
         <Switch>
+          <Route path="/rate">
+            <RatingPage />
+          </Route>
           <Route path="/dashboard">
             <Dashboard />
           </Route>
@@ -30,14 +39,11 @@ const App = () => {
           <Route path="/signup">
             <SignUpForm />
           </Route>
-          <Route path="/login">
-            <LoginForm />
-          </Route>
           <Route path="/dashboard">
             <Dashboard />
           </Route>
           <Route path="/">
-            <HomePage />
+            <LoginForm />
           </Route>
         </Switch>
       </Router>

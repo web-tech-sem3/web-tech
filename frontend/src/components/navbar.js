@@ -1,14 +1,17 @@
-import { Drawer, IconButton } from '@material-ui/core';
+import { Button, Drawer, IconButton } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import DashboardIcon from '@material-ui/icons/Dashboard';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
+import ThumbsUpDownIcon from '@material-ui/icons/ThumbsUpDown';
 import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
 import MenuIcon from '@material-ui/icons/Menu';
 import React, { useState } from 'react';
 import { Link, Switch } from 'react-router-dom';
+import PersonIcon from '@material-ui/icons/Person';
 import { red } from '@material-ui/core/colors';
 import styled from 'styled-components';
 import Css from '../styles/Navbar.module.css';
@@ -40,14 +43,14 @@ const Navbar = () => {
 
   const anchor = 'left';
   return (
-    <div>
+    <div align="center">
       <AppBar position="fixed" color="white">
         <Toolbar>
           <IconButton
             onClick={() => {
               handleOpen();
             }}
-            align="left"
+            align="center"
             style={{
               width: 100,
             }}
@@ -73,6 +76,24 @@ const Navbar = () => {
               </div>
               <p>&nbsp;</p>
               <div>
+                <Link to="/dashboard">
+                  <IconButton onClick={handleClose}>
+                    <DashboardIcon />
+                    Dashboard
+                  </IconButton>
+                </Link>
+              </div>
+              <p>&nbsp;</p>
+              <div>
+                <Link to="/rate">
+                  <IconButton onClick={handleClose}>
+                    <ThumbsUpDownIcon />
+                    Review
+                  </IconButton>
+                </Link>
+              </div>
+              <p>&nbsp;</p>
+              <div>
                 <Link to="/about">
                   <IconButton onClick={handleClose}>
                     <InfoIcon />
@@ -80,16 +101,6 @@ const Navbar = () => {
                   </IconButton>
                 </Link>
               </div>
-
-              <p>&nbsp;</p>
-              {/* <div>
-                <Link to="/login">
-                  <IconButton onClick={handleClose}>
-                    <ExitToAppRoundedIcon />
-                    Logout
-                  </IconButton>
-                </Link>
-              </div> */}
             </Drawer>
           </Switch>
           <div className={Css.headerContainer}>
@@ -102,11 +113,7 @@ const Navbar = () => {
               </div>
               <div className={Css.btnContainer}>
                 <Link to="/login">
-                  <button className={Css.btn}>Login</button>
-                </Link>
-                &nbsp;&nbsp;&nbsp;
-                <Link to="/signup">
-                  <button className={Css.btn}>SignUp</button>
+                  <Button type="secondary">Logout</Button>
                 </Link>
               </div>
             </div>
