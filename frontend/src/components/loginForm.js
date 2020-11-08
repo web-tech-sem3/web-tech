@@ -1,12 +1,9 @@
-import { Button, TextField } from "@material-ui/core";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import balsamiqBold from "../fonts/balsamiq/BalsamiqSans-Bold.ttf";
-// import '../styles/loginform.css';
-import Css from "../styles/loginform.module.css";
-import loginService from "../services/login";
-import img from "../images/Login.jpg";
-import form from "../styles/Loginform2.module.css";
+import { Button, TextField } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import balsamiqBold from '../fonts/balsamiq/BalsamiqSans-Bold.ttf';
+import '../styles/loginform.css';
+import loginService from '../services/login';
 
 const LoginForm = () => {
   const [username, setUsername] = useState(null);
@@ -14,7 +11,7 @@ const LoginForm = () => {
   const [error, setError] = useState(null);
   const [token, setToken] = useState(null);
 
-  const handleLoginSubmit = async (event) => {
+  const handleLoginSubmit = async event => {
     event.preventDefault();
     const obj = {
       userName: username,
@@ -24,49 +21,60 @@ const LoginForm = () => {
       const val = await loginService.login(obj);
       setToken(val.token);
     } catch (e) {
-      setError("Wrong Username or Password");
+      setError('Wrong Username or Password');
       console.log(error);
     }
   };
 
-  const handleUsernameChange = (event) => {
+  const handleUsernameChange = event => {
     event.preventDefault();
     setUsername(event.target.value);
   };
-  const handlePasswordChange = (event) => {
+  const handlePasswordChange = event => {
     event.preventDefault();
     setPassword(event.target.value);
   };
 
   return (
-    <div className={Css.body}>
-      <div className={Css.container}>
-        <div className={Css.Wall}>
-          <img src={img}></img>
-        </div>
-        <div className={Css.form}>
-          <div className={Css.formContainer}>
-            <div className={form.loginbox}>
-              <h2>Login</h2>
-              <form>
-                <div className={form.userbox}>
-                  <input type="text" name="" required=""></input>
-                  <label>Username</label>
-                </div>
-                <div className={form.userbox}>
-                  <input type="password" name="" required=""></input>
-                  <label>Password</label>
-                </div>
-                <a href="#">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  Submit
-                </a>
-              </form>
+    <div align="center">
+      <h2 className={{ font: balsamiqBold }}>Login Form</h2>
+      <div className="form">
+        <div className="details">
+          <form onSubmit={handleLoginSubmit}>
+            <div>
+              <div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <TextField
+                  type="text"
+                  required
+                  label="Username"
+                  fullWidth
+                  onChange={handleUsernameChange}
+                />
+              </div>
+
+              <p>&nbsp;</p>
+              <div>
+                <TextField
+                  type="password"
+                  required
+                  label="Password"
+                  fullWidth
+                  onChange={handlePasswordChange}
+                />
+              </div>
+              <p>&nbsp;</p>
+              <Button type="submit" class="login-btn">
+                Login
+              </Button>
+              <p> </p>
+              <p> </p>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

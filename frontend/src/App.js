@@ -38,9 +38,6 @@ const App = () => {
           <Route path="/login">
             <LoginForm />
           </Route>
-          <Route path="/home">
-            <HomePage />
-          </Route>
           <Route path="/">
             <HomePage />
           </Route>
