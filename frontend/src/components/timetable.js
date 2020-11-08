@@ -8,6 +8,7 @@ import {
   ViewsDirective,
   ViewDirective,
 } from '@syncfusion/ej2-react-schedule';
+import '../App.css';
 
 class TimeTable extends React.Component {
   constructor() {
