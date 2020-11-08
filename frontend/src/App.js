@@ -1,17 +1,20 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import AboutUs from "./components/aboutUs";
-import HomePage from "./components/homepage";
-import Dashboard from "./components/dashboard";
-import LoginForm from "./components/loginForm";
-import Navbar from "./components/navbar";
-import SignUpForm from "./components/signUpForm";
-import background from "./images/background.jpg";
-import Trial from "./components/Trial";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Nav from "./components/NewNavbar";
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AboutUs from './components/aboutUs';
+import HomePage from './components/homepage';
+import Dashboard from './components/dashboard';
+import LoginForm from './components/loginForm';
+import Navbar from './components/navbar';
+import SignUpForm from './components/signUpForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import RatingPage from './components/rating';
 
 const App = () => {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    setUser(null);
+  }, []);
+
   return (
     <div
     // style={{
@@ -22,27 +25,28 @@ const App = () => {
     // }}
     >
       <Router>
-        <Navbar />
-        {/* <Nav /> */}
+        {user ? <Navbar /> : <LoginForm setUser={setUser} />}
         <Switch>
+          <Route path="/rate">
+            <RatingPage />
+          </Route>
           <Route path="/dashboard">
             <Dashboard />
           </Route>
-
           <Route path="/about">
             <AboutUs />
           </Route>
           <Route path="/signup">
             <SignUpForm />
           </Route>
-          <Route path="/login">
-            <LoginForm />
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
           <Route path="/home">
             <HomePage />
           </Route>
           <Route path="/">
-            <HomePage />
+            <LoginForm />
           </Route>
         </Switch>
       </Router>
