@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/signUpForm.css'
+import '../styles/signUpForm.css';
 
 const SignUpForm = () => {
   return (
@@ -9,17 +9,21 @@ const SignUpForm = () => {
           <img />
         </div>
         <div id="form">
-          <h1 id='Heading'>Create Account</h1>
+          <br />
+          <br />
+          <br />
+          <h1 id="Heading">Create Account</h1>
           <form action="">
+            <br />
+            <br />
+            <br />
             <input type="text" placeholder="Enter your name" />
-            <input type="date" placeholder="Enter your DOB" />
-            <input type="email" placeholder="Enter your email" />
-
+            <input type="text" placeholder="Enter your username" />
             <input type="password" placeholder="Choose your password" />
             <input type="password" placeholder="Confirm your password" />
             <div className="buttons">
               <div className="container">
-                <a href="" className="btn effect01" target="_blank" >
+                <a href="" className="btn effect01" target="_blank">
                   <span>SignUp</span>
                 </a>
               </div>

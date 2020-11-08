@@ -115,6 +115,7 @@ const Navbar = () => {
       </AppBar>
 
       <p>&nbsp;</p>
+      <p>&nbsp;</p>
     </div>
   );
 };
