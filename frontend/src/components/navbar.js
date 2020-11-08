@@ -116,8 +116,12 @@ const Navbar = () => {
                 <img src={Logo}></img>
               </div>
               <div className={Css.btnContainer}>
-                <button className={Css.btn}>Login</button>
-                <button className={Css.btn}>SignUp</button>
+                <Link to="/login">
+                  <button className={Css.btn}>Login</button>
+                </Link>
+                <Link to="/signup">
+                  <button className={Css.btn}>SignUp</button>
+                </Link>
               </div>
             </div>
           </div>
