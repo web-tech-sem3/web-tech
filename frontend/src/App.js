@@ -25,7 +25,7 @@ const App = () => {
     // }}
     >
       <Router>
-        {user ? <Navbar /> : <LoginForm setUser={setUser} />}
+        {user ? <Navbar /> : null}
         <Switch>
           <Route path="/rate">
             <RatingPage />
@@ -43,7 +43,7 @@ const App = () => {
             <Dashboard />
           </Route>
           <Route path="/">
-            <LoginForm />
+            <LoginForm setUser={setUser} />
           </Route>
         </Switch>
       </Router>
