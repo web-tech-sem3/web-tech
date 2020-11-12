@@ -11,8 +11,6 @@ import InfoIcon from '@material-ui/icons/Info';
 import MenuIcon from '@material-ui/icons/Menu';
 import React, { useState } from 'react';
 import { Link, Switch } from 'react-router-dom';
-import PersonIcon from '@material-ui/icons/Person';
-import { red } from '@material-ui/core/colors';
 import styled from 'styled-components';
 import Css from '../styles/Navbar.module.css';
 import Logo from '../images/logo.png';
@@ -114,7 +112,7 @@ const Navbar = ({ setUser }) => {
               </div>
               <div className={Css.btnContainer}>
                 <Link to="/login">
-                  <Button onClick={logout} type="secondary">
+                  <Button onClick={logout} color="secondary" type="outlined">
                     Logout
                   </Button>
                 </Link>
