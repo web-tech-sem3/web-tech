@@ -167,28 +167,22 @@ const HomePage = () => {
             <Carousel.Item>
               <img className="d-block w-100" src={home1} alt="First slide" />
               <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
+                <h3>Umm...</h3>
+                <p>Remove all your doubts by trying it for first time</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img className="d-block w-100" src={home2} alt="Second slide" />
               <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
+                <h3>What</h3>
+                <p>Take control of your studies, and with it, your life.</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img className="d-block w-100" src={home3} alt="First slide" />
               <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
+                <h3>Why?</h3>
+                <p>Take control of your studies, and with it, your life.</p>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>

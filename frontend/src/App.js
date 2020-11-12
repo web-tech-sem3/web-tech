@@ -7,6 +7,7 @@ import LoginForm from './components/loginForm';
 import Navbar from './components/navbar';
 import SignUpForm from './components/signUpForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import background from './images/background.jpg';
 import RatingPage from './components/rating';
 
 const App = () => {
@@ -17,15 +18,15 @@ const App = () => {
 
   return (
     <div
-    // style={{
-    //   backgroundImage: `url(${background})`,
-    //   height: '170vh',
-    //   backgroundSize: 'cover',
-    //   position: 'relative',
-    // }}
+      style={{
+        backgroundImage: `url(${background})`,
+        height: '170vh',
+        backgroundSize: 'cover',
+        position: 'relative',
+      }}
     >
       <Router>
-        {user ? <Navbar /> : null}
+        {user ? <Navbar setUser={setUser} /> : null}
         <Switch>
           <Route path="/rate">
             <RatingPage />
@@ -38,6 +39,9 @@ const App = () => {
           </Route>
           <Route path="/signup">
             <SignUpForm />
+          </Route>
+          <Route path="/home">
+            <HomePage />
           </Route>
           <Route path="/dashboard">
             <Dashboard />

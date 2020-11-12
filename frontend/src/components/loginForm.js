@@ -88,15 +88,18 @@ const SignInSide = ({ setUser }) => {
               id="password"
               autoComplete="current-password"
             />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Sign In
-            </Button>
+            <Link to="/home">
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                onClick={login}
+                className={classes.submit}
+              >
+                Sign In
+              </Button>
+            </Link>
             <Grid container>
               <Grid item>
                 <Link to="/signup">Don't have an account?</Link>

@@ -1,7 +1,12 @@
 import React from 'react';
+import TimeTable from './timeTable';
 
 const Dashboard = () => {
-  return <div>Dashboard for a specific user</div>;
+  return (
+    <div>
+      <TimeTable />
+    </div>
+  );
 };
 
 export default Dashboard;

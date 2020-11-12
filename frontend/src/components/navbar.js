@@ -16,8 +16,7 @@ import { red } from '@material-ui/core/colors';
 import styled from 'styled-components';
 import Css from '../styles/Navbar.module.css';
 import Logo from '../images/logo.png';
-import { CgHomeAlt } from 'react-icons/cg';
-import { BsInfoCircle } from 'react-icons/bs';
+
 const Options = styled.h1`
   font-size: 1rem;
   color: red;
@@ -31,7 +30,7 @@ const Header = styled.h3`
   background: pink;
 `;
 
-const Navbar = () => {
+const Navbar = ({ setUser }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -40,7 +39,9 @@ const Navbar = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
+  const logout = () => {
+    setUser(false);
+  };
   const anchor = 'left';
   return (
     <div align="center">
@@ -113,7 +114,9 @@ const Navbar = () => {
               </div>
               <div className={Css.btnContainer}>
                 <Link to="/login">
-                  <Button type="secondary">Logout</Button>
+                  <Button onClick={logout} type="secondary">
+                    Logout
+                  </Button>
                 </Link>
               </div>
             </div>
