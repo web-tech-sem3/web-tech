@@ -24,7 +24,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function RatingStar() {
+const RatingStar = () => {
   const [value, setValue] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
   const classes = useStyles();
@@ -47,4 +47,6 @@ export default function RatingStar() {
       )}
     </div>
   );
-}
+};
+
+export default RatingStar;

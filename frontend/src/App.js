@@ -8,7 +8,7 @@ import Navbar from './components/navbar';
 import SignUpForm from './components/signUpForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import background from './images/background.jpg';
-import RatingPage from './components/rating';
+import RatingPage from './components/ratingStar';
 
 const App = () => {
   const [user, setUser] = useState(null);
