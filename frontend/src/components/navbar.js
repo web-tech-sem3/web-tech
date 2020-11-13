@@ -119,8 +119,6 @@ const Navbar = ({ setUser }) => {
           </div>
         </Toolbar>
       </AppBar>
-
-      <p>&nbsp;</p>
       <p>&nbsp;</p>
     </div>
   );
