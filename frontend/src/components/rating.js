@@ -7,7 +7,7 @@ import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 275,
+    width: 350,
     paddingTop: 20,
     height: 100,
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
