@@ -1,10 +1,9 @@
-import React from "react";
-import Css from "../styles/aboutUs.module.css";
-import img1 from "../images/Vidhu.jpg";
-import img2 from "../images/Vidhu2.jpg";
-import img3 from "../images/Vidhu3.jpg";
+import React from 'react';
+import Css from '../styles/aboutUs.module.css';
+import img1 from '../images/Vidhu.jpg';
+import Copyright from './copyright';
 
-const Card = (props) => {
+const Card = props => {
   return (
     <div>
       <div>
@@ -31,7 +30,7 @@ const AboutUs = () => {
         <h1>About Us</h1>
       </div>
       <div className={Css.vision}>
-        <h1>Our Vision</h1>
+        <h1 align="center">Our Vision</h1>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis
           possimus, nam sed odit vel illo natus voluptate fugiat maxime. Eum,
@@ -47,29 +46,52 @@ const AboutUs = () => {
           nobis!
         </p>
       </div>
+      <h1 align="center">Our Team</h1>
       <div className={Css.container}>
         <Card
           img={img1}
-          name="Vidhu Verma"
+          name="Arvind Meena"
           Job="Front End"
           para="Happy!"
-          email="Vidhu@example.com"
-        ></Card>
+          email="Arvind@example.com"
+        />
+        <Card
+          img={img1}
+          name="Chaudhary Abuzar"
+          Job="Front End"
+          para="Happy!"
+          email="Chaudhary@example.com"
+        />
+        <Card
+          img={img1}
+          name="Hansraj Singh"
+          Job="Front End"
+          para="Happy!"
+          email="Hansraj@example.com"
+        />
+        <Card
+          img={img1}
+          name="Tanmay Gairola"
+          Job="Front End"
+          para="Happy!"
+          email="Tanmay@example.com"
+        />
         <Card
           img={img1}
           name="Vidhu Verma"
           Job="Front End"
           para="Happy!"
           email="Vidhu@example.com"
-        ></Card>
-        <Card
-          img={img1}
-          name="Vidhu Verma"
-          Job="Front End"
-          para="Happy!"
-          email="Vidhu@example.com"
-        ></Card>
+        />
       </div>
+      <br />
+      <br />
+      <br />
+      <Copyright />
+
+      <br />
+      <br />
+      <br />
     </div>
   );
 };
