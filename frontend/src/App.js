@@ -23,6 +23,8 @@ const App = () => {
         height: '170vh',
         backgroundSize: 'cover',
         position: 'relative',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       <Router>
