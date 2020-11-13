@@ -3,6 +3,7 @@ import Card from '@material-ui/core/Card';
 import RatingStar from './ratingStar';
 import { makeStyles } from '@material-ui/core/styles';
 import { hover } from '@syncfusion/ej2-react-schedule';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -24,6 +25,7 @@ const Rating = () => {
   const classes = useStyles();
   return (
     <div align="center">
+      <Typography variant="h2">Rating Page</Typography>
       <Card className={classes.root}>
         Customer Care
         <RatingStar />
