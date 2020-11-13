@@ -25,7 +25,9 @@ const Rating = () => {
   const classes = useStyles();
   return (
     <div align="center">
+      <br />
       <Typography variant="h2">Rating Page</Typography>
+      <br />
       <Card className={classes.root}>
         Customer Care
         <RatingStar />

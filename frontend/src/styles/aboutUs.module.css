@@ -1,6 +1,6 @@
 .image {
   display: block;
-  width: 100%;
+  width: 90%;
   height: auto;
 }
 
@@ -11,7 +11,7 @@
   right: 0;
   background-color: #008cba;
   overflow: hidden;
-  width: 100%;
+  width: 90%;
   height: 0;
   transition: 0.5s ease;
 }
@@ -62,7 +62,7 @@
 }
 .AboutUs h1 {
   font-size: 4rem;
-  font-family: "Alef", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Alef', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
   letter-spacing: 1rem;
   -webkit-text-stroke-width: 1px;
