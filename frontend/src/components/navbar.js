@@ -1,10 +1,8 @@
 import { Button, Drawer, IconButton } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
 import ThumbsUpDownIcon from '@material-ui/icons/ThumbsUpDown';
 import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
