@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import {
   ScheduleComponent,
   Week,
@@ -9,6 +8,7 @@ import {
   ViewsDirective,
   ViewDirective,
 } from '@syncfusion/ej2-react-schedule';
+import '../styles/timeTable.css';
 
 const TimeTable = () => {
   return (
@@ -16,7 +16,6 @@ const TimeTable = () => {
       width="100%"
       height="550px"
       selectedDate={new Date(2020, 11, 15)}
-      workDays={this.workingDays}
     >
       <ViewsDirective>
         <ViewDirective option="Week" />
