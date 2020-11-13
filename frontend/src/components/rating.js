@@ -2,7 +2,6 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import RatingStar from './ratingStar';
 import { makeStyles } from '@material-ui/core/styles';
-import { hover } from '@syncfusion/ej2-react-schedule';
 import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
