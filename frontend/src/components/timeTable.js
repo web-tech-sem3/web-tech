@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import {
   ScheduleComponent,
   Week,
@@ -8,14 +9,9 @@ import {
   ViewsDirective,
   ViewDirective,
 } from '@syncfusion/ej2-react-schedule';
-
 const TimeTable = () => {
   return (
-    <ScheduleComponent
-      width="100%"
-      height="550px"
-      selectedDate={new Date(2020, 11, 15)}
-    >
+    <ScheduleComponent width="100%" height="550px" cssClass="virtual-scrolling">
       <ViewsDirective>
         <ViewDirective option="Week" />
         <ViewDirective option="WorkWeek" />
@@ -25,5 +21,4 @@ const TimeTable = () => {
     </ScheduleComponent>
   );
 };
-
 export default TimeTable;
