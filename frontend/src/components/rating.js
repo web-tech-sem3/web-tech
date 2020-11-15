@@ -2,6 +2,7 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import RatingStar from './ratingStar';
 import { makeStyles } from '@material-ui/core/styles';
+import Copyright from '../components/copyright';
 import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
@@ -17,6 +18,11 @@ const useStyles = makeStyles({
   },
   pos: {
     marginBottom: 12,
+  },
+  copyright: {
+    height: 100,
+    alignContent: 'center',
+    position: 'bottom',
   },
 });
 
@@ -45,6 +51,10 @@ const Rating = () => {
       <Card className={classes.root}>
         UI
         <RatingStar />
+      </Card>
+      <br />
+      <Card className={classes.copyright}>
+        <Copyright />
       </Card>
     </div>
   );
