@@ -58,7 +58,7 @@ const Navbar = ({ setUser }) => {
             <Drawer variant="persistent" anchor={anchor} open={open}>
               <IconButton onClick={handleClose}>
                 <ArrowBackIosIcon />
-                Back
+                Close
               </IconButton>
 
               <p>&nbsp;</p>

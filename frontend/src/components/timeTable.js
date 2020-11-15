@@ -8,7 +8,6 @@ import {
   ViewsDirective,
   ViewDirective,
 } from '@syncfusion/ej2-react-schedule';
-import '../styles/timeTable.css';
 
 const TimeTable = () => {
   return (

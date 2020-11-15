@@ -253,6 +253,8 @@ const HomePage = () => {
           </Typography>
         </footer>
         <Copyright />
+        <br />
+        <br />
       </React.Fragment>
     </ThemeProvider>
   );
