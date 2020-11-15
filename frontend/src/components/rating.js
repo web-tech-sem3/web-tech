@@ -3,7 +3,7 @@ import Card from '@material-ui/core/Card';
 import RatingStar from './ratingStar';
 import { makeStyles } from '@material-ui/core/styles';
 import Copyright from '../components/copyright';
-import { Typography } from '@material-ui/core';
+import { Paper, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -53,9 +53,9 @@ const Rating = () => {
         <RatingStar />
       </Card>
       <br />
-      <Card className={classes.copyright}>
+      <Paper className={classes.copyright}>
         <Copyright />
-      </Card>
+      </Paper>
     </div>
   );
 };
