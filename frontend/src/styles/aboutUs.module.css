@@ -1,7 +1,7 @@
 .image {
   display: block;
   width: 90%;
-  height: auto;
+  height: 50vh;
 }
 
 .overlay {
@@ -23,7 +23,7 @@
 }
 
 .text {
-  color: white;
+  color: grey;
   font-size: 15px;
   position: absolute;
   top: 50%;
