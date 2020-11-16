@@ -29,7 +29,7 @@ const NameCard = props => {
   const classes = useStyles();
   return (
     <Grid item key={props.name} xs={12} sm={6} md={4}>
-      <Card className={classes.card}>
+      <Card className={classes.card} variant="elevation">
         <CardMedia
           className={classes.cardMedia}
           image={props.image}

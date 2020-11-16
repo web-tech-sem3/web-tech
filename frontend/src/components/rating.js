@@ -3,11 +3,11 @@ import Card from '@material-ui/core/Card';
 import RatingStar from './ratingStar';
 import { makeStyles } from '@material-ui/core/styles';
 import Copyright from '../components/copyright';
-import { Paper, Typography } from '@material-ui/core';
+import background from '../images/background.jpg';
 
 const useStyles = makeStyles({
   root: {
-    width: 350,
+    width: 400,
     paddingTop: 20,
     height: 100,
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -29,9 +29,18 @@ const useStyles = makeStyles({
 const Rating = () => {
   const classes = useStyles();
   return (
-    <div align="center">
+    <div
+      align="center"
+      style={{
+        backgroundImage: `url(${background})`,
+        height: '83vh',
+        backgroundSize: 'cover',
+        position: 'relative',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
       <br />
-      <Typography variant="h2">Rating Page</Typography>
       <br />
       <Card className={classes.root}>
         Customer Care
@@ -53,9 +62,10 @@ const Rating = () => {
         <RatingStar />
       </Card>
       <br />
-      <Paper className={classes.copyright}>
-        <Copyright />
-      </Paper>
+      <br />
+      <br />
+      <br />
+      <Copyright />
     </div>
   );
 };
