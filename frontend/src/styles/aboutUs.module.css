@@ -11,7 +11,7 @@
   right: 0;
   background-color: pink;
   overflow: hidden;
-  opacity: 80%;
+  opacity: 85%;
   width: 90%;
   height: 0;
   transition: 0.5s ease;
@@ -23,7 +23,7 @@
 }
 
 .text {
-  color: grey;
+  color: lightslategrey;
   font-size: 15px;
   position: absolute;
   top: 50%;
