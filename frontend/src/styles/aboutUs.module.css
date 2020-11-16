@@ -1,7 +1,6 @@
 .image {
   display: block;
   width: 90%;
-  height: auto;
 }
 
 .overlay {
@@ -9,8 +8,9 @@
   bottom: 100%;
   left: 0;
   right: 0;
-  background-color: #008cba;
+  background-color: pink;
   overflow: hidden;
+  opacity: 80%;
   width: 90%;
   height: 0;
   transition: 0.5s ease;
