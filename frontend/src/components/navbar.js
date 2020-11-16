@@ -13,13 +13,6 @@ import styled from 'styled-components';
 import Css from '../styles/Navbar.module.css';
 import Logo from '../images/logo.png';
 
-const Options = styled.h1`
-  font-size: 1rem;
-  color: red;
-  &:hover {
-  }
-`;
-
 const Header = styled.h3`
   color: white;
   letter-spacing: 0.4em;
