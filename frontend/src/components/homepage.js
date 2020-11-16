@@ -21,6 +21,7 @@ import cover from '../images/cover2.jpg';
 import styled from 'styled-components';
 import { Carousel } from 'react-bootstrap';
 import { blue } from '@material-ui/core/colors';
+import background from '../images/background.jpg';
 import { keyframes } from 'styled-components';
 import stylescss from '../styles/homepage.module.css';
 
@@ -143,117 +144,128 @@ const HomePage = () => {
   `;
 
   return (
-    <ThemeProvider theme={theme}>
-      <React.Fragment>
-        <CssBaseline />
+    <div
+      style={{
+        backgroundImage: `url(${background})`,
+        height: '130vh',
+        backgroundSize: 'cover',
+        position: 'relative',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <ThemeProvider theme={theme}>
+        <React.Fragment>
+          <CssBaseline />
 
-        <main>
-          <div align="center" className={classes.heroContent}>
-            <Container maxWidth="sm">
-              <TitleWrapper>
-                <Title>U_Table</Title>
+          <main>
+            <div align="center" className={classes.heroContent}>
+              <Container maxWidth="sm">
+                <TitleWrapper>
+                  <Title>U_Table</Title>
 
-                <SubTitle>A table for you.</SubTitle>
-              </TitleWrapper>
-            </Container>
-          </div>
+                  <SubTitle>A table for you.</SubTitle>
+                </TitleWrapper>
+              </Container>
+            </div>
 
-          <Carousel
-            style={{ width: '60vw', left: '20vw', marginBottom: '12vh' }}
-          >
-            <Carousel.Item>
-              <img className="d-block w-100" src={home1} alt="First slide" />
-              <Carousel.Caption>
-                <h3>Umm...</h3>
-                <p>Remove all your doubts by trying it for first time</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src={home2} alt="Second slide" />
-              <Carousel.Caption>
-                <h3>What</h3>
-                <p>Take control of your studies, and with it, your life.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src={home3} alt="First slide" />
-              <Carousel.Caption>
-                <h3>Why?</h3>
-                <p>Take control of your studies, and with it, your life.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-          <div className={stylescss.container}>
-            <h1 className={stylescss.h1}>why.</h1>
-            <p className={stylescss.why}>
-              These days students who are the youth of this nation seem to be in
-              so much confusion. They may know what they want to do in life but
-              not how to achieve it .That’s why we decided to pick up this
-              issue!!
-              <br></br>
-              <br></br>
-              Our app will tell students when to do what. They’ll get
-              suggestions, a personalized timetable allowing them to complete
-              whatever they want.
-            </p>
-          </div>
-          <CardDiv>
-            <Container className={classes.cardGrid} maxWidth="md">
-              {/* End hero unit */}
-              <Grid container spacing={4}>
-                <NameCard
-                  name="Hansraj Singh"
-                  message="
+            <Carousel
+              style={{ width: '60vw', left: '20vw', marginBottom: '12vh' }}
+            >
+              <Carousel.Item>
+                <img className="d-block w-100" src={home1} alt="First slide" />
+                <Carousel.Caption>
+                  <h3>Umm...</h3>
+                  <p>Remove all your doubts by trying it for first time</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img className="d-block w-100" src={home2} alt="Second slide" />
+                <Carousel.Caption>
+                  <h3>What</h3>
+                  <p>Take control of your studies, and with it, your life.</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img className="d-block w-100" src={home3} alt="First slide" />
+                <Carousel.Caption>
+                  <h3>Why?</h3>
+                  <p>Take control of your studies, and with it, your life.</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            </Carousel>
+            <div className={stylescss.container}>
+              <h1 className={stylescss.h1}>why.</h1>
+              <p className={stylescss.why}>
+                These days students who are the youth of this nation seem to be
+                in so much confusion. They may know what they want to do in life
+                but not how to achieve it .That’s why we decided to pick up this
+                issue!!
+                <br></br>
+                <br></br>
+                Our app will tell students when to do what. They’ll get
+                suggestions, a personalized timetable allowing them to complete
+                whatever they want.
+              </p>
+            </div>
+            <CardDiv>
+              <Container className={classes.cardGrid} maxWidth="md">
+                {/* End hero unit */}
+                <Grid container spacing={4}>
+                  <NameCard
+                    name="Hansraj Singh"
+                    message="
           U_Table helped me realize my full potential by giving me something to work towards"
-                  image={kachraa}
-                />
-                <NameCard
-                  name="Tanmay Gairola"
-                  message="
+                    image={kachraa}
+                  />
+                  <NameCard
+                    name="Tanmay Gairola"
+                    message="
         I realized I was wasting a lot of time each day when I tried U_Table"
-                  image={babu}
-                />
-                <NameCard
-                  name="Vidhu Verma"
-                  message="
+                    image={babu}
+                  />
+                  <NameCard
+                    name="Vidhu Verma"
+                    message="
       It took me a while to realize U_Table was boon for me"
-                  image={ak}
-                />
-                <NameCard
-                  name="Arvind Meena"
-                  message="
+                    image={ak}
+                  />
+                  <NameCard
+                    name="Arvind Meena"
+                    message="
     U_Table helps me get going about my day, something I was apprehensive about"
-                  image={suniel}
-                />
-                <NameCard
-                  name="Chaudhary Abuzar"
-                  message="
+                    image={suniel}
+                  />
+                  <NameCard
+                    name="Chaudhary Abuzar"
+                    message="
   All day I work on my projects and U_Table helps me prioritize"
-                  image={rajpal}
-                />
-              </Grid>
-            </Container>
-          </CardDiv>
-        </main>
-        {/* Footer */}
-        <footer className={classes.footer}>
-          <Typography variant="h6" align="center" gutterBottom>
-            U_Table
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            color="textSecondary"
-            component="p"
-          >
-            Get more productive each day
-          </Typography>
-        </footer>
-        <Copyright />
-        <br />
-        <br />
-      </React.Fragment>
-    </ThemeProvider>
+                    image={rajpal}
+                  />
+                </Grid>
+              </Container>
+            </CardDiv>
+          </main>
+          {/* Footer */}
+          <footer className={classes.footer}>
+            <Typography variant="h6" align="center" gutterBottom>
+              U_Table
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              align="center"
+              color="textSecondary"
+              component="p"
+            >
+              Get more productive each day
+            </Typography>
+          </footer>
+          <Copyright />
+          <br />
+          <br />
+        </React.Fragment>
+      </ThemeProvider>
+    </div>
   );
 };
 

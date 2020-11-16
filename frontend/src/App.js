@@ -17,16 +17,7 @@ const App = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${background})`,
-        height: '140vh',
-        backgroundSize: 'cover',
-        position: 'relative',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+    <div>
       <Router>
         {user ? <Navbar setUser={setUser} /> : null}
         <Switch>
