@@ -1,6 +1,7 @@
 .image {
   display: block;
   width: 90%;
+  height: auto;
 }
 
 .overlay {
