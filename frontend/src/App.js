@@ -20,7 +20,7 @@ const App = () => {
     <div
       style={{
         backgroundImage: `url(${background})`,
-        height: '170vh',
+        height: '100vh',
         backgroundSize: 'cover',
         position: 'relative',
         backgroundPosition: 'center',
