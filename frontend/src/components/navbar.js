@@ -42,14 +42,14 @@ const Navbar = ({ setUser }) => {
             }}
             align="center"
             style={{
-              width: 100,
+              width: 60,
             }}
           >
             <MenuIcon color="secondary" />
           </IconButton>
           <Switch>
             <Drawer variant="persistent" anchor={anchor} open={open}>
-              <IconButton onClick={handleClose}>
+              <IconButton onClick={handleClose} style={{ width: 200 }}>
                 <ArrowBackIosIcon />
                 Close
               </IconButton>
@@ -99,7 +99,7 @@ const Navbar = ({ setUser }) => {
             </div>
             <div className={Css.Rhead}>
               <div className={Css.logo}>
-                <img src={Logo}></img>
+                <img src={Logo} />
               </div>
               <div className={Css.btnContainer}>
                 <Link to="/login">
