@@ -1,6 +1,9 @@
 import React from 'react';
 import Css from '../styles/aboutUs.module.css';
-import img1 from '../images/Vidhu.jpg';
+import vidhu from '../images/vidhu.jpg';
+import abuzar from '../images/abuzar.jpg';
+import hansraj from '../images/hansraj.jpg';
+
 import Copyright from './copyright';
 
 const Card = props => {
@@ -49,35 +52,35 @@ const AboutUs = () => {
       <h1 align="center">Our Team</h1>
       <div className={Css.container}>
         <Card
-          img={img1}
+          img={vidhu}
           name="Arvind Meena"
           Job="Front End"
           para="Happy!"
           email="Arvind@example.com"
         />
         <Card
-          img={img1}
+          img={abuzar}
           name="Chaudhary Abuzar"
           Job="Front End"
           para="Happy!"
           email="Chaudhary@example.com"
         />
         <Card
-          img={img1}
+          img={hansraj}
           name="Hansraj Singh"
           Job="Front End"
           para="Happy!"
           email="Hansraj@example.com"
         />
         <Card
-          img={img1}
+          img={vidhu}
           name="Tanmay Gairola"
           Job="Front End"
           para="Happy!"
           email="Tanmay@example.com"
         />
         <Card
-          img={img1}
+          img={vidhu}
           name="Vidhu Verma"
           Job="Front End"
           para="Happy!"
