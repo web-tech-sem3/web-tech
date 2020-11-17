@@ -22,18 +22,15 @@ const useStyles = makeStyles(theme => ({
   back: {
     backgroundImage: `url(${background})`,
     backgroundRepeat: 'no-repeat',
-    backgroundColor:
-      theme.palette.type === 'light'
-        ? theme.palette.grey[50]
-        : theme.palette.grey[900],
     backgroundSize: 'cover',
     marginTop: 0,
     backgroundPosition: 'center',
   },
   card: {
+    marginTop: theme.spacing(8),
     borderRadius: '5%',
-    backgroundColor: 'pink',
-    opacity: '75%',
+    backgroundColor: 'white',
+    opacity: '80%',
   },
   avatar: {
     margin: theme.spacing(1),
@@ -52,7 +49,7 @@ export default function SignUp() {
   const classes = useStyles();
 
   return (
-    <Container className={classes.back}>
+    <div className={classes.back}>
       <Container component="main" maxWidth="xs" className={classes.card}>
         <CssBaseline />
         <div className={classes.paper}>
@@ -144,6 +141,6 @@ export default function SignUp() {
       <Box mt={5}>
         <Copyright />
       </Box>
-    </Container>
+    </div>
   );
 }
