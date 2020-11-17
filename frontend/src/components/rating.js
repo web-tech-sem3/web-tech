@@ -44,22 +44,22 @@ const Rating = () => {
       <br />
       <Card className={classes.root}>
         Customer Care
-        <RatingStar />
+        <RatingStar num={1} />
       </Card>
       <br />
       <Card className={classes.root}>
         Caring
-        <RatingStar />
+        <RatingStar num={2} />
       </Card>
       <br />
       <Card className={classes.root}>
         UX
-        <RatingStar />
+        <RatingStar num={3} />
       </Card>
       <br />
       <Card className={classes.root}>
         UI
-        <RatingStar />
+        <RatingStar num={4} />
       </Card>
       <br />
       <br />
