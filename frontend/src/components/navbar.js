@@ -99,7 +99,7 @@ const Navbar = ({ setUser }) => {
             </div>
             <div className={Css.Rhead}>
               <div className={Css.logo}>
-                <img src={Logo} />
+                <img src={Logo} alt="logo" />
               </div>
               <div className={Css.btnContainer}>
                 <Link to="/login">
