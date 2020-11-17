@@ -24,8 +24,8 @@ const useStyles = makeStyles({
   },
 });
 
-const RatingStar = () => {
-  const [value, setValue] = React.useState(2);
+const RatingStar = ({ num }) => {
+  const [value, setValue] = React.useState({ 1: 1, 2: 2, 3: 3, 4: 4 });
   const [hover, setHover] = React.useState(-1);
   const classes = useStyles();
 
@@ -33,17 +33,19 @@ const RatingStar = () => {
     <div className={classes.root}>
       <Rating
         name="hover-feedback"
-        value={value}
+        value={value[num]}
         precision={0.5}
         onChange={(event, newValue) => {
-          setValue(newValue);
+          console.log(num);
+          setValue({ ...value, num: newValue });
+          console.log(value);
         }}
         onChangeActive={(event, newHover) => {
           setHover(newHover);
         }}
       />
       {value !== null && (
-        <Box ml={2}>{labels[hover !== -1 ? hover : value]}</Box>
+        <Box ml={2}>{labels[hover !== -1 ? hover : value[num]]}</Box>
       )}
     </div>
   );
