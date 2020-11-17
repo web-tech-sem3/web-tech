@@ -3,6 +3,7 @@ import Css from '../styles/aboutUs.module.css';
 import vidhu from '../images/vidhu.jpg';
 import abuzar from '../images/abuzar.jpg';
 import hansraj from '../images/hansraj.jpg';
+import tanmay from '../images/tanmay.jpg';
 
 import Copyright from './copyright';
 
@@ -55,28 +56,28 @@ const AboutUs = () => {
           img={vidhu}
           name="Arvind Meena"
           Job="Front End"
-          para="Happy!"
+          para="Sad!"
           email="Arvind@example.com"
         />
         <Card
           img={abuzar}
           name="Chaudhary Abuzar"
           Job="Front End"
-          para="Happy!"
+          para="Busy!"
           email="Chaudhary@example.com"
         />
         <Card
           img={hansraj}
           name="Hansraj Singh"
           Job="Front End"
-          para="Happy!"
+          para="Crying!"
           email="Hansraj@example.com"
         />
         <Card
-          img={vidhu}
+          img={tanmay}
           name="Tanmay Gairola"
           Job="Front End"
-          para="Happy!"
+          para="Not Happy!"
           email="Tanmay@example.com"
         />
         <Card
