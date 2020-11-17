@@ -42,6 +42,7 @@ const Rating = () => {
     >
       <br />
       <br />
+      <br />
       <Card className={classes.root}>
         Customer Care
         <RatingStar num={1} />
@@ -61,7 +62,6 @@ const Rating = () => {
         UI
         <RatingStar num={4} />
       </Card>
-      <br />
       <br />
       <br />
       <br />
