@@ -5,19 +5,23 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import background from '../images/background.jpg';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Copyright from './copyright';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { Card } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   paper: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+  },
+  copyright: {
+    height: 60,
+    paddingTop: 20,
   },
   back: {
     backgroundImage: `url(${background})`,
@@ -138,9 +142,12 @@ export default function SignUp() {
           </form>
         </div>
       </Container>
-      <Box mt={5}>
+      <br />
+      <br />
+      <br />
+      <Card className={classes.copyright}>
         <Copyright />
-      </Box>
+      </Card>
     </div>
   );
 }
