@@ -104,6 +104,8 @@ const Dashboard = () => {
         }}
       >
         <TimeTable />
+        <br />
+        <br />
       </div>
     </div>
   );
