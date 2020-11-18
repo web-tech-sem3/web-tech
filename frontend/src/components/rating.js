@@ -59,17 +59,17 @@ const useStyles = makeStyles(theme => ({
 
 const Rating = () => {
   const classes = useStyles();
-  const SubTitle = styled.h4`
+  const SubTitle = styled.h3`
     color: white;
     letter-spacing: 0.4em;
     background: pink;
   `;
-  const Title = styled.h1`
-    font-size: 2em;
+  const Title = styled.h2`
+    font-size: 3em;
     color: black;
     background: white;
     text-transform: uppercase;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.5em;
   `;
   const MoveIn = keyframes`
   from {
@@ -83,7 +83,7 @@ const Rating = () => {
 `;
 
   const TitleWrapper = styled.section`
-    padding: 4em;
+    padding: 3em;
     background: papayawhip;
     display: flex;
     justify-content: center;
@@ -107,49 +107,59 @@ const Rating = () => {
         backgroundSize: 'cover',
       }}
     >
-      <div align="center" className={classes.heroContent}>
-        <Container maxWidth="sm">
-          <TitleWrapper>
-            <Title>Dashboard</Title>
-
-            <SubTitle>Your Home.</SubTitle>
-          </TitleWrapper>
-        </Container>
-      </div>
       <div
-        align="center"
         style={{
-          paddingLeft: 700,
-          position: 'relative',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          display: 'flex',
         }}
       >
-        <br />
-        <br />
-        <br />
-        <Card className={classes.root}>
-          Customer Care
-          <RatingStar num={1} />
-        </Card>
-        <br />
-        <Card className={classes.root}>
-          Caring
-          <RatingStar num={2} />
-        </Card>
-        <br />
-        <Card className={classes.root}>
-          UX
-          <RatingStar num={3} />
-        </Card>
-        <br />
-        <Card className={classes.root}>
-          UI
-          <RatingStar num={4} />
-        </Card>
-        <br />
-        <br />
-        <br />
+        <div
+          align="center"
+          className={classes.heroContent}
+          style={{ paddingLeft: '10%' }}
+        >
+          <Container maxWidth="sm">
+            <TitleWrapper>
+              <Title>Rating</Title>
+              <br />
+              <SubTitle>Rate Us</SubTitle>
+            </TitleWrapper>
+          </Container>
+        </div>
+        <div
+          align="center"
+          style={{
+            paddingLeft: 200,
+            position: 'relative',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          <br />
+          <br />
+          <br />
+          <Card className={classes.root}>
+            Customer Care
+            <RatingStar num={1} />
+          </Card>
+          <br />
+          <Card className={classes.root}>
+            Caring
+            <RatingStar num={2} />
+          </Card>
+          <br />
+          <Card className={classes.root}>
+            UX
+            <RatingStar num={3} />
+          </Card>
+          <br />
+          <Card className={classes.root}>
+            UI
+            <RatingStar num={4} />
+          </Card>
+          <br />
+          <br />
+          <br />
+        </div>
       </div>
       <br />
       <Copyright />
