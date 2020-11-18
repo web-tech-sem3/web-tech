@@ -4,7 +4,6 @@ import vidhu from '../images/vidhu.jpg';
 import abuzar from '../images/abuzar.jpg';
 import hansraj from '../images/hansraj.jpg';
 import tanmay from '../images/tanmay.jpg';
-
 import Copyright from './copyright';
 
 const Card = props => {
@@ -34,19 +33,23 @@ const AboutUs = () => {
         <h1>About Us</h1>
       </div>
       <div className={Css.vision}>
-        <h1 align="center">Our Vision</h1>
-        <h4>
+        <h1 align="center">
+          <b>Our Vision</b>
+        </h1>
+        <p style={{ fontSize: '1.5rem' }}>
           These days students who are the youth of this nation seem to be in so
           much confusion. They may know what they want to do in life but not how
           to achieve it .
-        </h4>
-        <h4>
+        </p>
+        <p style={{ fontSize: '1.5rem' }}>
           That’s why we decided to pick up this issue !! Our app will tell
           students when to do what. They’ll get suggestions, a personalized
           timetable allowing them to complete whatever they want.
-        </h4>
+        </p>
       </div>
-      <h1 align="center">Our Team</h1>
+      <h1 align="center">
+        <b>Our Team</b>
+      </h1>
       <div className={Css.container}>
         <Card
           img={vidhu}
