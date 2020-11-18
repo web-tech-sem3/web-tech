@@ -1,12 +1,10 @@
 import React from 'react';
 import TimeTable from './timeTable';
 import background from '../images/background.jpg';
-import Copyright from './copyright';
 import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
-import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
-import { Card, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   icon: {
