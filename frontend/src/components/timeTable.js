@@ -14,9 +14,9 @@ const TimeTable = () => {
   return (
     <ScheduleComponent width="100%" height="550px" cssClass="virtual-scrolling">
       <ViewsDirective>
-        <ViewDirective option="Week" />
-        <ViewDirective option="WorkWeek" />
-        <ViewDirective option="TimelineWorkWeek" />
+        <ViewDirective option="Week" allowVirtualScrolling={true} />
+        <ViewDirective option="WorkWeek" allowVirtualScrolling={true} />
+        <ViewDirective option="TimelineWorkWeek" allowVirtualScrolling={true} />
       </ViewsDirective>
       <Inject services={[Week, WorkWeek, TimelineViews]} />
     </ScheduleComponent>
