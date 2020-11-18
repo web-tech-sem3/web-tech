@@ -4,7 +4,7 @@ import RatingStar from './ratingStar';
 import { makeStyles } from '@material-ui/core/styles';
 import Copyright from '../components/copyright';
 import background from '../images/background.jpg';
-import { CircularProgress } from '@material-ui/core';
+import '../App.css';
 
 const useStyles = makeStyles({
   root: {

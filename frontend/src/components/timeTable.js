@@ -8,6 +8,8 @@ import {
   ViewsDirective,
   ViewDirective,
 } from '@syncfusion/ej2-react-schedule';
+import '../App.css';
+
 const TimeTable = () => {
   return (
     <ScheduleComponent width="100%" height="550px" cssClass="virtual-scrolling">
