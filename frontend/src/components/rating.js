@@ -115,7 +115,7 @@ const Rating = () => {
         <div
           align="center"
           className={classes.heroContent}
-          style={{ paddingLeft: '10%' }}
+          style={{ paddingLeft: '5%' }}
         >
           <Container maxWidth="sm">
             <TitleWrapper>
@@ -128,7 +128,7 @@ const Rating = () => {
         <div
           align="center"
           style={{
-            paddingLeft: 200,
+            paddingLeft: 150,
             position: 'relative',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
