@@ -4,7 +4,6 @@ import RatingStar from './ratingStar';
 import { makeStyles } from '@material-ui/core/styles';
 import Copyright from '../components/copyright';
 import background from '../images/background.jpg';
-import '../App.css';
 
 const useStyles = makeStyles({
   root: {

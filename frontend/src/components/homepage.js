@@ -101,7 +101,7 @@ const HomePage = () => {
 
   const Title = styled.h1`
     font-size: 4em;
-    color: balck;
+    color: black;
     background: white;
     text-transform: uppercase;
     letter-spacing: 0.5em;
