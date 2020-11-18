@@ -35,20 +35,16 @@ const AboutUs = () => {
       </div>
       <div className={Css.vision}>
         <h1 align="center">Our Vision</h1>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis
-          possimus, nam sed odit vel illo natus voluptate fugiat maxime. Eum,
-          eius. Temporibus labore quidem doloremque deleniti praesentium cumque,
-          quia iure natus repellat voluptate itaque. Sunt voluptates doloribus
-          cupiditate delectus magnam architecto, quod minima vitae ad eos sit
-          quidem molestiae amet consequatur? Officiis at perferendis magni.
-          Ullam laudantium eum reiciendis dolor debitis quam ipsa commodi nulla
-          dolores? Aperiam officia dignissimos nesciunt, voluptas blanditiis
-          veritatis ab odio, dolorum accusamus laborum molestias libero error
-          iste eius quasi ipsa deleniti facere nam quia sapiente delectus!
-          Cupiditate fugiat voluptas molestiae optio, enim earum obcaecati
-          nobis!
-        </p>
+        <h4>
+          These days students who are the youth of this nation seem to be in so
+          much confusion. They may know what they want to do in life but not how
+          to achieve it .
+        </h4>
+        <h4>
+          That’s why we decided to pick up this issue !! Our app will tell
+          students when to do what. They’ll get suggestions, a personalized
+          timetable allowing them to complete whatever they want.
+        </h4>
       </div>
       <h1 align="center">Our Team</h1>
       <div className={Css.container}>
