@@ -69,7 +69,7 @@ const Rating = () => {
     color: black;
     background: white;
     text-transform: uppercase;
-    letter-spacing: 0.5em;
+    letter-spacing: 0.6em;
   `;
   const MoveIn = keyframes`
   from {
@@ -115,7 +115,7 @@ const Rating = () => {
         <div
           align="center"
           className={classes.heroContent}
-          style={{ paddingLeft: '5%' }}
+          style={{ paddingLeft: '5%', paddingTop: '15%' }}
         >
           <Container maxWidth="sm">
             <TitleWrapper>
@@ -161,7 +161,6 @@ const Rating = () => {
           <br />
         </div>
       </div>
-      <br />
       <Copyright />
     </div>
   );
