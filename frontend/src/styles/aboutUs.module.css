@@ -52,7 +52,7 @@
 }
 
 .AboutUs {
-  background: teal;
+  background: #f0bcd4;
   height: 30vh;
   display: flex;
   justify-content: center;
@@ -60,7 +60,7 @@
 }
 .AboutUs h1 {
   font-size: 4rem;
-  font-family: 'Alef', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: white;
   letter-spacing: 1rem;
   -webkit-text-stroke-width: 1px;
