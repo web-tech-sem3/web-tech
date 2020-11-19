@@ -28,6 +28,7 @@ const RatingStar = ({ num }) => {
   const [value, setValue] = React.useState({ 1: 1, 2: 2, 3: 3, 4: 4 });
   const [hover, setHover] = React.useState(-1);
   const classes = useStyles();
+  var copyValue;
 
   return (
     <div className={classes.root}>
@@ -38,7 +39,9 @@ const RatingStar = ({ num }) => {
         onChange={(event, newValue) => {
           console.log(num);
           console.log(value[3]);
-          setValue({ ...value, 3: newValue });
+          copyValue = { ...value };
+          copyValue[num] = newValue;
+          setValue(copyValue);
           console.log(value);
         }}
         onChangeActive={(event, newHover) => {
