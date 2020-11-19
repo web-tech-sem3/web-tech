@@ -37,7 +37,8 @@ const RatingStar = ({ num }) => {
         precision={0.5}
         onChange={(event, newValue) => {
           console.log(num);
-          setValue({ ...value, num: newValue });
+          console.log(value[3]);
+          setValue({ ...value, 3: newValue });
           console.log(value);
         }}
         onChangeActive={(event, newHover) => {
