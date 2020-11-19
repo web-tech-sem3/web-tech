@@ -17,16 +17,12 @@ const App = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const User = window.localStorage.getItem('userLoggedIn');
-    if (User) {
-      const user = JSON.parse(User);
-      setUser(user);
-    }
-  }, []);
-
   const handleLogin = async event => {
     event.preventDefault();
+    console.log({
+      username,
+      password,
+    });
     try {
       const User = await loginService
         .login({
@@ -40,6 +36,7 @@ const App = () => {
           setPassword('');
         });
       console.log('Logged in Successfully');
+      console.log(User);
       setUser(User);
       window.localStorage.setItem('userLoggedIn', JSON.stringify(User));
       setUsername('');
@@ -89,6 +86,8 @@ const App = () => {
             <LoginForm
               handleLogin={handleLogin}
               handleUsernameChange={handleUsernameChange}
+              username={username}
+              password={password}
               handlePasswordChange={handlePasswordChange}
             />
           </Route>

@@ -51,6 +51,8 @@ const SignInSide = ({
   handleLogin,
   handleUsernameChange,
   handlePasswordChange,
+  username,
+  password,
 }) => {
   const classes = useStyles();
 
@@ -74,6 +76,7 @@ const SignInSide = ({
               onChange={handleUsernameChange}
               margin="normal"
               required
+              value={username}
               fullWidth
               id="username"
               label="Username"
@@ -87,6 +90,7 @@ const SignInSide = ({
               margin="normal"
               required
               fullWidth
+              value={password}
               name="password"
               label="Password"
               type="password"
