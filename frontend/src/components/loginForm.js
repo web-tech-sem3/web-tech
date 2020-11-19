@@ -46,12 +46,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const SignInSide = ({ setUser }) => {
+const SignInSide = ({
+  setUser,
+  handleLogin,
+  handleUsernameChange,
+  handlePasswordChange,
+}) => {
   const classes = useStyles();
-
-  const login = () => {
-    setUser(true);
-  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -67,9 +68,10 @@ const SignInSide = ({ setUser }) => {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className={classes.form} noValidate onSubmit={login}>
+          <form className={classes.form} noValidate onSubmit={handleLogin}>
             <TextField
               variant="outlined"
+              onChange={handleUsernameChange}
               margin="normal"
               required
               fullWidth
@@ -81,6 +83,7 @@ const SignInSide = ({ setUser }) => {
             />
             <TextField
               variant="outlined"
+              onChange={handlePasswordChange}
               margin="normal"
               required
               fullWidth
@@ -90,18 +93,15 @@ const SignInSide = ({ setUser }) => {
               id="password"
               autoComplete="current-password"
             />
-            <Link to="/home">
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                onClick={login}
-                className={classes.submit}
-              >
-                Sign In
-              </Button>
-            </Link>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Sign In
+            </Button>
             <Grid container>
               <Grid item>
                 <Link to="/signup">Don't have an account?</Link>
