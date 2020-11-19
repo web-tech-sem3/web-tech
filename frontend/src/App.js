@@ -17,17 +17,21 @@ const App = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
-  const handleLogin = async event => {
+  const handleLogin = event => {
     event.preventDefault();
-    console.log({
-      username,
-      password,
-    });
     try {
-      const User = await loginService
+      const User = loginService
         .login({
-          username,
+          userName: username,
           password,
+        })
+        .then(() => {
+          console.log('Logged in Successfully');
+          console.log(User);
+          setUser(User);
+          window.localStorage.setItem('userLoggedIn', JSON.stringify(User));
+          setUsername('');
+          setPassword('');
         })
         .catch(err => {
           setError(`Wrong Username or Password`);
@@ -35,12 +39,6 @@ const App = () => {
           setUsername('');
           setPassword('');
         });
-      console.log('Logged in Successfully');
-      console.log(User);
-      setUser(User);
-      window.localStorage.setItem('userLoggedIn', JSON.stringify(User));
-      setUsername('');
-      setPassword('');
     } catch (exception) {
       console.log(exception);
     }
