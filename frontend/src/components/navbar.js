@@ -8,6 +8,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
 import MenuIcon from '@material-ui/icons/Menu';
 import React, { useState } from 'react';
+import PersonIcon from '@material-ui/icons/Person';
 import { Link, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Css from '../styles/Navbar.module.css';
@@ -79,6 +80,15 @@ const Navbar = ({ setUser }) => {
                   <IconButton onClick={handleClose}>
                     <ThumbsUpDownIcon />
                     Review
+                  </IconButton>
+                </Link>
+              </div>
+              <p>&nbsp;</p>
+              <div>
+                <Link to="/you">
+                  <IconButton onClick={handleClose}>
+                    <PersonIcon />
+                    About You
                   </IconButton>
                 </Link>
               </div>

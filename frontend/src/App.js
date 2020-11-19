@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AboutUs from './components/aboutUs';
 import HomePage from './components/homepage';
 import Dashboard from './components/dashboard';
+import PersonForm from './components/personForm';
 import LoginForm from './components/loginForm';
 import Navbar from './components/navbar';
 import SignUpForm from './components/signUpForm';
@@ -28,6 +29,9 @@ const App = () => {
           </Route>
           <Route path="/about">
             <AboutUs />
+          </Route>
+          <Route path="/you">
+            <PersonForm />
           </Route>
           <Route path="/signup">
             <SignUpForm />
