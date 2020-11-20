@@ -17,6 +17,10 @@ const App = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
+  useEffect(() => {
+    setUser(window.localStorage.getItem('userLoggedIn'));
+  }, []);
+
   const handleLogin = event => {
     event.preventDefault();
     try {
@@ -36,6 +40,7 @@ const App = () => {
         .catch(err => {
           setError(`Wrong Username or Password`);
           setTimeout(() => setError(null), 3000);
+          window.alert('wrong username or password');
           setUsername('');
           setPassword('');
         });
@@ -57,7 +62,7 @@ const App = () => {
   return (
     <div>
       <Router>
-        {user ? <Navbar setUser={setUser} /> : null}
+        {user ? <Navbar setUser={setUser} username={user.name} /> : null}
         <Switch>
           <Route path="/rate">
             <RatingPage />

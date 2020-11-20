@@ -13,6 +13,7 @@ import { Link, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Css from '../styles/Navbar.module.css';
 import Logo from '../images/logo.png';
+import { userInfo } from 'os';
 
 const Header = styled.h3`
   color: white;
@@ -20,7 +21,7 @@ const Header = styled.h3`
   background: pink;
 `;
 
-const Navbar = ({ setUser }) => {
+const Navbar = ({ setUser, username }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -30,7 +31,7 @@ const Navbar = ({ setUser }) => {
     setOpen(false);
   };
   const logout = () => {
-    setUser(false);
+    setUser(null);
   };
   const anchor = 'left';
   return (
@@ -110,6 +111,9 @@ const Navbar = ({ setUser }) => {
             <div className={Css.Rhead}>
               <div className={Css.logo}>
                 <img src={Logo} alt="logo" />
+              </div>
+              <div className={Css.heading}>
+                <Header>{username}</Header>
               </div>
               <div className={Css.btnContainer}>
                 <Link to="/login">
