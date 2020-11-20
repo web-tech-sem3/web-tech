@@ -21,7 +21,7 @@ const Header = styled.h3`
   background: pink;
 `;
 
-const Navbar = ({ setUser, username }) => {
+const Navbar = ({ setUser }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -112,9 +112,6 @@ const Navbar = ({ setUser, username }) => {
             <div className={Css.Rhead}>
               <div className={Css.logo}>
                 <img src={Logo} alt="logo" />
-              </div>
-              <div className={Css.heading}>
-                <Header>{username}</Header>
               </div>
               <div className={Css.btnContainer}>
                 <Link to="/login">

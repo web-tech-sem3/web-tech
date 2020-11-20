@@ -54,7 +54,7 @@ const App = () => {
   return (
     <div>
       <Router>
-        {user ? <Navbar setUser={setUser} username={user.name} /> : null}
+        {user ? <Navbar setUser={setUser} /> : null}
         <Switch>
           <Route path="/rate">
             <RatingPage />
@@ -72,7 +72,7 @@ const App = () => {
             <SignUpForm />
           </Route>
           <Route path="/home">
-            <HomePage />
+            <HomePage username={user} />
           </Route>
           <Route path="/dashboard">
             <Dashboard />
@@ -87,7 +87,7 @@ const App = () => {
                 handlePasswordChange={handlePasswordChange}
               />
             ) : (
-              <HomePage />
+              <HomePage username={user} />
             )}
           </Route>
         </Switch>

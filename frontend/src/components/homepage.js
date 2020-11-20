@@ -83,8 +83,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const HomePage = () => {
+const HomePage = ({ username }) => {
   const classes = useStyles();
+  const user = username ? username.name : '';
 
   const theme = createMuiTheme({
     palette: {
@@ -95,7 +96,7 @@ const HomePage = () => {
 
   const SubTitle = styled.h3`
     color: white;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.2em;
     background: pink;
   `;
 
@@ -161,7 +162,7 @@ const HomePage = () => {
                 <TitleWrapper>
                   <Title>U_Table</Title>
 
-                  <SubTitle>A table for you.</SubTitle>
+                  <SubTitle>A table for {user}.</SubTitle>
                 </TitleWrapper>
               </Container>
             </div>
