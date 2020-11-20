@@ -21,31 +21,23 @@ const App = () => {
     setUser(window.localStorage.getItem('userLoggedIn'));
   }, []);
 
-  const handleLogin = event => {
+  const handleLogin = async event => {
     event.preventDefault();
     try {
-      const User = loginService
-        .login({
-          userName: username,
-          password,
-        })
-        .then(() => {
-          console.log('Logged in Successfully');
-          console.log(User);
-          setUser(User);
-          window.localStorage.setItem('userLoggedIn', JSON.stringify(User));
-          setUsername('');
-          setPassword('');
-        })
-        .catch(err => {
-          setError(`Wrong Username or Password`);
-          setTimeout(() => setError(null), 3000);
-          window.alert('wrong username or password');
-          setUsername('');
-          setPassword('');
-        });
+      const User = await loginService.login({
+        userName: username,
+        password,
+      });
+
+      console.log('Logged in Successfully');
+      console.log(User);
+      setUser(User);
+      window.localStorage.setItem('userLoggedIn', JSON.stringify(User));
+      setUsername('');
+      setPassword('');
     } catch (exception) {
       console.log(exception);
+      window.alert('wrong username or password');
     }
   };
 

@@ -31,6 +31,7 @@ const Navbar = ({ setUser, username }) => {
     setOpen(false);
   };
   const logout = () => {
+    window.localStorage.clear();
     setUser(null);
   };
   const anchor = 'left';
