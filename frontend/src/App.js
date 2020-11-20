@@ -18,7 +18,7 @@ const App = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setUser(window.localStorage.getItem('userLoggedIn'));
+    setUser(JSON.parse(window.localStorage.getItem('userLoggedIn')));
   }, []);
 
   const handleLogin = async event => {
