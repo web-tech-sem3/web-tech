@@ -28,16 +28,12 @@ const App = () => {
         userName: username,
         password,
       });
-
-      console.log('Logged in Successfully');
-      console.log(User);
       setUser(User);
       window.localStorage.setItem('userLoggedIn', JSON.stringify(User));
       setUsername('');
       setPassword('');
     } catch (exception) {
-      console.log(exception);
-      window.alert('wrong username or password');
+      window.alert('Wrong username or password');
     }
   };
 
