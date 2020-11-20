@@ -81,13 +81,17 @@ const App = () => {
             <Dashboard />
           </Route>
           <Route path="/">
-            <LoginForm
-              handleLogin={handleLogin}
-              handleUsernameChange={handleUsernameChange}
-              username={username}
-              password={password}
-              handlePasswordChange={handlePasswordChange}
-            />
+            {!user ? (
+              <LoginForm
+                handleLogin={handleLogin}
+                handleUsernameChange={handleUsernameChange}
+                username={username}
+                password={password}
+                handlePasswordChange={handlePasswordChange}
+              />
+            ) : (
+              <HomePage />
+            )}
           </Route>
         </Switch>
       </Router>
