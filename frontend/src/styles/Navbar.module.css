@@ -32,7 +32,8 @@
 
 .logo img {
   height: 7vh;
-  margin-right: 40vw;
+  margin-right: 36vw;
+  align-self: 'center';
   margin-left: 2vw;
 }
 

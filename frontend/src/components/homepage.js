@@ -85,7 +85,6 @@ const useStyles = makeStyles(theme => ({
 
 const HomePage = ({ username }) => {
   const classes = useStyles();
-  const user = username ? username.name : '';
 
   const theme = createMuiTheme({
     palette: {
@@ -162,7 +161,7 @@ const HomePage = ({ username }) => {
                 <TitleWrapper>
                   <Title>U_Table</Title>
 
-                  <SubTitle>A table for {user}.</SubTitle>
+                  <SubTitle>A table for you.</SubTitle>
                 </TitleWrapper>
               </Container>
             </div>
