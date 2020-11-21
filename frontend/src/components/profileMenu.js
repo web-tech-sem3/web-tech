@@ -27,6 +27,7 @@ const ProfileMenu = ({ setUser, user }) => {
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
+        color="secondary"
       >
         {name}
       </Button>
