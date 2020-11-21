@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import { Divider } from '@material-ui/core';
 
 const ProfileMenu = ({ setUser, user }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -24,7 +25,7 @@ const ProfileMenu = ({ setUser, user }) => {
   return (
     <div>
       <Button
-        aria-controls="simple-menu"
+        aria-controls=""
         aria-haspopup="true"
         onClick={handleClick}
         color="secondary"
@@ -37,8 +38,8 @@ const ProfileMenu = ({ setUser, user }) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Signed in as {user.userName}</MenuItem>
+        <Divider />
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
     </div>
