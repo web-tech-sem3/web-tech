@@ -36,6 +36,7 @@ const useStyles = makeStyles(theme => ({
     borderRadius: '2%',
     backgroundColor: 'white',
     opacity: '95%',
+    boxShadow: '2px 2px 25px',
   },
   avatar: {
     margin: theme.spacing(1),
@@ -55,12 +56,7 @@ export default function SignUp() {
 
   return (
     <div className={classes.back}>
-      <Container
-        component="main"
-        maxWidth="xs"
-        className={classes.card}
-        elevation={7}
-      >
+      <Container component="main" maxWidth="xs" className={classes.card}>
         <CssBaseline />
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>

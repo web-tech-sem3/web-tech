@@ -53,25 +53,72 @@ const App = () => {
         {user ? <Navbar setUser={setUser} user={user} /> : null}
         <Switch>
           <Route path="/rate">
-            <RatingPage />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
+            {!user ? (
+              <LoginForm
+                handleLogin={handleLogin}
+                handleUsernameChange={handleUsernameChange}
+                username={username}
+                password={password}
+                handlePasswordChange={handlePasswordChange}
+              />
+            ) : (
+              <RatingPage />
+            )}
           </Route>
           <Route path="/about">
-            <AboutUs />
+            {!user ? (
+              <LoginForm
+                handleLogin={handleLogin}
+                handleUsernameChange={handleUsernameChange}
+                username={username}
+                password={password}
+                handlePasswordChange={handlePasswordChange}
+              />
+            ) : (
+              <AboutUs />
+            )}{' '}
           </Route>
           <Route path="/you">
-            <PersonForm />
+            {!user ? (
+              <LoginForm
+                handleLogin={handleLogin}
+                handleUsernameChange={handleUsernameChange}
+                username={username}
+                password={password}
+                handlePasswordChange={handlePasswordChange}
+              />
+            ) : (
+              <PersonForm />
+            )}
           </Route>
           <Route path="/signup">
             <SignUpForm />
           </Route>
           <Route path="/home">
-            <HomePage username={user} />
+            {!user ? (
+              <LoginForm
+                handleLogin={handleLogin}
+                handleUsernameChange={handleUsernameChange}
+                username={username}
+                password={password}
+                handlePasswordChange={handlePasswordChange}
+              />
+            ) : (
+              <HomePage username={user} />
+            )}
           </Route>
           <Route path="/dashboard">
-            <Dashboard />
+            {!user ? (
+              <LoginForm
+                handleLogin={handleLogin}
+                handleUsernameChange={handleUsernameChange}
+                username={username}
+                password={password}
+                handlePasswordChange={handlePasswordChange}
+              />
+            ) : (
+              <Dashboard />
+            )}
           </Route>
           <Route path="/">
             {!user ? (
