@@ -1,4 +1,10 @@
-import { Button, Divider, Drawer, IconButton } from '@material-ui/core';
+import {
+  Button,
+  Divider,
+  Drawer,
+  IconButton,
+  Tooltip,
+} from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -35,17 +41,19 @@ const Navbar = ({ setUser, user }) => {
     <div align="center">
       <AppBar position="fixed" color="white">
         <Toolbar>
-          <IconButton
-            onClick={() => {
-              handleOpen();
-            }}
-            align="center"
-            style={{
-              width: 60,
-            }}
-          >
-            <MenuIcon color="secondary" />
-          </IconButton>
+          <Tooltip title="Menu" arrow>
+            <IconButton
+              onClick={() => {
+                handleOpen();
+              }}
+              align="center"
+              style={{
+                width: 60,
+              }}
+            >
+              <MenuIcon color="secondary" />
+            </IconButton>
+          </Tooltip>
           <Switch>
             <Drawer
               variant="persistent"
@@ -115,12 +123,16 @@ const Navbar = ({ setUser, user }) => {
             </div>
             <div className={Css.Rhead}>
               <div className={Css.logo}>
-                <img src={Logo} alt="logo" />
+                <Tooltip title="U_Table" arrow>
+                  <img src={Logo} alt="logo" />
+                </Tooltip>
               </div>
               <Divider orientation="vertical" flexItem />
-              <div>
-                <ProfileMenu setUser={setUser} user={user} />
-              </div>
+              <Tooltip title="Profile" arrow>
+                <div>
+                  <ProfileMenu setUser={setUser} user={user} />
+                </div>
+              </Tooltip>
             </div>
           </div>
         </Toolbar>
