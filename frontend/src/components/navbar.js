@@ -53,14 +53,17 @@ const Navbar = ({ setUser, user }) => {
               open={open}
               transitionDuration={450}
             >
-              <IconButton onClick={handleClose} style={{ width: 200 }}>
+              <IconButton
+                onClick={handleClose}
+                style={{ width: 200, paddingTop: '10%', paddingBottom: '10%' }}
+              >
                 <ArrowBackIosIcon />
                 Close
               </IconButton>
-
-              <p>&nbsp;</p>
-              <p></p>
               <div>
+                <Divider />
+
+                <br />
                 <Link to="/home">
                   <IconButton onClick={handleClose}>
                     <HomeIcon />
