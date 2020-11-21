@@ -4,6 +4,7 @@ import {
   Drawer,
   IconButton,
   Tooltip,
+  Zoom,
 } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -41,14 +42,14 @@ const Navbar = ({ setUser, user }) => {
     <div align="center">
       <AppBar position="fixed" color="white">
         <Toolbar>
-          <Tooltip title="Menu" arrow>
+          <Tooltip title="Menu" arrow TransitionComponent={Zoom}>
             <IconButton
               onClick={() => {
                 handleOpen();
               }}
               align="center"
               style={{
-                width: 60,
+                width: 'auto',
               }}
             >
               <MenuIcon color="secondary" />
@@ -123,12 +124,12 @@ const Navbar = ({ setUser, user }) => {
             </div>
             <div className={Css.Rhead}>
               <div className={Css.logo}>
-                <Tooltip title="U_Table" arrow>
+                <Tooltip title="U_Table" arrow TransitionComponent={Zoom}>
                   <img src={Logo} alt="logo" />
                 </Tooltip>
               </div>
               <Divider orientation="vertical" flexItem />
-              <Tooltip title="Profile" arrow>
+              <Tooltip title="Profile Menu" arrow TransitionComponent={Zoom}>
                 <div>
                   <ProfileMenu setUser={setUser} user={user} />
                 </div>

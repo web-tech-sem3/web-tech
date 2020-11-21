@@ -24,21 +24,12 @@ const ProfileMenu = ({ setUser, user }) => {
 
   return (
     <div>
-      <Button
-        aria-controls=""
-        aria-haspopup="true"
-        onClick={handleClick}
-        color="secondary"
-      >
+      <Button onClick={handleClick} color="secondary">
         {name}
       </Button>
-      <Menu
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
+      <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
         <MenuItem onClick={handleClose}>Signed in as {user.userName}</MenuItem>
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
         <Divider />
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
