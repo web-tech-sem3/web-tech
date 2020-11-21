@@ -47,7 +47,12 @@ const Navbar = ({ setUser, user }) => {
             <MenuIcon color="secondary" />
           </IconButton>
           <Switch>
-            <Drawer variant="persistent" anchor={anchor} open={open}>
+            <Drawer
+              variant="persistent"
+              anchor={anchor}
+              open={open}
+              transitionDuration={450}
+            >
               <IconButton onClick={handleClose} style={{ width: 200 }}>
                 <ArrowBackIosIcon />
                 Close
