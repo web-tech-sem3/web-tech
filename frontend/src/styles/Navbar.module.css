@@ -1,6 +1,7 @@
 .headerContainer {
   display: flex;
   width: 100vw;
+  height: 2.5vw;
   justify-content: flex-start;
 }
 

@@ -1,4 +1,4 @@
-import { Button, Drawer, IconButton } from '@material-ui/core';
+import { Button, Divider, Drawer, IconButton } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -114,7 +114,8 @@ const Navbar = ({ setUser, user }) => {
               <div className={Css.logo}>
                 <img src={Logo} alt="logo" />
               </div>
-              <div className={Css.btnContainer}>
+              <Divider orientation="vertical" flexItem />
+              <div>
                 <ProfileMenu setUser={setUser} user={user} />
               </div>
             </div>
