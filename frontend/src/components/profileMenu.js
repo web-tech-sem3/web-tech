@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
-const ProfileMenu = ({ user }) => {
+const ProfileMenu = ({ setUser, user }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const name = user ? user.name : '';
 
@@ -12,6 +12,12 @@ const ProfileMenu = ({ user }) => {
   };
 
   const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleLogout = () => {
+    window.localStorage.clear();
+    setUser(null);
     setAnchorEl(null);
   };
 
@@ -32,7 +38,7 @@ const ProfileMenu = ({ user }) => {
       >
         <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
     </div>
   );

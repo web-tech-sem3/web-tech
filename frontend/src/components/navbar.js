@@ -13,7 +13,7 @@ import { Link, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Css from '../styles/Navbar.module.css';
 import Logo from '../images/logo.png';
-import ProfileMenu from './profile-menu';
+import ProfileMenu from './profileMenu';
 
 const Header = styled.h3`
   color: white;
@@ -21,7 +21,7 @@ const Header = styled.h3`
   background: pink;
 `;
 
-const Navbar = ({ setUser }) => {
+const Navbar = ({ setUser, user }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -29,10 +29,6 @@ const Navbar = ({ setUser }) => {
   };
   const handleClose = () => {
     setOpen(false);
-  };
-  const logout = () => {
-    window.localStorage.clear();
-    setUser(null);
   };
   const anchor = 'left';
   return (
@@ -114,7 +110,7 @@ const Navbar = ({ setUser }) => {
                 <img src={Logo} alt="logo" />
               </div>
               <div className={Css.btnContainer}>
-                <ProfileMenu />
+                <ProfileMenu setUser={setUser} user={user} />
               </div>
             </div>
           </div>
