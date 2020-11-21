@@ -4,14 +4,19 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import background from '../images/background.jpg';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
+import IconButton from '@material-ui/core/IconButton';
+import { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Copyright from './copyright';
+import { InputAdornment } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -55,7 +60,10 @@ const SignInSide = ({
   password,
 }) => {
   const classes = useStyles();
-
+  const [view, setView] = useState(false);
+  const toggleView = () => {
+    setView(!view);
+  };
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -93,9 +101,21 @@ const SignInSide = ({
               value={password}
               name="password"
               label="Password"
-              type="password"
+              type={view ? 'text' : 'password'}
               id="password"
               autoComplete="current-password"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={toggleView}
+                    >
+                      {view ? <Visibility /> : <VisibilityOff />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
             <Button
               type="submit"
