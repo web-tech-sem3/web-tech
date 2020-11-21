@@ -13,7 +13,7 @@ import { Link, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Css from '../styles/Navbar.module.css';
 import Logo from '../images/logo.png';
-import { userInfo } from 'os';
+import ProfileMenu from './profile-menu';
 
 const Header = styled.h3`
   color: white;
@@ -114,11 +114,7 @@ const Navbar = ({ setUser }) => {
                 <img src={Logo} alt="logo" />
               </div>
               <div className={Css.btnContainer}>
-                <Link to="/login">
-                  <Button onClick={logout} color="secondary" type="outlined">
-                    Logout
-                  </Button>
-                </Link>
+                <ProfileMenu />
               </div>
             </div>
           </div>

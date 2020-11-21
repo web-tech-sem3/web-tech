@@ -50,7 +50,7 @@ const App = () => {
   return (
     <div>
       <Router>
-        {user ? <Navbar setUser={setUser} /> : null}
+        {user ? <Navbar setUser={setUser} name={user} /> : null}
         <Switch>
           <Route path="/rate">
             <RatingPage />

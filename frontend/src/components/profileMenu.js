@@ -3,8 +3,9 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
-const ProfileMenu = () => {
+const ProfileMenu = ({ user }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const name = user ? user.name : '';
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
@@ -21,7 +22,7 @@ const ProfileMenu = () => {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        Open Menu
+        {name}
       </Button>
       <Menu
         anchorEl={anchorEl}
