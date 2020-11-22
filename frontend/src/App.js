@@ -10,6 +10,7 @@ import Navbar from './components/navbar';
 import SignUpForm from './components/signUpForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RatingPage from './components/rating';
+import ProfilePage from './components/profilePage';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -63,6 +64,19 @@ const App = () => {
               />
             ) : (
               <RatingPage />
+            )}
+          </Route>
+          <Route path="/profile">
+            {!user ? (
+              <LoginForm
+                handleLogin={handleLogin}
+                handleUsernameChange={handleUsernameChange}
+                username={username}
+                password={password}
+                handlePasswordChange={handlePasswordChange}
+              />
+            ) : (
+              <ProfilePage />
             )}
           </Route>
           <Route path="/about">

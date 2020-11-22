@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Divider } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const ProfileMenu = ({ setUser, user }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -29,7 +30,9 @@ const ProfileMenu = ({ setUser, user }) => {
       </Button>
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
         <MenuItem onClick={handleClose}>Signed in as {user.userName}</MenuItem>
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <Link to="/profile">
+          <MenuItem onClick={handleClose}>Profile</MenuItem>
+        </Link>
         <Divider />
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
