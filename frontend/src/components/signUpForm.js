@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import background from '../images/background.jpg';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import SignUpService from '../services/signUp'
+import SignUpService from '../services/signUp';
 import Copyright from './copyright';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -52,11 +52,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default async function SignUp() {
+export default function SignUp() {
   const classes = useStyles();
-  const handleSignUp = await () =>{
-    const data = 
-  }
+  const handleSignUp = async () => {
+    const data = await SignUpService.signUp();
+  };
 
   return (
     <div className={classes.back}>
