@@ -24,12 +24,12 @@ const DashboardTopNavigation = () => {
         value={value}
         onChange={handleChange}
         indicatorColor="primary"
-        textColor="primary"
+        textColor="secondary"
         centered
       >
-        <Tab label="Item One" />
-        <Tab label="Item Two" />
-        <Tab label="Item Three" />
+        <Tab label="Scheduler" />
+        <Tab label="ToDos" />
+        <Tab label="Progress" />
       </Tabs>
     </Paper>
   );
