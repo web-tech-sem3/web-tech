@@ -5,6 +5,7 @@ import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
+import DashboardTopNavigation from './dashboardTopNav';
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -84,26 +85,25 @@ const Dashboard = () => {
       align="center"
       style={{
         backgroundImage: `url(${background})`,
-        display: 'flex',
       }}
     >
-      <div align="center" className={classes.heroContent}>
+      <div style={{ paddingTop: '2%' }}>
+        <DashboardTopNavigation />
+      </div>
+      <div
+        align="center"
+        className={classes.heroContent}
+        style={{ display: 'flex' }}
+      >
         <Container maxWidth="sm">
           <TitleWrapper>
             <Title>Dashboard</Title>
-
             <SubTitle>Your Home.</SubTitle>
           </TitleWrapper>
         </Container>
-      </div>
-      <div
-        style={{
-          paddingTop: '3%',
-        }}
-      >
-        <TimeTable />
-        <br />
-        <br />
+        <div style={{}}>
+          <TimeTable />
+        </div>
       </div>
     </div>
   );
