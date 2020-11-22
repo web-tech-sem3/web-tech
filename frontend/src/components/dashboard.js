@@ -90,6 +90,7 @@ const Dashboard = () => {
       style={{
         backgroundImage: `url(${background})`,
         overflow: 'hidden',
+        backgroundSize: 'cover',
       }}
     >
       <div

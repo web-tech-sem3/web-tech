@@ -61,12 +61,7 @@ const DashboardTopNavigation = () => {
   return (
     <div className={classes.root}>
       <AppBar position="static" color="transparent">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          centered
-          aria-label="simple tabs example"
-        >
+        <Tabs value={value} onChange={handleChange} centered>
           <Tab label="Item One" {...a11yProps(0)} />
           <Tab label="Item Two" {...a11yProps(1)} />
           <Tab label="Item Three" {...a11yProps(2)} />

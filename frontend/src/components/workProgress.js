@@ -11,9 +11,12 @@ import { Form } from 'react-bootstrap';
 
 const WorkProgress = () => {
   const [task, setTask] = useState(null);
+
   const handleTaskSubmit = e => {
     e.preventDefault();
+    setTask(null);
   };
+
   const handleTaskChange = e => {
     e.preventDefault();
     setTask(e.target.value);

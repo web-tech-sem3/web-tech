@@ -25,6 +25,12 @@ const data = {
     },
     {
       id: 'lane2',
+      title: 'In Progress',
+      label: '0/0',
+      cards: [],
+    },
+    {
+      id: 'lane3',
       title: 'Completed',
       label: '0/0',
       cards: [],
@@ -33,7 +39,9 @@ const data = {
 };
 
 const Kanban = () => {
-  return <Board data={data} />;
+  return (
+    <Board data={data} style={{ background: 'lightpink', paddingLeft: '5%' }} />
+  );
 };
 
 export default Kanban;
