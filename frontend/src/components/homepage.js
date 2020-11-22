@@ -70,7 +70,11 @@ const useStyles = makeStyles(theme => ({
   card: {
     height: '100%',
     display: 'flex',
+    transition: 'transform .3s',
     flexDirection: 'column',
+    '&:hover': {
+      transform: 'scale(1.1)',
+    },
   },
   cardMedia: {
     paddingTop: '56.25%', // 16:9

@@ -10,7 +10,6 @@ import {
 import React from 'react';
 import background from '../images/background.jpg';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import { Link } from 'react-router-dom';
 import MailIcon from '@material-ui/icons/Mail';
 import tanmay from '../images/tanmay.jpg';
 import TwitterIcon from '@material-ui/icons/Twitter';
