@@ -118,7 +118,7 @@ const App = () => {
                 handlePasswordChange={handlePasswordChange}
               />
             ) : (
-              <HomePage username={user} />
+              <HomePage />
             )}
           </Route>
           <Route path="/dashboard">
@@ -144,7 +144,7 @@ const App = () => {
                 handlePasswordChange={handlePasswordChange}
               />
             ) : (
-              <HomePage username={user} />
+              <HomePage />
             )}
           </Route>
         </Switch>

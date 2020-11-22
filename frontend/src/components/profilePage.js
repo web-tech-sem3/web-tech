@@ -9,13 +9,12 @@ import {
   Typography,
   Zoom,
 } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import background from '../images/background.jpg';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import MailIcon from '@material-ui/icons/Mail';
 import tanmay from '../images/vidhu.jpg';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import { userInfo } from 'os';
 
 const useStyles = makeStyles(theme => ({
   avatar: {
@@ -39,8 +38,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const ProfilePage = user => {
+const ProfilePage = ({ user }) => {
   const classes = useStyles();
+  const username = user ? user.userName : '';
+  const name = user ? user.name : '';
+
   return (
     <div
       style={{
@@ -99,9 +101,9 @@ const ProfilePage = user => {
       />
       <div style={{ paddingLeft: '8%', paddingTop: '4%' }}>
         <Paper className={classes.profile} elevation={5}>
-          <Typography>Username: {user.userName}</Typography>
+          <Typography>Name: {name}</Typography>
           <Divider />
-          <Typography>Name: {user.name}</Typography>
+          <Typography>Username: {username}</Typography>
           <Divider />
           <Typography>Daily Target: {user.target}</Typography>
         </Paper>

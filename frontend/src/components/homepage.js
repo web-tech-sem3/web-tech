@@ -87,7 +87,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const HomePage = ({ username }) => {
+const HomePage = () => {
   const classes = useStyles();
 
   const theme = createMuiTheme({
