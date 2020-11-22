@@ -1,4 +1,11 @@
 import { Button, Stepper, TextField } from '@material-ui/core';
+import {
+  TimelineConnector,
+  TimelineContent,
+  TimelineDot,
+  TimelineItem,
+  TimelineSeparator,
+} from '@material-ui/lab';
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 
@@ -15,10 +22,25 @@ const WorkProgress = () => {
   return (
     <div>
       <Form onSubmit={handleTaskSubmit}>
-        <TextField label="Task Done" value={task} onChange={handleTaskChange} />
-        <Button type="submit">Add</Button>
+        <TextField
+          variant="outlined"
+          label="Task Done"
+          value={task}
+          onChange={handleTaskChange}
+        />
+        <Button color="secondary" type="submit">
+          Add
+        </Button>
       </Form>
-      <Stepper></Stepper>
+      <Stepper>
+        <TimelineItem>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>Eat</TimelineContent>
+        </TimelineItem>
+      </Stepper>
     </div>
   );
 };
