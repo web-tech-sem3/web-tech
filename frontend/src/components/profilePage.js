@@ -18,8 +18,10 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 const useStyles = makeStyles({
   avatar: {
     borderRadius: '100%',
+    transition: 'transform .2s',
     '&:hover': {
-      boxShadow: '2px 2px 10px teal',
+      boxShadow: '2px 2px 10px lightcoral',
+      transform: 'scale(1.1)',
     },
   },
 });
