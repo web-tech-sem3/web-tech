@@ -19,7 +19,18 @@ const data = {
           title: 'Pay Rent',
           description: 'Transfer via NEFT',
           label: '5 mins',
-          metadata: { sha: 'be312a1' },
+        },
+        {
+          id: 'Card3',
+          title: 'Add functionality',
+          description: 'Add backend for kanban',
+          label: '5 mins',
+        },
+        {
+          id: 'Card4',
+          title: 'Viva',
+          description: 'Study for viva',
+          label: '5 mins',
         },
       ],
     },
@@ -40,7 +51,11 @@ const data = {
 
 const Kanban = () => {
   return (
-    <Board data={data} style={{ background: 'lightpink', paddingLeft: '5%' }} />
+    <Board
+      data={data}
+      editable
+      style={{ background: '#ECD1D3', paddingLeft: '5%' }}
+    />
   );
 };
 

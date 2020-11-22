@@ -76,7 +76,7 @@ const App = () => {
                 handlePasswordChange={handlePasswordChange}
               />
             ) : (
-              <ProfilePage />
+              <ProfilePage user={user} />
             )}
           </Route>
           <Route path="/about">

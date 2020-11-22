@@ -4,7 +4,9 @@ import {
   Divider,
   IconButton,
   makeStyles,
+  Paper,
   Tooltip,
+  Typography,
   Zoom,
 } from '@material-ui/core';
 import React from 'react';
@@ -13,19 +15,31 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import MailIcon from '@material-ui/icons/Mail';
 import tanmay from '../images/vidhu.jpg';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import { userInfo } from 'os';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   avatar: {
     borderRadius: '100%',
-    transition: 'transform .3s',
+    transition: 'transform .4s',
     '&:hover': {
       boxShadow: '2px 2px 5px 5px grey',
       transform: 'scale(1.1)',
     },
   },
-});
+  profile: {
+    width: '100vh',
+    height: '70vh',
+    backgroundImage: 'linear-gradient(315deg, #eec0c6 0%, #ecd1d3 74%)',
+    transition: 'transform .4s',
+    opacity: '80%',
+    '&:hover': {
+      transform: 'scale(1.04)',
+      opacity: '100%',
+    },
+  },
+}));
 
-const ProfilePage = () => {
+const ProfilePage = user => {
   const classes = useStyles();
   return (
     <div
@@ -70,7 +84,7 @@ const ProfilePage = () => {
               </IconButton>
             </Tooltip>
           </a>
-          <a href={null}>
+          <a href="mailto:tanmay@gmail.com">
             <Tooltip TransitionComponent={Zoom} title="Mail" arrow>
               <IconButton>
                 <MailIcon style={{ width: '40px', height: '40px' }} />
@@ -82,7 +96,16 @@ const ProfilePage = () => {
       <Divider
         orientation="vertical"
         style={{ width: '5px', color: 'lightpink' }}
-      ></Divider>
+      />
+      <div style={{ paddingLeft: '8%', paddingTop: '4%' }}>
+        <Paper className={classes.profile} elevation={5}>
+          <Typography>Username: {user.userName}</Typography>
+          <Divider />
+          <Typography>Name: {user.name}</Typography>
+          <Divider />
+          <Typography>Daily Target: {user.target}</Typography>
+        </Paper>
+      </div>
     </div>
   );
 };

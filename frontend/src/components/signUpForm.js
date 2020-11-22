@@ -38,6 +38,10 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: 'white',
     opacity: '95%',
     boxShadow: '2px 2px 25px',
+    transition: 'transform .3s',
+    '&:hover': {
+      transform: 'scale(1.03)',
+    },
   },
   avatar: {
     margin: theme.spacing(1),
