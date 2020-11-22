@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import DashboardTopNavigation from './dashboardTopNav';
+import { Divider } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -85,11 +86,9 @@ const Dashboard = () => {
       align="center"
       style={{
         backgroundImage: `url(${background})`,
+        overflow: 'hidden',
       }}
     >
-      <div style={{ paddingTop: '2%' }}>
-        <DashboardTopNavigation />
-      </div>
       <div
         align="center"
         className={classes.heroContent}
@@ -101,7 +100,9 @@ const Dashboard = () => {
             <SubTitle>Your Home.</SubTitle>
           </TitleWrapper>
         </Container>
-        <div style={{}}>
+        <Divider orientation="vertical" maxWidth="0" />
+        <div>
+          <DashboardTopNavigation />
           <TimeTable />
         </div>
       </div>
