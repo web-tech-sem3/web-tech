@@ -3,6 +3,7 @@ import {
   Card,
   Divider,
   IconButton,
+  makeStyles,
   Tooltip,
   Zoom,
 } from '@material-ui/core';
@@ -11,14 +12,20 @@ import background from '../images/background.jpg';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { Link } from 'react-router-dom';
 import MailIcon from '@material-ui/icons/Mail';
+import tanmay from '../images/tanmay.jpg';
 import TwitterIcon from '@material-ui/icons/Twitter';
 
-const useStyles = makeStyles() =>{
-  
-}
+const useStyles = makeStyles({
+  avatar: {
+    borderRadius: '100%',
+    '&:hover': {
+      boxShadow: '2px 2px 10px teal',
+    },
+  },
+});
 
 const ProfilePage = () => {
-  const classes = useStyles()
+  const classes = useStyles();
   return (
     <div
       style={{
@@ -37,7 +44,7 @@ const ProfilePage = () => {
           <Avatar
             alt="profile-pic"
             style={{ width: '300px', height: '300px' }}
-            src="/src/images/tanmay.jpg"
+            src={tanmay}
           />
         </div>
         <br />
