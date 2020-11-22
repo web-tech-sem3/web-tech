@@ -1,5 +1,6 @@
 import {
   Button,
+  ClickAwayListener,
   Divider,
   Drawer,
   IconButton,
@@ -64,7 +65,11 @@ const Navbar = ({ setUser, user }) => {
             >
               <IconButton
                 onClick={handleClose}
-                style={{ width: 200, paddingTop: '10%', paddingBottom: '10%' }}
+                style={{
+                  width: 200,
+                  paddingTop: '10%',
+                  paddingBottom: '10%',
+                }}
               >
                 <ArrowBackIosIcon />
                 Close
