@@ -18,7 +18,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 const useStyles = makeStyles({
   avatar: {
     borderRadius: '100%',
-    transition: 'transform .2s',
+    transition: 'transform .3s',
     '&:hover': {
       boxShadow: '2px 2px 10px lightcoral',
       transform: 'scale(1.1)',
@@ -45,7 +45,10 @@ const ProfilePage = () => {
         <div className={classes.avatar}>
           <Avatar
             alt="profile-pic"
-            style={{ width: '300px', height: '300px' }}
+            style={{
+              width: '300px',
+              height: '300px',
+            }}
             src={tanmay}
           />
         </div>

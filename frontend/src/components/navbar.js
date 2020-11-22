@@ -126,11 +126,11 @@ const Navbar = ({ setUser, user }) => {
                 </Tooltip>
               </div>
               <Divider orientation="vertical" flexItem />
-              <Tooltip title="Profile Menu" arrow TransitionComponent={Zoom}>
-                <div>
+              <div>
+                <Tooltip title="Profile Menu" arrow TransitionComponent={Zoom}>
                   <ProfileMenu setUser={setUser} user={user} />
-                </div>
-              </Tooltip>
+                </Tooltip>
+              </div>
             </div>
           </div>
         </Toolbar>

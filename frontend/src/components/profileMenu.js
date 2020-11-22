@@ -29,9 +29,11 @@ const ProfileMenu = ({ setUser, user }) => {
         {name}
       </Button>
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
-        <MenuItem onClick={handleClose}>Signed in as {user.userName}</MenuItem>
-        <Link to="/profile">
-          <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>Logged in as {user.userName}</MenuItem>
+        <Link to="/profile" style={{ color: 'black' }}>
+          <div>
+            <MenuItem onClick={handleClose}>Profile</MenuItem>
+          </div>
         </Link>
         <Divider />
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
