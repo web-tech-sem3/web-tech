@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import background from '../images/background.jpg';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
+import SignUpService from '../services/signUp'
 import Copyright from './copyright';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -51,8 +52,11 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SignUp() {
+export default async function SignUp() {
   const classes = useStyles();
+  const handleSignUp = await () =>{
+    const data = 
+  }
 
   return (
     <div className={classes.back}>
@@ -65,7 +69,7 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={handleSignUp}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField

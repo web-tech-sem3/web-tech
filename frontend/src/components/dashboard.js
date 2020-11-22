@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TimeTable from './timeTable';
 import background from '../images/background.jpg';
 import Container from '@material-ui/core/Container';
@@ -40,6 +40,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Dashboard = () => {
+  const [component, setComponent] = useState(0);
   const classes = useStyles();
   const SubTitle = styled.h4`
     color: white;
