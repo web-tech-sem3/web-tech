@@ -41,16 +41,18 @@ const ProfilePage = () => {
       }}
     >
       <div style={{ padding: '5%' }}>
-        <div className={classes.avatar}>
-          <Avatar
-            alt="profile-pic"
-            style={{
-              width: '300px',
-              height: '300px',
-            }}
-            src={tanmay}
-          />
-        </div>
+        <Tooltip title="Profile Picture" arrow TransitionComponent={Zoom}>
+          <div className={classes.avatar}>
+            <Avatar
+              alt="profile-pic"
+              style={{
+                width: '300px',
+                height: '300px',
+              }}
+              src={tanmay}
+            />
+          </div>
+        </Tooltip>
         <br />
         <br />
         <div style={{ display: 'flex', paddingLeft: '50px' }}>

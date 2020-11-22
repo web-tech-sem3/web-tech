@@ -46,7 +46,7 @@ const Dashboard = () => {
   const classes = useStyles();
   const SubTitle = styled.h4`
     color: white;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.2em;
     background: pink;
   `;
   const Title = styled.h1`
@@ -97,14 +97,14 @@ const Dashboard = () => {
         className={classes.heroContent}
         style={{ display: 'flex' }}
       >
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" style={{ width: '55vh' }}>
           <TitleWrapper>
             <Title>Dashboard</Title>
             <SubTitle>Your Home.</SubTitle>
           </TitleWrapper>
         </Container>
         <Divider orientation="vertical" maxWidth="0" />
-        <div style={{ width: '70%', height: '100%' }}>
+        <div style={{ width: '100%', height: '100%' }}>
           <DashboardTopNavigation />
         </div>
       </div>
