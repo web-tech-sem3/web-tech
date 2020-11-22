@@ -7,14 +7,16 @@ import { keyframes } from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import DashboardTopNavigation from './dashboardTopNav';
 import { Divider } from '@material-ui/core';
+import Kanban from './kanban';
+import { Route, Switch } from 'react-router';
 
 const useStyles = makeStyles(theme => ({
   icon: {
     marginRight: theme.spacing(2),
   },
   heroContent: {
-    padding: theme.spacing(8, 0, 6),
-    paddingTop: theme.spacing(10),
+    padding: theme.spacing(5, 0, 6),
+    paddingTop: theme.spacing(4.5),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -102,9 +104,8 @@ const Dashboard = () => {
           </TitleWrapper>
         </Container>
         <Divider orientation="vertical" maxWidth="0" />
-        <div>
+        <div style={{ width: '70%', height: '100%' }}>
           <DashboardTopNavigation />
-          <TimeTable />
         </div>
       </div>
     </div>
