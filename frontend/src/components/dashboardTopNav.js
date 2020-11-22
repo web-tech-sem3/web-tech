@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import TimeTable from './timeTable';
 import Kanban from './kanban';
+import WorkProgress from './workProgress';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -78,7 +79,7 @@ const DashboardTopNavigation = () => {
         <Kanban />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <WorkProgress />
       </TabPanel>
     </div>
   );
