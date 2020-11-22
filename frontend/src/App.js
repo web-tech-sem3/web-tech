@@ -11,6 +11,7 @@ import SignUpForm from './components/signUpForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RatingPage from './components/rating';
 import ProfilePage from './components/profilePage';
+import SettingsPage from './components/settings';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -64,6 +65,19 @@ const App = () => {
               />
             ) : (
               <RatingPage />
+            )}
+          </Route>
+          <Route path="/settings">
+            {!user ? (
+              <LoginForm
+                handleLogin={handleLogin}
+                handleUsernameChange={handleUsernameChange}
+                username={username}
+                password={password}
+                handlePasswordChange={handlePasswordChange}
+              />
+            ) : (
+              <SettingsPage />
             )}
           </Route>
           <Route path="/profile">

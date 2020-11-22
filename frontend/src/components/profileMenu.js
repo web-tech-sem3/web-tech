@@ -33,6 +33,9 @@ const ProfileMenu = ({ setUser, user }) => {
         <Link to="/profile" style={{ textDecoration: 'none', color: 'black' }}>
           <MenuItem onClick={handleClose}>Profile</MenuItem>
         </Link>
+        <Link to="/settings" style={{ textDecoration: 'none', color: 'black' }}>
+          <MenuItem onClick={handleClose}>Settings</MenuItem>
+        </Link>
         <Divider />
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>

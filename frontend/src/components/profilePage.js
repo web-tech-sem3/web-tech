@@ -20,13 +20,16 @@ const useStyles = makeStyles(theme => ({
   avatar: {
     borderRadius: '100%',
     transition: 'transform .4s',
+    filter: 'blur(0.7px)',
     '&:hover': {
       boxShadow: '2px 2px 5px 5px grey',
       transform: 'scale(1.1)',
+      filter: 'blur(0px)',
     },
   },
   profile: {
     width: '100vh',
+    padding: '10%',
     height: '70vh',
     backgroundImage: 'linear-gradient(315deg, #eec0c6 0%, #ecd1d3 74%)',
     transition: 'transform .4s',
@@ -34,6 +37,14 @@ const useStyles = makeStyles(theme => ({
     '&:hover': {
       transform: 'scale(1.04)',
       opacity: '100%',
+    },
+  },
+  label: {
+    transition: 'transform .5s',
+    filter: 'blur(0.7px)',
+    '&:hover': {
+      transform: 'italic',
+      filter: 'blur(0px)',
     },
   },
 }));
@@ -101,11 +112,22 @@ const ProfilePage = ({ user }) => {
       />
       <div style={{ paddingLeft: '8%', paddingTop: '4%' }}>
         <Paper className={classes.profile} elevation={5}>
-          <Typography>Name: {name}</Typography>
+          <Typography variant="h3" className={classes.label}>
+            Name
+            <br />
+            <Typography variant="h4">{name}</Typography>
+          </Typography>
           <Divider />
-          <Typography>Username: {username}</Typography>
+          <Typography variant="h3" className={classes.label}>
+            Username
+            <br />
+            <Typography variant="h4">{username}</Typography>
+          </Typography>
           <Divider />
-          <Typography>Daily Target: {user.target}</Typography>
+          <Typography variant="h3" className={classes.label}>
+            Daily Target
+            <br /> {user.target}
+          </Typography>
         </Paper>
       </div>
     </div>
