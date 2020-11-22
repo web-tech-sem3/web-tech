@@ -31,7 +31,7 @@ const ProfileMenu = ({ setUser, user }) => {
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
         <MenuItem onClick={handleClose}>Logged in as {user.userName}</MenuItem>
         <Link to="/profile" style={{ textDecoration: 'none', color: 'black' }}>
-          <MenuItem>Profile</MenuItem>
+          <MenuItem onClick={handleClose}>Profile</MenuItem>
         </Link>
         <Divider />
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
