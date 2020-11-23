@@ -37,7 +37,9 @@ const ProfileMenu = ({ setUser, user }) => {
           <MenuItem onClick={handleClose}>Settings</MenuItem>
         </Link>
         <Divider />
-        <MenuItem onClick={handleLogout}>Logout</MenuItem>
+        <Link to="/home" style={{ textDecoration: 'none', color: 'black' }}>
+          <MenuItem onClick={handleLogout}>Logout</MenuItem>
+        </Link>
       </Menu>
     </div>
   );

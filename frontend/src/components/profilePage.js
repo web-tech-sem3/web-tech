@@ -15,12 +15,12 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import MailIcon from '@material-ui/icons/Mail';
 import tanmay from '../images/vidhu.jpg';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import Copyright from './copyright';
 
 const useStyles = makeStyles(theme => ({
   avatar: {
     borderRadius: '100%',
-    transition: 'transform .4s',
-    filter: 'blur(0.7px)',
+    transition: 'transform .4s ease-in-out',
     '&:hover': {
       boxShadow: '2px 2px 5px 5px grey',
       transform: 'scale(1.1)',
@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     padding: '10%',
     height: '70vh',
     backgroundImage: 'linear-gradient(315deg, #eec0c6 0%, #ecd1d3 74%)',
-    transition: 'transform .4s',
+    transition: 'transform .4s ease-in-out',
     opacity: '80%',
     '&:hover': {
       transform: 'scale(1.04)',
@@ -45,6 +45,7 @@ const useStyles = makeStyles(theme => ({
     '&:hover': {
       transform: 'italic',
       filter: 'blur(0px)',
+      backdropFilter: 'blur(100px)',
     },
   },
 }));
@@ -60,7 +61,7 @@ const ProfilePage = ({ user }) => {
         background: `url(${background})`,
         overflow: 'hidden',
         display: 'flex',
-        height: '93vh',
+        height: '94.3vh',
         backgroundSize: 'cover',
         position: 'relative',
         backgroundPosition: 'center',

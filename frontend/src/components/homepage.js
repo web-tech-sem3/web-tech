@@ -85,6 +85,15 @@ const useStyles = makeStyles(theme => ({
   footer: {
     padding: theme.spacing(6),
   },
+  carousel: {
+    width: '60vw',
+    left: '20vw',
+    marginBottom: '12vh',
+    transition: 'all .4s',
+    '&:hover': {
+      transform: 'scale(1.1)',
+    },
+  },
 }));
 
 const HomePage = () => {
@@ -158,7 +167,6 @@ const HomePage = () => {
       <ThemeProvider theme={theme}>
         <React.Fragment>
           <CssBaseline />
-
           <main>
             <div align="center" className={classes.heroContent}>
               <Container maxWidth="sm">
@@ -169,10 +177,7 @@ const HomePage = () => {
                 </TitleWrapper>
               </Container>
             </div>
-
-            <Carousel
-              style={{ width: '60vw', left: '20vw', marginBottom: '12vh' }}
-            >
+            <Carousel className={classes.carousel}>
               <Carousel.Item>
                 <img className="d-block w-100" src={home1} alt="First slide" />
                 <Carousel.Caption>

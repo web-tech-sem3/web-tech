@@ -98,7 +98,7 @@ const Dashboard = () => {
         className={classes.heroContent}
         style={{ display: 'flex' }}
       >
-        <Container maxWidth="sm" style={{ width: '55vh' }}>
+        <Container maxWidth="sm" style={{ width: '55vh', paddingTop: '4%' }}>
           <TitleWrapper>
             <Title>Dashboard</Title>
             <SubTitle>Your Home.</SubTitle>
