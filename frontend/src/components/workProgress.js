@@ -54,6 +54,17 @@ const WorkProgress = () => {
 
   return (
     <div>
+      <Form onSubmit={handleTaskSubmit}>
+        <TextField
+          variant="outlined"
+          label="Task Done"
+          value={task}
+          onChange={handleTaskChange}
+        />
+        <Button color="secondary" type="submit">
+          Add
+        </Button>
+      </Form>
       <Backdrop
         open={backdrop}
         className={classes.backdrop}
@@ -61,17 +72,7 @@ const WorkProgress = () => {
           setBackdrop(!backdrop);
         }}
       >
-        <Form onSubmit={handleTaskSubmit}>
-          <TextField
-            variant="outlined"
-            label="Task Done"
-            value={task}
-            onChange={handleTaskChange}
-          />
-          <Button color="secondary" type="submit">
-            Add
-          </Button>
-        </Form>
+        <CircularProgress color="secondary" />
       </Backdrop>
       <Timeline>
         <TimelineItem>
