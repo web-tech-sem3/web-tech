@@ -12,6 +12,7 @@ const userSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'TimeTable',
   },
+  target: Number,
 });
 
 userSchema.plugin(uniqueValidator);
