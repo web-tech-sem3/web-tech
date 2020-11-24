@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import TimeTable from './timeTable';
 import Kanban from './kanban';
-import WorkProgress from './workProgress';
+import DashboardChart from './chart';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -46,7 +46,7 @@ function a11yProps(index) {
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    backgroundColor: theme.palette.background.paper,
+    paddingTop: '0',
   },
 }));
 
@@ -60,11 +60,11 @@ const DashboardTopNavigation = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="transparent">
+      <AppBar variant="outlined" position="static" color="transparent">
         <Tabs value={value} onChange={handleChange} centered>
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Scheduler" {...a11yProps(0)} />
+          <Tab label="ToDos" {...a11yProps(1)} />
+          <Tab label="Progress" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -74,7 +74,7 @@ const DashboardTopNavigation = () => {
         <Kanban />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <WorkProgress />
+        <DashboardChart />
       </TabPanel>
     </div>
   );
