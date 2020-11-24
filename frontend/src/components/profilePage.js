@@ -24,7 +24,6 @@ const useStyles = makeStyles(theme => ({
     '&:hover': {
       boxShadow: '2px 2px 5px 5px grey',
       transform: 'scale(1.1)',
-      filter: 'blur(0px)',
     },
   },
   profile: {
@@ -36,19 +35,27 @@ const useStyles = makeStyles(theme => ({
     opacity: '80%',
     '&:hover': {
       transform: 'scale(1.04)',
-      opacity: '100%',
+      opacity: '90%',
     },
   },
   label: {
     transition: 'transform .5s',
-    filter: 'blur(0.7px)',
     '&:hover': {
-      transform: 'italic',
-      filter: 'blur(0px)',
-      backdropFilter: 'blur(100px)',
+      transform: 'scale(1.03)',
     },
   },
 }));
+
+const Helper = ({ title, subtitle }) => {
+  const classes = useStyles();
+  return (
+    <Typography variant="h3" className={classes.label}>
+      <i>{title}</i>
+      <br />
+      <Typography variant="h4">{subtitle}</Typography>
+    </Typography>
+  );
+};
 
 const ProfilePage = ({ user }) => {
   const classes = useStyles();
@@ -106,6 +113,10 @@ const ProfilePage = ({ user }) => {
             </Tooltip>
           </a>
         </div>
+        <br />
+        <Typography variant="h5" align="center" style={{ opacity: '80%' }}>
+          User since <b>25</b> days
+        </Typography>
       </div>
       <Divider
         orientation="vertical"
@@ -113,22 +124,11 @@ const ProfilePage = ({ user }) => {
       />
       <div style={{ paddingLeft: '8%', paddingTop: '4%' }}>
         <Paper className={classes.profile} elevation={5}>
-          <Typography variant="h3" className={classes.label}>
-            Name
-            <br />
-            <Typography variant="h4">{name}</Typography>
-          </Typography>
-          <Divider />
-          <Typography variant="h3" className={classes.label}>
-            Username
-            <br />
-            <Typography variant="h4">{username}</Typography>
-          </Typography>
-          <Divider />
-          <Typography variant="h3" className={classes.label}>
-            Daily Target
-            <br /> {user.target}
-          </Typography>
+          <Helper title={'Name'} subtitle={name} />
+          <Divider style={{ height: '3px' }} />
+          <Helper title={'Username'} subtitle={username} />
+          <Divider style={{ height: '3px' }} />
+          <Helper title={'Daily Target'} subtitle={'9.2 hours'} />
         </Paper>
       </div>
     </div>
