@@ -7,6 +7,7 @@ import background from '../images/background.jpg';
 import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
+import SpringCard from './springCard';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,6 +18,10 @@ const useStyles = makeStyles(theme => ({
     alignContent: 'center',
     align: 'center',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    transition: 'transform .4s',
+    '&:hover': {
+      transform: 'scale(1.1)',
+    },
   },
   pos: {
     marginBottom: 12,
@@ -137,25 +142,33 @@ const Rating = () => {
           <br />
           <br />
           <br />
-          <Card className={classes.root}>
-            Customer Care
-            <RatingStar num={1} />
-          </Card>
+          <SpringCard>
+            <Card className={classes.root}>
+              Customer Care
+              <RatingStar num={1} />
+            </Card>
+          </SpringCard>
           <br />
-          <Card className={classes.root}>
-            Caring
-            <RatingStar num={2} />
-          </Card>
+          <SpringCard>
+            <Card className={classes.root}>
+              Caring
+              <RatingStar num={2} />
+            </Card>
+          </SpringCard>
           <br />
-          <Card className={classes.root}>
-            UX
-            <RatingStar num={3} />
-          </Card>
+          <SpringCard>
+            <Card className={classes.root}>
+              UX
+              <RatingStar num={3} />
+            </Card>
+          </SpringCard>
           <br />
-          <Card className={classes.root}>
-            UI
-            <RatingStar num={4} />
-          </Card>
+          <SpringCard>
+            <Card className={classes.root}>
+              UI
+              <RatingStar num={4} />
+            </Card>
+          </SpringCard>
           <br />
           <br />
           <br />

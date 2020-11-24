@@ -21,24 +21,27 @@ import { Carousel } from 'react-bootstrap';
 import background from '../images/background.jpg';
 import { keyframes } from 'styled-components';
 import stylescss from '../styles/homepage.module.css';
+import SpringCard from './springCard';
 
 const NameCard = props => {
   const classes = useStyles();
   return (
     <Grid item key={props.name} xs={12} sm={6} md={4}>
-      <Card className={classes.card} variant="elevation">
-        <CardMedia
-          className={classes.cardMedia}
-          image={props.image}
-          title="Image title"
-        />
-        <CardContent className={classes.cardContent}>
-          <Typography gutterBottom variant="h5" component="h2">
-            {props.name}
-          </Typography>
-          <Typography>{props.message}</Typography>
-        </CardContent>
-      </Card>
+      <SpringCard height="50vh" width="40vh">
+        <Card className={classes.card} variant="elevation">
+          <CardMedia
+            className={classes.cardMedia}
+            image={props.image}
+            title="Image title"
+          />
+          <CardContent className={classes.cardContent}>
+            <Typography gutterBottom variant="h5" component="h2">
+              {props.name}
+            </Typography>
+            <Typography>{props.message}</Typography>
+          </CardContent>
+        </Card>
+      </SpringCard>
     </Grid>
   );
 };
@@ -170,11 +173,12 @@ const HomePage = () => {
           <main>
             <div align="center" className={classes.heroContent}>
               <Container maxWidth="sm">
-                <TitleWrapper>
-                  <Title>U_Table</Title>
-
-                  <SubTitle>A table for you.</SubTitle>
-                </TitleWrapper>
+                <SpringCard width="90vh">
+                  <TitleWrapper>
+                    <Title>U_Table</Title>
+                    <SubTitle>A table for you.</SubTitle>
+                  </TitleWrapper>
+                </SpringCard>
               </Container>
             </div>
             <Carousel className={classes.carousel}>
