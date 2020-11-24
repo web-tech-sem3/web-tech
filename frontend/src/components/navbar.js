@@ -33,7 +33,11 @@ const Navbar = ({ setUser, user }) => {
   const anchor = 'left';
   return (
     <div align="center">
-      <AppBar position="fixed" color="white">
+      <AppBar
+        position="fixed"
+        variant="elevation"
+        style={{ background: 'white' }}
+      >
         <Toolbar>
           <Tooltip title="Menu" arrow TransitionComponent={Zoom}>
             <IconButton
