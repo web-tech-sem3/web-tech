@@ -1,3 +1,4 @@
+import { makeStyles } from '@material-ui/core';
 import React from 'react';
 import Board from 'react-trello';
 
@@ -54,7 +55,7 @@ const Kanban = () => {
     <Board
       data={data}
       editable
-      style={{ background: '#ECD1D3', paddingLeft: '5%' }}
+      style={{ background: 'transparent', paddingLeft: '5%' }}
     />
   );
 };
