@@ -10,7 +10,7 @@ import Navbar from './components/navbar';
 import SignUpForm from './components/signUpForm';
 import RatingPage from './components/rating';
 import ProfilePage from './components/profilePage';
-import SettingsPage from './components/settings';
+import SettingsPage from './components/settingsPage';
 import Loading from './components/loading';
 
 const App = () => {

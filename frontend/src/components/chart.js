@@ -83,7 +83,7 @@ const DashboardChart = () => {
     <div
       style={{
         width: '800px',
-        height: '600px',
+        height: '500px',
         background: 'white',
         borderRadius: '5px',
       }}

@@ -60,7 +60,7 @@ const DashboardTopNavigation = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar variant="outlined" position="static" color="transparent">
+      <AppBar variant="outlined" position="static" color="white">
         <Tabs value={value} onChange={handleChange} centered>
           <Tab label="Scheduler" {...a11yProps(0)} />
           <Tab label="ToDos" {...a11yProps(1)} />
