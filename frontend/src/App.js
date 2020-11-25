@@ -8,7 +8,6 @@ import loginService from './services/login';
 import LoginForm from './components/loginForm';
 import Navbar from './components/navbar';
 import SignUpForm from './components/signUpForm';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import RatingPage from './components/rating';
 import ProfilePage from './components/profilePage';
 import SettingsPage from './components/settings';

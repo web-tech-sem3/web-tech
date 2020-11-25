@@ -17,11 +17,13 @@ const Loading = () => {
     reset: true,
   });
   return items.map(i => (
-    <animated.div
-      key={i}
-      className="script-bf-box"
-      style={{ transform: radians.interpolate(interp(i)) }}
-    />
+    <div style={{ display: 'flex' }}>
+      <animated.div
+        key={i}
+        className="script-bf-box"
+        style={{ transform: radians.interpolate(interp(i)) }}
+      />
+    </div>
   ));
 };
 export default Loading;
