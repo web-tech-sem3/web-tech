@@ -16,6 +16,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import tanmay from '../images/vidhu.jpg';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import Copyright from './copyright';
+import SpringCard from './springCard';
 
 const useStyles = makeStyles(theme => ({
   avatar: {
@@ -27,9 +28,9 @@ const useStyles = makeStyles(theme => ({
     },
   },
   profile: {
-    width: '100vh',
+    width: '90vh',
     padding: '10%',
-    height: '70vh',
+    height: '60vh',
     backgroundImage: 'linear-gradient(315deg, #eec0c6 0%, #ecd1d3 74%)',
     transition: 'transform .4s ease-in-out',
     opacity: '80%',
@@ -122,14 +123,16 @@ const ProfilePage = ({ user }) => {
         orientation="vertical"
         style={{ width: '5px', color: 'lightpink' }}
       />
-      <div style={{ paddingLeft: '8%', paddingTop: '4%' }}>
-        <Paper className={classes.profile} elevation={5}>
-          <Helper title={'Name'} subtitle={name} />
-          <Divider style={{ height: '3px' }} />
-          <Helper title={'Username'} subtitle={username} />
-          <Divider style={{ height: '3px' }} />
-          <Helper title={'Daily Target'} subtitle={'9.2 hours'} />
-        </Paper>
+      <div style={{ paddingLeft: '8%', paddingTop: '6%' }}>
+        <SpringCard>
+          <Paper className={classes.profile} elevation={5}>
+            <Helper title={'Name'} subtitle={name} />
+            <Divider style={{ height: '3px' }} />
+            <Helper title={'Username'} subtitle={username} />
+            <Divider style={{ height: '3px' }} />
+            <Helper title={'Daily Target'} subtitle={'9.2 hours'} />
+          </Paper>
+        </SpringCard>
       </div>
     </div>
   );
