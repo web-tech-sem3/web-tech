@@ -96,6 +96,7 @@ const useStyles = makeStyles(theme => ({
     transition: 'all .4s',
     '&:hover': {
       transform: 'scale(1.05)',
+      boxShadow: '8px 8px 60px 20px grey',
     },
   },
 }));
