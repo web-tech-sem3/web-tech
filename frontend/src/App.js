@@ -21,7 +21,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 2000);
+    setTimeout(() => setLoading(false), 3000);
     setUser(JSON.parse(window.localStorage.getItem('userLoggedIn')));
   }, []);
 

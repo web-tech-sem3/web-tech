@@ -1,10 +1,11 @@
 import React from 'react';
-
-const items = range(4);
-const interp = i => r =>
-  `translate3d(0, ${15 * Math.sin(r + (i * 2 * Math.PI) / 1.6)}px, 0)`;
+import loading from '../images/loading.gif';
 
 const Loading = () => {
-  return <div></div>;
+  return (
+    <div style={{ paddingLeft: '18%' }} align="center">
+      <img src={loading} />
+    </div>
+  );
 };
 export default Loading;
