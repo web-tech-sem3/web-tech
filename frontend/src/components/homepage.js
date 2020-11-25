@@ -76,7 +76,8 @@ const useStyles = makeStyles(theme => ({
     transition: 'transform .3s',
     flexDirection: 'column',
     '&:hover': {
-      transform: 'scale(1.1)',
+      transform: 'scale(1.08)',
+      boxShadow: '20px 20px 30px 5px rgba(0, 0, 0, 0.3)',
     },
   },
   cardMedia: {
