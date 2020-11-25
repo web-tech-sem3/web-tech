@@ -26,7 +26,7 @@ const DashboardChart = () => {
       {
         label: 'Daily Progress',
         data: [
-          ['Day 1', 1],
+          [0, 1],
           [1, 2],
           [2, 4],
           [3, 2],
@@ -82,8 +82,8 @@ const DashboardChart = () => {
     // space of its parent element automatically
     <div
       style={{
-        width: '700px',
-        height: '500px',
+        width: '800px',
+        height: '600px',
         background: 'white',
         borderRadius: '5px',
       }}

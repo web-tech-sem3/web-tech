@@ -95,7 +95,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '12vh',
     transition: 'all .4s',
     '&:hover': {
-      transform: 'scale(1.1)',
+      transform: 'scale(1.05)',
     },
   },
 }));
@@ -147,10 +147,6 @@ const HomePage = () => {
     animation: ${MoveIn} 1s linear;
     transition: all ease 0.5s;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
-    &:hover {
-      transform: translateY(-2vh);
-      transition: all ease 0.5s;
-    }
   `;
 
   const CardDiv = styled.div`
