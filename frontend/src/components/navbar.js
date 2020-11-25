@@ -44,7 +44,6 @@ const Navbar = ({ setUser, user }) => {
               onClick={() => {
                 handleOpen();
               }}
-              align="center"
               style={{
                 width: 'auto',
               }}

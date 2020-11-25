@@ -5,6 +5,7 @@ import abuzar from '../images/abuzar.jpg';
 import hansraj from '../images/hansraj.jpg';
 import tanmay from '../images/tanmay.jpg';
 import Copyright from './copyright';
+import { Typography } from '@material-ui/core';
 
 const Card = props => {
   return (
@@ -33,9 +34,9 @@ const AboutUs = () => {
         <h1>About Us</h1>
       </div>
       <div className={Css.vision}>
-        <h1 align="center">
-          <b>Our Vision</b>
-        </h1>
+        <Typography variant="h2" align="center">
+          Our Vision
+        </Typography>
         <p style={{ fontSize: '1.5rem' }}>
           These days students who are the youth of this nation seem to be in so
           much confusion. They may know what they want to do in life but not how
@@ -47,9 +48,9 @@ const AboutUs = () => {
           timetable allowing them to complete whatever they want.
         </p>
       </div>
-      <h1 align="center">
-        <b>Our Team</b>
-      </h1>
+      <Typography variant="h2" align="center">
+        Our Team
+      </Typography>
       <div className={Css.container}>
         <Card
           img={vidhu}
