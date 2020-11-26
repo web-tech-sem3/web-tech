@@ -22,9 +22,15 @@ router.post('/', async (req, res) => {
 
   const token = jwt.sign(userForToken, 'hello');
 
-  res
-    .status(200)
-    .send({ token, userName: userToLogin.userName, name: userToLogin.name });
+  res.status(200).send({
+    token,
+    userName: userToLogin.userName,
+    name: userToLogin.name,
+    todo: userToLogin.todo,
+    social: userToLogin.social,
+    contacts: userToLogin.contacts,
+    target: userToLogin.target,
+  });
 });
 
 module.exports = router;

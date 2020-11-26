@@ -47,10 +47,11 @@ const data = {
   ],
 };
 
-const Kanban = () => {
+const Kanban = ({ userData }) => {
+  console.log(userData);
   return (
     <Board
-      data={data}
+      data={{ lanes: userData }}
       editable
       style={{ background: 'transparent', paddingLeft: '5%' }}
     />

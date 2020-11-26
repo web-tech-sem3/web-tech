@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const DashboardTopNavigation = () => {
+const DashboardTopNavigation = ({ data }) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -71,7 +71,7 @@ const DashboardTopNavigation = () => {
         <TimeTable />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Kanban />
+        <Kanban userData={data} />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <DashboardChart />

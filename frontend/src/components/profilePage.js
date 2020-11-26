@@ -62,6 +62,8 @@ const ProfilePage = ({ user }) => {
   const classes = useStyles();
   const username = user ? user.userName : '';
   const name = user ? user.name : '';
+  console.log(user);
+  const target = user ? user.target : '';
 
   return (
     <div
@@ -130,7 +132,7 @@ const ProfilePage = ({ user }) => {
             <Divider style={{ height: '3px' }} />
             <Helper title={'Username'} subtitle={username} />
             <Divider style={{ height: '3px' }} />
-            <Helper title={'Daily Target'} subtitle={'9.2 hours'} />
+            <Helper title={'Daily Target'} subtitle={target} />
           </Paper>
         </SpringCard>
       </div>

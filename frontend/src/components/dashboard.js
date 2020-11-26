@@ -41,7 +41,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Dashboard = () => {
+const Dashboard = ({ user }) => {
+  const data = user ? user.todo : null;
   const [component, setComponent] = useState(0);
   const classes = useStyles();
   const SubTitle = styled.h4`
@@ -106,7 +107,7 @@ const Dashboard = () => {
         </Container>
         <Divider orientation="vertical" maxWidth="0" />
         <div style={{ width: '100%', height: '100%' }}>
-          <DashboardTopNavigation />
+          <DashboardTopNavigation data={data} />
         </div>
       </div>
     </div>

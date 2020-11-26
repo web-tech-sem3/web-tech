@@ -32,6 +32,7 @@ const App = () => {
         userName: username,
         password,
       });
+      console.log(User);
       setUser(User);
       window.localStorage.setItem('userLoggedIn', JSON.stringify(User));
       setUsername('');
@@ -152,7 +153,7 @@ const App = () => {
                   handlePasswordChange={handlePasswordChange}
                 />
               ) : (
-                <Dashboard />
+                <Dashboard user={user} />
               )}
             </Route>
             <Route path="/">
