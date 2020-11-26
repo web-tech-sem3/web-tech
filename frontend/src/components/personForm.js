@@ -105,7 +105,8 @@ const PersonForm = () => {
       align="center"
       style={{
         backgroundImage: `url(${background})`,
-        height: '130vh',
+        height: '100vh',
+        overflow: 'hidden',
         backgroundSize: 'cover',
         position: 'relative',
         backgroundPosition: 'center',
