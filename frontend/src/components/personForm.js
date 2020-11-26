@@ -1,6 +1,7 @@
 import {
   Avatar,
   Button,
+  FormHelperText,
   Input,
   InputLabel,
   makeStyles,
@@ -11,14 +12,15 @@ import {
   TextField,
 } from '@material-ui/core';
 import vidhu from '../images/vidhu.jpg';
+import background from '../images/background.jpg';
 import React, { useState } from 'react';
 
 const useStyles = makeStyles({
-  form: {
+  paper: {
     width: '70vh',
     borderRadius: '2vh',
     height: '85vh',
-    padding: '5vh',
+    padding: '3vh',
   },
   avatar: {
     width: '10vh',
@@ -30,7 +32,15 @@ const useStyles = makeStyles({
     },
   },
   select: {
-    width: '34vh',
+    width: '46vh',
+    margin: '2vh',
+  },
+  text: {
+    width: '46vh',
+    margin: '2vh',
+  },
+  button: {
+    width: '36vh',
   },
 });
 
@@ -91,8 +101,19 @@ const PersonForm = () => {
   };
 
   return (
-    <div align="center" style={{ paddingTop: '6vh' }}>
-      <Paper className={classes.form} elevation={4}>
+    <div
+      align="center"
+      style={{
+        backgroundImage: `url(${background})`,
+        height: '130vh',
+        backgroundSize: 'cover',
+        position: 'relative',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        paddingTop: '6vh',
+      }}
+    >
+      <Paper className={classes.paper} elevation={4}>
         <Avatar
           src={vidhu}
           alt="profile"
@@ -100,7 +121,6 @@ const PersonForm = () => {
           className={classes.avatar}
         />
         <form onSubmit={handleFormSubmit}>
-          <InputLabel>Your Occupation</InputLabel>
           <Select
             placeholder="Occupation"
             className={classes.select}
@@ -114,7 +134,6 @@ const PersonForm = () => {
               <MenuItem value={o.number}>{o.occupation}</MenuItem>
             ))}
           </Select>
-          <InputLabel>Your Target Exam</InputLabel>
           <Select
             className={classes.select}
             value={target}
@@ -127,23 +146,31 @@ const PersonForm = () => {
               <MenuItem value={o.number}>{o.target}</MenuItem>
             ))}
           </Select>
-          <InputLabel>Your Age</InputLabel>
           <TextField
             value={age}
             variant="outlined"
+            className={classes.text}
             label="Age"
             onChange={handleAgeChange}
           />
-          <InputLabel>Hours on Job</InputLabel>
           <TextField
             value={hour}
             variant="outlined"
+            className={classes.text}
             label="Hour"
+            fullWidth
             onChange={handleHourChange}
           />
           <br />
           <br />
-          <Button type="submit">Submit</Button>
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            className={classes.button}
+          >
+            Submit
+          </Button>
         </form>
       </Paper>
     </div>

@@ -170,8 +170,6 @@ const Rating = () => {
             </Card>
           </SpringCard>
           <br />
-          <br />
-          <br />
         </div>
       </div>
       <Copyright />
