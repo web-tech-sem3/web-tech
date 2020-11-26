@@ -1,0 +1,7 @@
+PUT http://localhost:3001/api/user/contacts
+Content-Type: application/json
+
+{
+  "userName": "tanmay",
+  "contacts": ["http", "https"]
+}

@@ -1,0 +1,11 @@
+PUT http://localhost:3001/api/user/social
+Content-Type: application/json
+
+{
+  "userName": "tanmay",
+  "social":{
+    "github": "https://github.com/gairTanm",
+    "twitter": "",
+    "mail": "tanmay@gmail.com"
+  }
+}

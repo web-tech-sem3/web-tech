@@ -13,6 +13,20 @@ const userSchema = mongoose.Schema({
     ref: 'TimeTable',
   },
   target: Number,
+  contacts: [String],
+  social: {
+    type: Map,
+    of: String,
+  },
+  todo: [
+    {
+      id: String,
+      title: String,
+      cards: [
+        { id: String, title: String, description: String, label: String },
+      ],
+    },
+  ],
 });
 
 userSchema.plugin(uniqueValidator);

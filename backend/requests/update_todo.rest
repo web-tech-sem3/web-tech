@@ -1,0 +1,39 @@
+PUT http://localhost:3001/api/user/todo
+Content-Type: application/json
+
+{
+   "userName":"tanmay",
+   "todo":[
+      {
+         "id":"lane1",
+         "title":"Planned Tasks",
+         "cards":[
+            {
+               "id":"Card1",
+               "title":"Write Blog",
+               "description":"Can AI make memes",
+               "label":"30 mins"
+            }
+         ]
+      },
+      {
+         "id":"lane2",
+         "title":"In Progress",
+         "cards":[
+            {
+               "id":"Card2",
+               "title":"Pay Rent",
+               "description":"Transfer via NEFT",
+               "label":"5 mins"
+            }
+         ]
+      },
+      {
+         "id":"lane3",
+         "title":"Completed",
+         "cards":[
+            
+         ]
+      }
+   ]
+}
