@@ -30,4 +30,13 @@ router.put('/target', async (req, res) => {
   res.json(result);
 });
 
+router.put('/contacts', async (req, res) => {
+  const body = req.body;
+  const result = await User.findOneAndUpdate(
+    { userName: body.userName },
+    { contacts: body.contacts }
+  );
+  res.json(result);
+});
+
 module.exports = router;
