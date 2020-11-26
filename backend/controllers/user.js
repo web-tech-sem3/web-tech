@@ -19,4 +19,15 @@ router.post('/', async (req, res) => {
   res.json(savedUser);
 });
 
+router.put('/target', async (req, res) => {
+  const body = req.body;
+  const result = await User.findOneAndUpdate(
+    {
+      userName: body.userName,
+    },
+    { target: body.target }
+  );
+  res.json(result);
+});
+
 module.exports = router;
