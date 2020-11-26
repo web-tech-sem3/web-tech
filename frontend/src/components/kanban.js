@@ -7,7 +7,6 @@ const data = {
     {
       id: 'lane1',
       title: 'Planned Tasks',
-      label: '2/2',
       cards: [
         {
           id: 'Card1',
@@ -38,13 +37,11 @@ const data = {
     {
       id: 'lane2',
       title: 'In Progress',
-      label: '0/0',
       cards: [],
     },
     {
       id: 'lane3',
       title: 'Completed',
-      label: '0/0',
       cards: [],
     },
   ],
