@@ -1,6 +1,6 @@
 import React from 'react';
-import FlipCard from './flipCard';
 import background from '../images/background.jpg';
+import RenameFlipCard from './renameFlipCard';
 
 const SettingsPage = () => {
   return (
@@ -14,7 +14,7 @@ const SettingsPage = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <FlipCard />
+      <RenameFlipCard />
     </div>
   );
 };

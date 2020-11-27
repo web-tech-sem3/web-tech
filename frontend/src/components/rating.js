@@ -103,6 +103,7 @@ const Rating = () => {
       transition: all ease 0.5s;
     }
   `;
+
   return (
     <div
       align="center"
