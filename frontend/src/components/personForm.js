@@ -134,7 +134,7 @@ const PersonForm = () => {
           onClick={toggleHelp}
           className={classes.backdrop}
         >
-          <p>Haihiahgdg</p>
+          <HelpInfo
         </Backdrop>
         <div style={{ display: 'flex', alignContent: 'center' }}>
           <Avatar
