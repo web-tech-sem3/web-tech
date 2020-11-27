@@ -15,11 +15,11 @@ const HelpInfo = () => {
     <div>
       <Paper className={classes.paper}>
         <Typography variant="h2">What?</Typography>
-        <Typography variant="h5">Lorem Ipsum bc</Typography>
+        <Typography variant="h6">Pehla Lorem Ipsum</Typography>
         <Typography variant="h2">Why?</Typography>
-        <Typography variant="h5">Le Lorem Ipsum bc</Typography>
+        <Typography variant="h6">Le Lorem Ipsum bc</Typography>
         <Typography variant="h2">How?</Typography>
-        <Typography variant="h5">Firse Lorem Ipsum bc</Typography>
+        <Typography variant="h6">Firse Lorem Ipsum bc</Typography>
       </Paper>
     </div>
   );

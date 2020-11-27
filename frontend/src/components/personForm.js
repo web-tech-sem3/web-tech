@@ -26,14 +26,15 @@ const useStyles = makeStyles(theme => ({
     borderRadius: '2vh',
     height: '86vh',
     padding: '3vh',
+    boxShadow: '0.1px 0.1px 10px 1px gray',
   },
   avatar: {
     width: '15vh',
     height: '15vh',
     transition: 'all .3s ease-in-out',
     '&:hover': {
-      transform: 'scale(1.02)',
-      boxShadow: '2px 2px 1px 1px grey',
+      transform: 'scale(1.04)',
+      boxShadow: '1px 1px 10px 1px gray',
     },
   },
   select: {
@@ -155,7 +156,11 @@ const PersonForm = () => {
             variant="circle"
             className={classes.avatar}
           />
-          <IconButton className={classes.help} onClick={toggleHelp}>
+          <IconButton
+            className={classes.help}
+            onClick={toggleHelp}
+            style={{ marginTop: '5vh', marginLeft: '5vh' }}
+          >
             <HelpIcon />
           </IconButton>
         </div>
