@@ -7,6 +7,7 @@ import {
   MenuItem,
   Paper,
   Select,
+  Snackbar,
   TextField,
   Tooltip,
   Zoom,
@@ -16,6 +17,8 @@ import HelpIcon from '@material-ui/icons/Help';
 import vidhu from '../images/vidhu.jpg';
 import background from '../images/background.jpg';
 import React, { useState } from 'react';
+import { separateOperations } from 'graphql';
+import { Alert } from '@material-ui/lab';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -23,7 +26,6 @@ const useStyles = makeStyles(theme => ({
     borderRadius: '2vh',
     height: '86vh',
     padding: '3vh',
-    marginLeft: '6vh',
     boxShadow: '0.1px 0.1px 10px 1px gray',
   },
   avatar: {
@@ -92,6 +94,7 @@ const PersonForm = () => {
   const [target, setTarget] = useState();
   const [age, setAge] = useState();
   const [hour, setHour] = useState();
+  const [snackOpen, setSnackOpen] = useState(false);
   const [data, setData] = useState();
   const [helpOverlay, setHelpOverlay] = useState(false);
 
@@ -107,9 +110,13 @@ const PersonForm = () => {
   const handleHourChange = e => {
     setHour(e.target.value);
   };
+  const handleSnackClose = e => {
+    setSnackOpen(false);
+  };
   const handleFormSubmit = e => {
     e.preventDefault();
     setData({ age, occupation, hour, target });
+    setSnackOpen(true);
     console.log(data);
   };
   const toggleHelp = e => {
@@ -221,6 +228,15 @@ const PersonForm = () => {
             Submit
           </Button>
         </form>
+        <Snackbar
+          open={snackOpen}
+          autoHideDuration={3000}
+          onClose={handleSnackClose}
+        >
+          <Alert severity="success" variant="filled">
+            Successfully Noted!
+          </Alert>
+        </Snackbar>
       </Paper>
     </div>
   );

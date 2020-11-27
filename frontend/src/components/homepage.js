@@ -93,7 +93,7 @@ const useStyles = makeStyles(theme => ({
     width: '60vw',
     left: '20vw',
     marginBottom: '12vh',
-    transition: 'all .4s',
+    transition: 'all .6s',
     '&:hover': {
       transform: 'scale(1.05)',
       boxShadow: '8px 8px 60px 20px grey',
