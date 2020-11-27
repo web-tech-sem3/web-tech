@@ -1,7 +1,10 @@
 import {
   Avatar,
+  Backdrop,
   Button,
+  FormControl,
   FormHelperText,
+  IconButton,
   Input,
   InputLabel,
   makeStyles,
@@ -11,11 +14,13 @@ import {
   Slide,
   TextField,
 } from '@material-ui/core';
+import HelpIcon from '@material-ui/icons/Help';
 import vidhu from '../images/vidhu.jpg';
 import background from '../images/background.jpg';
 import React, { useState } from 'react';
+import SelectInput from '@material-ui/core/Select/SelectInput';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   paper: {
     width: '70vh',
     borderRadius: '2vh',
@@ -42,7 +47,11 @@ const useStyles = makeStyles({
   button: {
     width: '36vh',
   },
-});
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
+}));
 
 const Occupations = [
   {
@@ -81,6 +90,7 @@ const PersonForm = () => {
   const [age, setAge] = useState();
   const [hour, setHour] = useState();
   const [data, setData] = useState();
+  const [helpOverlay, setHelpOverlay] = useState(false);
 
   const handleOccupationChange = e => {
     setOccupation(e.target.value);
@@ -99,6 +109,10 @@ const PersonForm = () => {
     setData({ age, occupation, hour, target });
     console.log(data);
   };
+  const toggleHelp = e => {
+    e.preventDefault();
+    setHelpOverlay(!helpOverlay);
+  };
 
   return (
     <div
@@ -115,18 +129,31 @@ const PersonForm = () => {
       }}
     >
       <Paper className={classes.paper} elevation={4}>
-        <Avatar
-          src={vidhu}
-          alt="profile"
-          variant="circle"
-          className={classes.avatar}
-        />
+        <Backdrop
+          open={helpOverlay}
+          onClick={toggleHelp}
+          className={classes.backdrop}
+        >
+          <p>Haihiahgdg</p>
+        </Backdrop>
+        <div style={{ display: 'flex', alignContent: 'center' }}>
+          <Avatar
+            src={vidhu}
+            alt="profile"
+            variant="circle"
+            className={classes.avatar}
+          />
+          <IconButton onClick={toggleHelp}>
+            <HelpIcon />
+          </IconButton>
+        </div>
         <form onSubmit={handleFormSubmit}>
           <Select
             placeholder="Occupation"
             className={classes.select}
             value={occupation}
             label="Occupation"
+            required
             color="secondary"
             variant="outlined"
             onChange={handleOccupationChange}
@@ -139,7 +166,9 @@ const PersonForm = () => {
             className={classes.select}
             value={target}
             label="Target"
+            placeholder="Target"
             color="secondary"
+            required
             variant="outlined"
             onChange={handleTargetChange}
           >
@@ -149,6 +178,7 @@ const PersonForm = () => {
           </Select>
           <TextField
             value={age}
+            required
             variant="outlined"
             className={classes.text}
             label="Age"
@@ -159,6 +189,7 @@ const PersonForm = () => {
             variant="outlined"
             className={classes.text}
             label="Hour"
+            required
             fullWidth
             onChange={handleHourChange}
           />
