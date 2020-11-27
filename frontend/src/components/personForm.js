@@ -2,17 +2,14 @@ import {
   Avatar,
   Backdrop,
   Button,
-  FormControl,
-  FormHelperText,
   IconButton,
-  Input,
-  InputLabel,
   makeStyles,
   MenuItem,
   Paper,
   Select,
-  Slide,
   TextField,
+  Tooltip,
+  Zoom,
 } from '@material-ui/core';
 import HelpInfo from '../components/helpInfo';
 import HelpIcon from '@material-ui/icons/Help';
@@ -135,7 +132,7 @@ const PersonForm = () => {
     >
       <Paper className={classes.paper} elevation={4}>
         <Backdrop
-          transitionDuration={1500}
+          transitionDuration={1000}
           open={helpOverlay}
           onClick={toggleHelp}
           className={classes.backdrop}
@@ -147,7 +144,7 @@ const PersonForm = () => {
             display: 'flex',
             alignContent: 'center',
             padding: '10px',
-            paddingLeft: '25vh',
+            paddingLeft: '26vh',
           }}
         >
           <Avatar
@@ -156,13 +153,15 @@ const PersonForm = () => {
             variant="circle"
             className={classes.avatar}
           />
-          <IconButton
-            className={classes.help}
-            onClick={toggleHelp}
-            style={{ marginTop: '5vh', marginLeft: '5vh' }}
-          >
-            <HelpIcon />
-          </IconButton>
+          <Tooltip title="Help" arrow transition={Zoom}>
+            <IconButton
+              className={classes.help}
+              onClick={toggleHelp}
+              style={{ marginTop: '5vh', marginLeft: '5vh' }}
+            >
+              <HelpIcon />
+            </IconButton>
+          </Tooltip>
         </div>
         <form onSubmit={handleFormSubmit}>
           <Select
