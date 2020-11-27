@@ -39,6 +39,8 @@ const App = () => {
       setPassword('');
     } catch (exception) {
       window.alert('Wrong username or password');
+      setUsername('');
+      setPassword('');
     }
   };
 
