@@ -23,6 +23,7 @@ const useStyles = makeStyles(theme => ({
     borderRadius: '2vh',
     height: '86vh',
     padding: '3vh',
+    marginLeft: '6vh',
     boxShadow: '0.1px 0.1px 10px 1px gray',
   },
   avatar: {

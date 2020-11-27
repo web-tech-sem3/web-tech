@@ -169,9 +169,9 @@ const Rating = () => {
               <RatingStar num={4} />
             </Card>
           </SpringCard>
-          <br />
         </div>
       </div>
+      <br />
       <Copyright />
     </div>
   );
