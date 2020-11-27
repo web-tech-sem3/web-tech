@@ -24,12 +24,12 @@ const useStyles = makeStyles(theme => ({
   paper: {
     width: '70vh',
     borderRadius: '2vh',
-    height: '85vh',
+    height: '86vh',
     padding: '3vh',
   },
   avatar: {
-    width: '10vh',
-    height: '10vh',
+    width: '15vh',
+    height: '15vh',
     transition: 'all .3s ease-in-out',
     '&:hover': {
       transform: 'scale(1.02)',
@@ -48,8 +48,8 @@ const useStyles = makeStyles(theme => ({
     width: '36vh',
   },
   help: {
-    width: '3vh',
-    height: '3vh',
+    width: '5vh',
+    height: '5vh',
   },
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
