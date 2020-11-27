@@ -14,11 +14,11 @@ import {
   Slide,
   TextField,
 } from '@material-ui/core';
+import HelpInfo from '../components/helpInfo';
 import HelpIcon from '@material-ui/icons/Help';
 import vidhu from '../images/vidhu.jpg';
 import background from '../images/background.jpg';
 import React, { useState } from 'react';
-import SelectInput from '@material-ui/core/Select/SelectInput';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -46,6 +46,10 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     width: '36vh',
+  },
+  help: {
+    width: '3vh',
+    height: '3vh',
   },
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
@@ -119,7 +123,7 @@ const PersonForm = () => {
       align="center"
       style={{
         backgroundImage: `url(${background})`,
-        height: '100vh',
+        height: '94vh',
         overflow: 'hidden',
         backgroundSize: 'cover',
         position: 'relative',
@@ -130,20 +134,28 @@ const PersonForm = () => {
     >
       <Paper className={classes.paper} elevation={4}>
         <Backdrop
+          transitionDuration={1500}
           open={helpOverlay}
           onClick={toggleHelp}
           className={classes.backdrop}
         >
-          <HelpInfo
+          <HelpInfo />
         </Backdrop>
-        <div style={{ display: 'flex', alignContent: 'center' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignContent: 'center',
+            padding: '10px',
+            paddingLeft: '25vh',
+          }}
+        >
           <Avatar
             src={vidhu}
             alt="profile"
             variant="circle"
             className={classes.avatar}
           />
-          <IconButton onClick={toggleHelp}>
+          <IconButton className={classes.help} onClick={toggleHelp}>
             <HelpIcon />
           </IconButton>
         </div>
