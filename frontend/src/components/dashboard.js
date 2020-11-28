@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TimeTable from './timeTable';
 import background from '../images/background.jpg';
 import Container from '@material-ui/core/Container';
@@ -7,6 +7,7 @@ import { keyframes } from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import DashboardTopNavigation from './dashboardTopNav';
 import { Divider } from '@material-ui/core';
+import UserService from '../services/user';
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -40,10 +41,34 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Dashboard = ({ user }) => {
-  const data = user ? user.todo : null;
+  const [data, setData] = useState();
   const userName = user ? user.userName : null;
   const [component, setComponent] = useState(0);
   const classes = useStyles();
+
+  useEffect(() => {
+    getTodos();
+  }, []);
+  /*useEffect(() => {
+    return async () => {
+      try {
+        const res = await UserService.putTodo({ userName, data });
+        console.log(res);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+  }, []);*/
+
+  const handleDataChange = newData => {
+    setData(newData);
+  };
+  const getTodos = async () => {
+    const d = await UserService.getTodo(userName);
+    console.log({ lanes: d.todo });
+    setData({ lanes: d.todo });
+  };
+
   const SubTitle = styled.h4`
     color: white;
     letter-spacing: 0.2em;

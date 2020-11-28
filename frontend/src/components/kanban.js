@@ -48,33 +48,8 @@ const data = {
   ],
 };
 
-const Kanban = ({ userData, userName }) => {
+const Kanban = ({ userData, userName, handleDataChange }) => {
   const [data, setData] = useState(null);
-
-  useEffect(() => {
-    getTodos();
-  }, []);
-
-  const getTodos = async () => {
-    const d = await UserService.getTodo(userName);
-    console.log({ lanes: d.todo });
-    setData({ lanes: d.todo });
-  };
-
-  /*useEffect(() => {
-    return async () => {
-      try {
-        const res = await UserService.putTodo({ userName, data });
-        console.log(res);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-  }, []);*/
-
-  const handleDataChange = newData => {
-    setData(newData);
-  };
 
   return (
     <Board
