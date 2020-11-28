@@ -57,4 +57,11 @@ router.put('/todo', async (req, res) => {
   res.json(result);
 });
 
+router.get('/todo/:userName', async (req, res) => {
+  const userName = req.params.userName;
+  console.log(req);
+  const result = await User.findOne({ userName: userName });
+  return res.json(result);
+});
+
 module.exports = router;

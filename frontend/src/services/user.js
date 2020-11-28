@@ -18,4 +18,8 @@ const putSocials = async object => {
   const res = await axios.put(`${baseURL}/social`, object);
   return res.data;
 };
-export default { signUp, putTarget, putTodo, putSocials };
+const getTodo = async userName => {
+  const res = await axios.get(`${baseURL}/todo/${userName}`);
+  return res.data;
+};
+export default { signUp, putTarget, putTodo, putSocials, getTodo };

@@ -7,8 +7,6 @@ import { keyframes } from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import DashboardTopNavigation from './dashboardTopNav';
 import { Divider } from '@material-ui/core';
-import Kanban from './kanban';
-import { Route, Switch } from 'react-router';
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -43,6 +41,7 @@ const useStyles = makeStyles(theme => ({
 
 const Dashboard = ({ user }) => {
   const data = user ? user.todo : null;
+  const userName = user ? user.userName : null;
   const [component, setComponent] = useState(0);
   const classes = useStyles();
   const SubTitle = styled.h4`
@@ -107,7 +106,7 @@ const Dashboard = ({ user }) => {
         </Container>
         <Divider orientation="vertical" maxWidth="0" />
         <div style={{ width: '100%', height: '100%' }}>
-          <DashboardTopNavigation data={data} />
+          <DashboardTopNavigation data={data} userName={userName} />
         </div>
       </div>
     </div>

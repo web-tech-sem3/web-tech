@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Board from 'react-trello';
+import UserService from '../services/user';
 
 const data = {
   lanes: [
@@ -47,13 +48,40 @@ const data = {
   ],
 };
 
-const Kanban = ({ userData }) => {
-  console.log(userData);
+const Kanban = ({ userData, userName }) => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    getTodos();
+  }, []);
+
+  const getTodos = async () => {
+    const d = await UserService.getTodo(userName);
+    console.log({ lanes: d.todo });
+    setData({ lanes: d.todo });
+  };
+
+  /*useEffect(() => {
+    return async () => {
+      try {
+        const res = await UserService.putTodo({ userName, data });
+        console.log(res);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+  }, []);*/
+
+  const handleDataChange = newData => {
+    setData(newData);
+  };
+
   return (
     <Board
-      data={{ lanes: userData }}
+      data={{ lanes: data }}
       editable
       style={{ background: 'transparent', paddingLeft: '5%' }}
+      onDataChange={handleDataChange}
     />
   );
 };
