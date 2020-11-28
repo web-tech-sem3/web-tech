@@ -18,7 +18,7 @@ import vidhu from '../images/vidhu.jpg';
 import background from '../images/background.jpg';
 import React, { useState } from 'react';
 import { separateOperations } from 'graphql';
-import { Alert } from '@material-ui/lab';
+import { Alert, Autocomplete } from '@material-ui/lab';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -174,34 +174,36 @@ const PersonForm = () => {
           </Tooltip>
         </div>
         <form onSubmit={handleFormSubmit}>
-          <Select
-            placeholder="Occupation"
-            className={classes.select}
-            value={occupation}
-            label="Occupation"
-            required
-            color="secondary"
-            variant="outlined"
-            onChange={handleOccupationChange}
-          >
-            {Occupations.map(o => (
-              <MenuItem value={o.number}>{o.occupation}</MenuItem>
-            ))}
-          </Select>
-          <Select
-            className={classes.select}
-            value={target}
-            label="Target"
-            placeholder="Target"
-            color="secondary"
-            required
-            variant="outlined"
-            onChange={handleTargetChange}
-          >
-            {Targets.map(o => (
-              <MenuItem value={o.number}>{o.target}</MenuItem>
-            ))}
-          </Select>
+          <Autocomplete
+            getOptionLabel={option => option.occupation}
+            options={Occupations}
+            renderInput={params => (
+              <TextField
+                required
+                {...params}
+                variant="outlined"
+                className={classes.text}
+                label="Occupation"
+                value={occupation}
+                onChange={handleOccupationChange}
+              />
+            )}
+          />
+          <Autocomplete
+            getOptionLabel={option => option.target}
+            options={Targets}
+            renderInput={params => (
+              <TextField
+                className={classes.text}
+                required
+                {...params}
+                variant="outlined"
+                label="Target Exam"
+                value={target}
+                onChange={target}
+              />
+            )}
+          />
           <TextField
             value={age}
             required
