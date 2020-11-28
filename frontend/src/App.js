@@ -12,6 +12,8 @@ import RatingPage from './components/rating';
 import ProfilePage from './components/profilePage';
 import SettingsPage from './components/settingPage';
 import Loading from './components/loading';
+import { Snackbar } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -19,6 +21,7 @@ const App = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [errorSnackOpen, setErrorSnackOpen] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 1500);
@@ -38,7 +41,7 @@ const App = () => {
       setUsername('');
       setPassword('');
     } catch (exception) {
-      window.alert('Wrong username or password');
+      setErrorSnackOpen(true);
       setUsername('');
       setPassword('');
     }
@@ -54,6 +57,9 @@ const App = () => {
     setPassword(event.target.value);
   };
 
+  const handleErrorSnackClose = e => {
+    setErrorSnackOpen(false);
+  };
   return (
     <div>
       {loading === true ? (
@@ -174,6 +180,15 @@ const App = () => {
           </Switch>
         </Router>
       )}
+      <Snackbar
+        open={errorSnackOpen}
+        autoHideDuration={1500}
+        onClose={handleErrorSnackClose}
+      >
+        <Alert severity="error" variant="filled">
+          Wrong Username or Password!
+        </Alert>
+      </Snackbar>
     </div>
   );
 };

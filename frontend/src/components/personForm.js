@@ -155,13 +155,15 @@ const PersonForm = () => {
             paddingLeft: '26vh',
           }}
         >
-          <Avatar
-            src={vidhu}
-            alt="profile"
-            variant="circle"
-            className={classes.avatar}
-          />
-          <Tooltip title="Help" arrow transition={Zoom}>
+          <Tooltip title="You" arrow TransitionComponent={Zoom}>
+            <Avatar
+              src={vidhu}
+              alt="profile"
+              variant="circle"
+              className={classes.avatar}
+            />
+          </Tooltip>
+          <Tooltip title="Help" arrow TransitionComponent={Zoom}>
             <IconButton
               className={classes.help}
               onClick={toggleHelp}
