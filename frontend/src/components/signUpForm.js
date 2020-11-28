@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -58,8 +58,61 @@ const useStyles = makeStyles(theme => ({
 
 const SignUp = () => {
   const classes = useStyles();
+  const [username, setUsername] = useState();
+  const [name, setName] = useState();
+  const [password, setPassword] = useState();
+  const [cPassword, setCPassword] = useState();
+  const [passwordSnackOpen, setPasswordSnackOpen] = useState(false);
+  const [errorSnackOpen, setErrorSnackOpen] = useState(false);
+  const [successSnackOpen, setSuccessSnackOpen] = useState(false);
+
+  const handleNameChange = e => {
+    e.preventDefault();
+    setName(e.target.value);
+  };
+  const handleUsernameChange = e => {
+    e.preventDefault();
+    setUsername(e.target.value);
+  };
+  const handlePasswordChange = e => {
+    e.preventDefault();
+    setPassword(e.target.value);
+  };
+  const handleCPasswordChange = e => {
+    e.preventDefault();
+    setCPassword(e.target.value);
+  };
+
   const handleSignUp = async () => {
-    const data = await UserService.signUp();
+    if (password != cPassword) {
+      setPasswordSnackOpen(true);
+      setUsername('');
+      setName('');
+      setPassword('');
+      setCPassword('');
+    } else {
+      const object = {
+        userName: username,
+        name,
+        password,
+      };
+      try {
+        const data = await UserService.signUp(object);
+        console.log(data);
+        setSuccessSnackOpen(true);
+        setUsername('');
+        setName('');
+        setPassword('');
+        setCPassword('');
+      } catch (exception) {
+        console.log(exception);
+        setErrorSnackOpen(true);
+        setUsername('');
+        setName('');
+        setPassword('');
+        setCPassword('');
+      }
+    }
   };
 
   return (
