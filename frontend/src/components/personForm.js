@@ -225,7 +225,7 @@ const PersonForm = () => {
           <br />
           <Button
             variant="contained"
-            color="primary"
+            color="secondary"
             type="submit"
             className={classes.button}
           >
