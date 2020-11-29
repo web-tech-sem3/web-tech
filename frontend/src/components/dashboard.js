@@ -44,6 +44,8 @@ const useStyles = makeStyles(theme => ({
 const Dashboard = ({ user }) => {
   const [data, setData] = useState();
   const userName = user ? user.userName : null;
+  const target = user ? user.target : null;
+  console.log(target, userName);
   const classes = useStyles();
 
   useEffect(() => {
@@ -131,11 +133,15 @@ const Dashboard = ({ user }) => {
               <SubTitle>Your Home.</SubTitle>
             </TitleWrapper>
           </Container>
-          <TargetDisplay />
+          <TargetDisplay target={target} />
         </div>
         <Divider orientation="vertical" maxWidth="0" />
         <div style={{ width: '100%', height: '100%' }}>
-          <DashboardTopNavigation data={data} userName={userName} />
+          <DashboardTopNavigation
+            data={data}
+            userName={userName}
+            target={target}
+          />
         </div>
       </div>
     </div>

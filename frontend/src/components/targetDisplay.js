@@ -1,6 +1,5 @@
-import { Typography } from '@material-ui/core';
+import { Tooltip, Typography, Zoom } from '@material-ui/core';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { useSpring, animated } from 'react-spring';
 import '../styles/targetDisplay.css'; // // Icons made by Freepik from www.flaticon.com
 
@@ -9,7 +8,7 @@ const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`;
 const trans2 = (x, y) => `translate3d(${x / 8 + 35}px,${y / 8 - 230}px,0)`;
 const trans3 = (x, y) => `translate3d(${x / 6 - 250}px,${y / 6 - 200}px,0)`;
 
-const TargetDisplay = () => {
+const TargetDisplay = ({ target }) => {
   const [props, set] = useSpring(() => ({
     xy: [0, 0],
     config: { mass: 10, tension: 550, friction: 140 },
@@ -28,14 +27,16 @@ const TargetDisplay = () => {
         class="card3"
         style={{ transform: props.xy.interpolate(trans3) }}
       />
-      <animated.div style={{ transform: props.xy.interpolate(trans2) }}>
-        <Typography
-          variant="h2"
-          style={{ opacity: '80%', marginLeft: '3vh', marginBottom: '2vh' }}
-        >
-          23 hours
-        </Typography>
-      </animated.div>
+      <Tooltip title="Target" arrow TransitionComponent={Zoom}>
+        <animated.div style={{ transform: props.xy.interpolate(trans2) }}>
+          <Typography
+            variant="h2"
+            style={{ opacity: '80%', marginLeft: '3vh', marginBottom: '2vh' }}
+          >
+            {`${target} hours`}
+          </Typography>
+        </animated.div>
+      </Tooltip>
     </div>
   );
 };
