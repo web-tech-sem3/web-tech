@@ -12,7 +12,8 @@ import UserService from '../services/user';
 import Copyright from './copyright';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { Card } from '@material-ui/core';
+import { Card, Snackbar } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -83,8 +84,9 @@ const SignUp = () => {
     setCPassword(e.target.value);
   };
 
-  const handleSignUp = async () => {
-    if (password != cPassword) {
+  const handleSignUp = async e => {
+    e.preventDefault();
+    if (password !== cPassword) {
       setPasswordSnackOpen(true);
       setUsername('');
       setName('');
@@ -96,21 +98,17 @@ const SignUp = () => {
         name,
         password,
       };
+      setUsername('');
+      setName('');
+      setPassword('');
+      setCPassword('');
       try {
         const data = await UserService.signUp(object);
         console.log(data);
         setSuccessSnackOpen(true);
-        setUsername('');
-        setName('');
-        setPassword('');
-        setCPassword('');
       } catch (exception) {
         console.log(exception);
         setErrorSnackOpen(true);
-        setUsername('');
-        setName('');
-        setPassword('');
-        setCPassword('');
       }
     }
   };
@@ -126,29 +124,19 @@ const SignUp = () => {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <form className={classes.form} noValidate onSubmit={handleSignUp}>
+          <form className={classes.form} onSubmit={handleSignUp}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={12}>
                 <TextField
                   autoComplete="fname"
                   name="firstName"
                   variant="outlined"
                   required
                   fullWidth
+                  onChange={handleNameChange}
                   id="firstName"
-                  label="First Name"
+                  label="Name"
                   autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="lname"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -158,6 +146,7 @@ const SignUp = () => {
                   fullWidth
                   id="username"
                   label="Username"
+                  onChange={handleUsernameChange}
                   name="username"
                   autoComplete="username"
                 />
@@ -169,6 +158,7 @@ const SignUp = () => {
                   fullWidth
                   name="password"
                   label="Password"
+                  onChange={handlePasswordChange}
                   type="password"
                   id="password"
                   autoComplete="current-password"
@@ -179,24 +169,23 @@ const SignUp = () => {
                   variant="outlined"
                   required
                   fullWidth
+                  onChange={handleCPasswordChange}
                   name="confirm password"
                   label="Confirm Password"
-                  type="cpassword"
+                  type="password"
                   id="cpassword"
                 />
               </Grid>
             </Grid>
-            <Link to="/login">
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className={classes.submit}
-              >
-                Sign Up
-              </Button>
-            </Link>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Sign Up
+            </Button>
             <Grid container justify="flex-end">
               <Grid item>
                 <Link to="/login">Already have an account? Sign in</Link>
@@ -206,6 +195,15 @@ const SignUp = () => {
         </div>
       </Container>
       <br />
+      <Snackbar autoHideDuration={1500} open={passwordSnackOpen}>
+        <Alert severity="error">Passwords Don't Match!</Alert>
+      </Snackbar>
+      <Snackbar autoHideDuration={1500} open={errorSnackOpen}>
+        <Alert severity="error">Username Already Taken!</Alert>
+      </Snackbar>
+      <Snackbar autoHideDuration={1500} open={successSnackOpen}>
+        <Alert severity="success">Signed Up, Now Login!</Alert>
+      </Snackbar>
       <br />
       <Card className={classes.copyright}>
         <Copyright />

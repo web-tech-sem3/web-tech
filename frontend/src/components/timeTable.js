@@ -12,7 +12,7 @@ import '../App.css';
 
 const TimeTable = () => {
   return (
-    <ScheduleComponent width="100%" height="550px" cssClass="virtual-scrolling">
+    <ScheduleComponent width="100%" height="500px" cssClass="virtual-scrolling">
       <ViewsDirective>
         <ViewDirective option="Week" allowVirtualScrolling={true} />
         <ViewDirective option="WorkWeek" allowVirtualScrolling={true} />

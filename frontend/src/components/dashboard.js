@@ -6,8 +6,9 @@ import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import DashboardTopNavigation from './dashboardTopNav';
-import { Divider } from '@material-ui/core';
+import { Divider, Tooltip, Zoom } from '@material-ui/core';
 import UserService from '../services/user';
+import TargetDisplay from './targetDisplay';
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -43,7 +44,6 @@ const useStyles = makeStyles(theme => ({
 const Dashboard = ({ user }) => {
   const [data, setData] = useState();
   const userName = user ? user.userName : null;
-  const [component, setComponent] = useState(0);
   const classes = useStyles();
 
   useEffect(() => {
@@ -114,6 +114,7 @@ const Dashboard = ({ user }) => {
       align="center"
       style={{
         backgroundImage: `url(${background})`,
+        height: '94vh',
         overflow: 'hidden',
         backgroundSize: 'cover',
       }}
@@ -123,12 +124,15 @@ const Dashboard = ({ user }) => {
         className={classes.heroContent}
         style={{ display: 'flex' }}
       >
-        <Container maxWidth="sm" style={{ width: '55vh', paddingTop: '4%' }}>
-          <TitleWrapper>
-            <Title>Dashboard</Title>
-            <SubTitle>Your Home.</SubTitle>
-          </TitleWrapper>
-        </Container>
+        <div>
+          <Container maxWidth="sm" style={{ width: '55vh', paddingTop: '4%' }}>
+            <TitleWrapper>
+              <Title>Dashboard</Title>
+              <SubTitle>Your Home.</SubTitle>
+            </TitleWrapper>
+          </Container>
+          <TargetDisplay />
+        </div>
         <Divider orientation="vertical" maxWidth="0" />
         <div style={{ width: '100%', height: '100%' }}>
           <DashboardTopNavigation data={data} userName={userName} />

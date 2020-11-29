@@ -12,14 +12,14 @@ import RatingPage from './components/rating';
 import ProfilePage from './components/profilePage';
 import SettingsPage from './components/settingPage';
 import Loading from './components/loading';
-import { Snackbar } from '@material-ui/core';
+import { Snackbar, Zoom } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 
 const App = () => {
   const [user, setUser] = useState(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
+  const [successSnackOpen, setSuccessSnackOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [errorSnackOpen, setErrorSnackOpen] = useState(false);
 
@@ -37,6 +37,7 @@ const App = () => {
       });
       console.log(User);
       setUser(User);
+      setSuccessSnackOpen(true);
       window.localStorage.setItem('userLoggedIn', JSON.stringify(User));
       setUsername('');
       setPassword('');
@@ -46,6 +47,12 @@ const App = () => {
       setPassword('');
     }
   };
+
+  const handleLogoutSnackClose = () => {
+    setLogoutSnackOpen(false);
+  };
+
+  const [logoutSnackOpen, setLogoutSnackOpen] = useState(null);
 
   const handleUsernameChange = event => {
     event.preventDefault();
@@ -60,6 +67,9 @@ const App = () => {
   const handleErrorSnackClose = e => {
     setErrorSnackOpen(false);
   };
+  const handleSuccessSnackClose = e => {
+    setSuccessSnackOpen(false);
+  };
   return (
     <div>
       {loading === true ? (
@@ -68,7 +78,13 @@ const App = () => {
         </div>
       ) : (
         <Router>
-          {user ? <Navbar setUser={setUser} user={user} /> : null}
+          {user ? (
+            <Navbar
+              setUser={setUser}
+              user={user}
+              setLogoutSnackOpen={setLogoutSnackOpen}
+            />
+          ) : null}
           <Switch>
             <Route path="/rate">
               {!user ? (
@@ -182,12 +198,36 @@ const App = () => {
       )}
       <Snackbar
         open={errorSnackOpen}
-        autoHideDuration={1500}
+        autoHideDuration={3000}
         onClose={handleErrorSnackClose}
+        TransitionComponent={Zoom}
+        transitionDuration={350}
       >
         <Alert severity="error" variant="filled">
           Wrong Username or Password!
         </Alert>
+      </Snackbar>
+      <Snackbar
+        open={successSnackOpen}
+        autoHideDuration={3000}
+        onClose={handleSuccessSnackClose}
+        variant="filled"
+        TransitionComponent={Zoom}
+        transitionDuration={350}
+      >
+        <Alert severity="success" variant="filled">
+          Success, Welcome Back!
+        </Alert>
+      </Snackbar>
+
+      <Snackbar
+        TransitionComponent={Zoom}
+        transitionDuration={350}
+        onClose={handleLogoutSnackClose}
+        open={logoutSnackOpen}
+        autoHideDuration={3000}
+      >
+        <Alert severity="info">Logged Out. Seeya!</Alert>
       </Snackbar>
     </div>
   );
