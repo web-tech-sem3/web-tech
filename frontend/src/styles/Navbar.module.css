@@ -32,10 +32,9 @@
 }
 
 .logo img {
+  position: absolute;
+  left: 50%;
   height: 6.5vh;
-  margin-right: 34vw;
-  align-self: 'center';
-  margin-left: 2vw;
 }
 
 .Opt {
