@@ -126,16 +126,6 @@ const HomePage = () => {
   `;
 
   // Create a Wrapper component that'll render a <section> tag with some styles
-  const MoveIn = keyframes`
-    from {
-      transform: translateY(30vh);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  `;
 
   const TitleWrapper = styled.section`
     padding: 4em;
@@ -145,7 +135,6 @@ const HomePage = () => {
     flex-wrap: wrap;
     align-content: stretch;
     align-items: baseline;
-    animation: ${MoveIn} 1s linear;
     transition: all ease 0.5s;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
   `;

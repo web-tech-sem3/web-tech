@@ -22,6 +22,7 @@ const useStyles = makeStyles({
   '@keyframes fade': {
     '0%': {
       opacity: 0,
+      filter: 'blur(20px)',
     },
     '100%': {
       opacity: 1,
