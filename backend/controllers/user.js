@@ -15,8 +15,12 @@ router.post('/', async (req, res) => {
     name: body.name,
     passwordHash: passwordHash,
   });
-  const savedUser = await newUser.save();
-  res.json(savedUser);
+  try {
+    const savedUser = await newUser.save();
+    res.json(savedUser);
+  } catch (e) {
+    res.status(204).end();
+  }
 });
 
 router.put('/target', async (req, res) => {
@@ -59,7 +63,6 @@ router.put('/todo', async (req, res) => {
 
 router.get('/todo/:userName', async (req, res) => {
   const userName = req.params.userName;
-  console.log(req);
   const result = await User.findOne({ userName: userName });
   return res.json(result);
 });
