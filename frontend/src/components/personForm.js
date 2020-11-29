@@ -22,6 +22,7 @@ import React, { useState } from 'react';
 import { separateOperations } from 'graphql';
 import { Alert, Autocomplete } from '@material-ui/lab';
 import { Container } from 'react-bootstrap';
+import panda from '../images/panda.svg';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -29,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     borderRadius: '2vh',
     height: '86vh',
     padding: '3vh',
-    marginRight: '30vh',
+    marginLeft: '30vh',
     boxShadow: '0.1px 0.1px 10px 1px gray',
   },
   avatar: {
@@ -59,6 +60,21 @@ const useStyles = makeStyles(theme => ({
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
     color: '#fff',
+  },
+  panda: {
+    animation: '$panda 10s infinite',
+  },
+  '@keyframes panda': {
+    '0%': {
+      opacity: 0,
+    },
+    '50%': {
+      opacity: 1,
+      transform: 'scale(1.2)',
+    },
+    '100%': {
+      opacity: 0,
+    },
   },
 }));
 
@@ -173,12 +189,29 @@ const PersonForm = () => {
       }}
     >
       <div style={{ display: 'flex' }}>
-        <Container style={{ width: '65vh', paddingTop: '4%' }}>
-          <TitleWrapper>
-            <Title>About You</Title>
-            <SubTitle>Your Form.</SubTitle>
-          </TitleWrapper>
-        </Container>
+        <div align="center">
+          <div style={{ marginTop: '4vh', marginLeft: '20vh' }}>
+            <Container style={{ width: '65vh' }}>
+              <TitleWrapper>
+                <Title>About You</Title>
+                <SubTitle>Your Form.</SubTitle>
+              </TitleWrapper>
+            </Container>
+          </div>
+          <div align="center">
+            <img
+              src={panda}
+              alt="lazy panda"
+              style={{
+                marginTop: '3vh',
+                width: '40vh',
+                height: '40vh',
+                marginLeft: '15vh',
+              }}
+              className={classes.panda}
+            />
+          </div>
+        </div>
         <Paper className={classes.paper} elevation={4}>
           <Backdrop
             transitionDuration={1000}

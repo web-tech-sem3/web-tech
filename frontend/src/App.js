@@ -12,8 +12,22 @@ import RatingPage from './components/rating';
 import ProfilePage from './components/profilePage';
 import SettingsPage from './components/settingPage';
 import Loading from './components/loading';
-import { Snackbar, Zoom } from '@material-ui/core';
+import { makeStyles, Snackbar, Zoom } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
+
+const useStyles = makeStyles({
+  startup: {
+    animation: '$fade 3s',
+  },
+  '@keyframes fade': {
+    '0%': {
+      opacity: 0,
+    },
+    '100%': {
+      opacity: 1,
+    },
+  },
+});
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -22,9 +36,9 @@ const App = () => {
   const [successSnackOpen, setSuccessSnackOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [errorSnackOpen, setErrorSnackOpen] = useState(false);
-
+  const classes = useStyles();
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1500);
+    setTimeout(() => setLoading(false), 4000);
     setUser(JSON.parse(window.localStorage.getItem('userLoggedIn')));
   }, []);
 
@@ -77,124 +91,126 @@ const App = () => {
           <Loading />
         </div>
       ) : (
-        <Router>
-          {user ? (
-            <Navbar
-              setUser={setUser}
-              user={user}
-              setLogoutSnackOpen={setLogoutSnackOpen}
-            />
-          ) : null}
-          <Switch>
-            <Route path="/rate">
-              {!user ? (
-                <LoginForm
-                  handleLogin={handleLogin}
-                  handleUsernameChange={handleUsernameChange}
-                  username={username}
-                  password={password}
-                  handlePasswordChange={handlePasswordChange}
-                />
-              ) : (
-                <RatingPage />
-              )}
-            </Route>
-            <Route path="/settings">
-              {!user ? (
-                <LoginForm
-                  handleLogin={handleLogin}
-                  handleUsernameChange={handleUsernameChange}
-                  username={username}
-                  password={password}
-                  handlePasswordChange={handlePasswordChange}
-                />
-              ) : (
-                <SettingsPage />
-              )}
-            </Route>
-            <Route path="/profile">
-              {!user ? (
-                <LoginForm
-                  handleLogin={handleLogin}
-                  handleUsernameChange={handleUsernameChange}
-                  username={username}
-                  password={password}
-                  handlePasswordChange={handlePasswordChange}
-                />
-              ) : (
-                <ProfilePage user={user} />
-              )}
-            </Route>
-            <Route path="/about">
-              {!user ? (
-                <LoginForm
-                  handleLogin={handleLogin}
-                  handleUsernameChange={handleUsernameChange}
-                  username={username}
-                  password={password}
-                  handlePasswordChange={handlePasswordChange}
-                />
-              ) : (
-                <AboutUs />
-              )}{' '}
-            </Route>
-            <Route path="/you">
-              {!user ? (
-                <LoginForm
-                  handleLogin={handleLogin}
-                  handleUsernameChange={handleUsernameChange}
-                  username={username}
-                  password={password}
-                  handlePasswordChange={handlePasswordChange}
-                />
-              ) : (
-                <PersonForm />
-              )}
-            </Route>
-            <Route path="/signup">
-              <SignUpForm />
-            </Route>
-            <Route path="/home">
-              {!user ? (
-                <LoginForm
-                  handleLogin={handleLogin}
-                  handleUsernameChange={handleUsernameChange}
-                  username={username}
-                  password={password}
-                  handlePasswordChange={handlePasswordChange}
-                />
-              ) : (
-                <HomePage />
-              )}
-            </Route>
-            <Route path="/dashboard">
-              {!user ? (
-                <LoginForm
-                  handleLogin={handleLogin}
-                  handleUsernameChange={handleUsernameChange}
-                  username={username}
-                  password={password}
-                  handlePasswordChange={handlePasswordChange}
-                />
-              ) : (
-                <Dashboard user={user} />
-              )}
-            </Route>
-            <Route path="/">
-              {!user ? (
-                <LoginForm
-                  handleLogin={handleLogin}
-                  handleUsernameChange={handleUsernameChange}
-                  username={username}
-                  password={password}
-                  handlePasswordChange={handlePasswordChange}
-                />
-              ) : (
-                <HomePage />
-              )}
-            </Route>
-          </Switch>
-        </Router>
+        <div className={classes.startup}>
+          <Router>
+            {user ? (
+              <Navbar
+                setUser={setUser}
+                user={user}
+                setLogoutSnackOpen={setLogoutSnackOpen}
+              />
+            ) : null}
+            <Switch>
+              <Route path="/rate">
+                {!user ? (
+                  <LoginForm
+                    handleLogin={handleLogin}
+                    handleUsernameChange={handleUsernameChange}
+                    username={username}
+                    password={password}
+                    handlePasswordChange={handlePasswordChange}
+                  />
+                ) : (
+                  <RatingPage />
+                )}
+              </Route>
+              <Route path="/settings">
+                {!user ? (
+                  <LoginForm
+                    handleLogin={handleLogin}
+                    handleUsernameChange={handleUsernameChange}
+                    username={username}
+                    password={password}
+                    handlePasswordChange={handlePasswordChange}
+                  />
+                ) : (
+                  <SettingsPage />
+                )}
+              </Route>
+              <Route path="/profile">
+                {!user ? (
+                  <LoginForm
+                    handleLogin={handleLogin}
+                    handleUsernameChange={handleUsernameChange}
+                    username={username}
+                    password={password}
+                    handlePasswordChange={handlePasswordChange}
+                  />
+                ) : (
+                  <ProfilePage user={user} />
+                )}
+              </Route>
+              <Route path="/about">
+                {!user ? (
+                  <LoginForm
+                    handleLogin={handleLogin}
+                    handleUsernameChange={handleUsernameChange}
+                    username={username}
+                    password={password}
+                    handlePasswordChange={handlePasswordChange}
+                  />
+                ) : (
+                  <AboutUs />
+                )}{' '}
+              </Route>
+              <Route path="/you">
+                {!user ? (
+                  <LoginForm
+                    handleLogin={handleLogin}
+                    handleUsernameChange={handleUsernameChange}
+                    username={username}
+                    password={password}
+                    handlePasswordChange={handlePasswordChange}
+                  />
+                ) : (
+                  <PersonForm />
+                )}
+              </Route>
+              <Route path="/signup">
+                <SignUpForm />
+              </Route>
+              <Route path="/home">
+                {!user ? (
+                  <LoginForm
+                    handleLogin={handleLogin}
+                    handleUsernameChange={handleUsernameChange}
+                    username={username}
+                    password={password}
+                    handlePasswordChange={handlePasswordChange}
+                  />
+                ) : (
+                  <HomePage />
+                )}
+              </Route>
+              <Route path="/dashboard">
+                {!user ? (
+                  <LoginForm
+                    handleLogin={handleLogin}
+                    handleUsernameChange={handleUsernameChange}
+                    username={username}
+                    password={password}
+                    handlePasswordChange={handlePasswordChange}
+                  />
+                ) : (
+                  <Dashboard user={user} />
+                )}
+              </Route>
+              <Route path="/">
+                {!user ? (
+                  <LoginForm
+                    handleLogin={handleLogin}
+                    handleUsernameChange={handleUsernameChange}
+                    username={username}
+                    password={password}
+                    handlePasswordChange={handlePasswordChange}
+                  />
+                ) : (
+                  <HomePage />
+                )}
+              </Route>
+            </Switch>
+          </Router>
+        </div>
       )}
       <Snackbar
         open={errorSnackOpen}
