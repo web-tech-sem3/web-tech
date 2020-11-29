@@ -8,7 +8,6 @@ import Copyright from './copyright';
 import { makeStyles, Typography } from '@material-ui/core';
 
 const Card = props => {
-  const classes = useStyles();
   return (
     <div>
       <div>
