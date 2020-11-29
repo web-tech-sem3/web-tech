@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import { Divider } from '@material-ui/core';
+import { Divider, Snackbar, Zoom } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { Alert } from '@material-ui/lab';
 
-const ProfileMenu = ({ setUser, user }) => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+const ProfileMenu = ({ setUser, user, setLogoutSnackOpen }) => {
+  const [anchorEl, setAnchorEl] = useState(null);
   const name = user ? user.name : '';
 
   const handleClick = event => {
@@ -18,6 +19,7 @@ const ProfileMenu = ({ setUser, user }) => {
   };
 
   const handleLogout = () => {
+    setLogoutSnackOpen(true);
     window.localStorage.clear();
     setUser(null);
     setAnchorEl(null);

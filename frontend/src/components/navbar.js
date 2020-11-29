@@ -21,7 +21,7 @@ const Header = styled.h3`
   background: pink;
 `;
 
-const Navbar = ({ setUser, user }) => {
+const Navbar = ({ setUser, user, setLogoutSnackOpen, logoutSnackOpen }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -131,7 +131,12 @@ const Navbar = ({ setUser, user }) => {
               <Divider orientation="vertical" flexItem />
               <div>
                 <Tooltip title="Profile Menu" arrow TransitionComponent={Zoom}>
-                  <ProfileMenu setUser={setUser} user={user} />
+                  <ProfileMenu
+                    setUser={setUser}
+                    user={user}
+                    setLogoutSnackOpen={setLogoutSnackOpen}
+                    logoutSnackOpen={logoutSnackOpen}
+                  />
                 </Tooltip>
               </div>
             </div>
