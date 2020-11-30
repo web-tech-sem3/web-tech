@@ -19,7 +19,6 @@ import home3 from '../images/reHome3.jpg';
 import styled from 'styled-components';
 import { Carousel } from 'react-bootstrap';
 import background from '../images/background.jpg';
-import { keyframes } from 'styled-components';
 import stylescss from '../styles/homepage.module.css';
 import SpringCard from './springCard';
 
