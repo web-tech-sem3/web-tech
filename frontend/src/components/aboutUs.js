@@ -5,7 +5,7 @@ import abuzar from '../images/abuzar.jpg';
 import hansraj from '../images/hansraj.jpg';
 import tanmay from '../images/tanmay.jpg';
 import Copyright from './copyright';
-import { makeStyles, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 const Card = props => {
   return (
