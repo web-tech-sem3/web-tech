@@ -93,24 +93,16 @@ const useStyles = makeStyles(theme => ({
     left: '20vw',
     marginBottom: '12vh',
     transition: 'all .6s',
-    animation: `$carouselMoveIn 4s ${theme.transitions.easing.easeIn}`,
+    animation: `$carousel 3s ${theme.transitions.easing.easeIn}`,
     '&:hover': {
       transform: 'scale(1.05)',
       boxShadow: '8px 8px 60px 20px grey',
     },
   },
-  '@keyframes carouselMoveIn': {
+  '@keyframes carousel': {
     '0%': {
-      transform: 'translateY(-200%)',
-    },
-    '60%': {
-      transform: 'translateY(0%)',
-    },
-    '75%': {
-      transform: 'translateY(-10%)',
-    },
-    '85%': {
-      transform: 'translateY(-10%)',
+      filter: 'blur(10px)',
+      transform: 'scale(1.2)',
     },
     '100%': {},
   },
@@ -141,11 +133,9 @@ const HomePage = () => {
   `;
 
   const move = keyframes`
-    from:{
-      filter: blur(10px)
-      transform: translateX(-200)
-    }
-    to:{
+    0% {
+      filter: blur(10px);transform: translateY(200%);}
+    100% {
       
     }
   `;
@@ -161,7 +151,7 @@ const HomePage = () => {
     align-content: stretch;
     align-items: baseline;
     transition: all ease 0.5s;
-    animation: ${move} 4s ease-in-out;
+    animation: ${move} 2s;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
   `;
 
