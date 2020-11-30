@@ -93,7 +93,7 @@ const useStyles = makeStyles(theme => ({
     left: '20vw',
     marginBottom: '12vh',
     transition: 'all .6s',
-    animation: `$carouselMoveIn 3s ${theme.transitions.easing.easeIn}`,
+    animation: `$carouselMoveIn 4s ${theme.transitions.easing.easeIn}`,
     '&:hover': {
       transform: 'scale(1.05)',
       boxShadow: '8px 8px 60px 20px grey',
@@ -101,7 +101,16 @@ const useStyles = makeStyles(theme => ({
   },
   '@keyframes carouselMoveIn': {
     '0%': {
-      transform: 'translateX(-200%)',
+      transform: 'translateY(-200%)',
+    },
+    '60%': {
+      transform: 'translateY(0%)',
+    },
+    '75%': {
+      transform: 'translateY(-10%)',
+    },
+    '85%': {
+      transform: 'translateY(-10%)',
     },
     '100%': {},
   },
