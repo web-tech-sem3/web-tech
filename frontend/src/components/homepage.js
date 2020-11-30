@@ -114,8 +114,9 @@ const useStyles = makeStyles(theme => ({
     transition: 'all .2s',
     opacity: '80%',
     animation: `$carousel 2s ${theme.transitions.easing.easeIn}`,
+    transition: 'all .2s',
     '&:hover': {
-      transform: 'rotate(0deg)',
+      transform: 'scale(1.2, 1.2)',
     },
   },
   titleArrow: {
@@ -124,6 +125,10 @@ const useStyles = makeStyles(theme => ({
     height: '30vh',
     opacity: '70%',
     animation: `$titleArrow 2s ${theme.transitions.easing.easeIn}`,
+    transition: 'all .2s',
+    '&:hover': {
+      transform: 'scale(-1.2, 1.2)',
+    },
   },
   arrow: {
     transform: 'rotate(30deg)',
