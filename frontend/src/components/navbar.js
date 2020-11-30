@@ -21,7 +21,7 @@ const Header = styled.h3`
   background: pink;
 `;
 
-const Navbar = ({ setUser, user, setLogoutSnackOpen, logoutSnackOpen }) => {
+const Navbar = ({ setUser, user, setLogoutSnackOpen }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -122,7 +122,7 @@ const Navbar = ({ setUser, user, setLogoutSnackOpen, logoutSnackOpen }) => {
             <div className={Css.heading}>
               <Header>U_Table</Header>
             </div>
-            <div className={Css.Rhead}>
+            <div className={Css.Rhead} style={{}}>
               <div className={Css.logo}>
                 <Tooltip title="U_Table" arrow TransitionComponent={Zoom}>
                   <img src={Logo} alt="logo" />
