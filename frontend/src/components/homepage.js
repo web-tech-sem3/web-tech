@@ -104,17 +104,32 @@ const useStyles = makeStyles(theme => ({
     transform: 'rotate(20deg)',
     marginLeft: '90vh',
     transition: 'all .2s',
+    opacity: '80%',
+    '&:hover': {
+      transform: 'rotate(0deg)',
+    },
+  },
+  hey: {
+    fontFamily: 'Gloria Hallelujah, cursive',
+    transition: 'all .2s',
+    opacity: '80%',
+    animation: `$carousel 2s ${theme.transitions.easing.easeIn}`,
     '&:hover': {
       transform: 'rotate(0deg)',
     },
   },
   titleArrow: {
-    transform: 'flip',
+    transform: 'scale(-1, 1)',
+    width: '30vh',
+    height: '30vh',
+    opacity: '70%',
+    animation: `$titleArrow 2s ${theme.transitions.easing.easeIn}`,
   },
   arrow: {
     transform: 'rotate(30deg)',
     width: '40vh',
     height: '40vh',
+    opacity: '80%',
     transition: 'all .2s',
     '&:hover': {
       transform: 'rotate(0deg)',
@@ -137,6 +152,15 @@ const useStyles = makeStyles(theme => ({
       transform: 'scale(1.2)',
     },
     '100%': {},
+  },
+  '@keyframes titleArrow': {
+    '0%': {
+      transform: 'scale(-1.3, 1.3)',
+      filter: 'blur(10px)',
+    },
+    '100%': {
+      transform: 'scale(-1, 1)',
+    },
   },
 }));
 
@@ -211,15 +235,22 @@ const HomePage = () => {
               className={classes.heroContent}
               style={{ display: 'flex' }}
             >
-              <img src={leftArrow} />
-              <Container maxWidth="sm">
-                <SpringCard width="90vh">
-                  <TitleWrapper>
-                    <Title>U_Table</Title>
-                    <SubTitle>A table for you.</SubTitle>
-                  </TitleWrapper>
-                </SpringCard>
-              </Container>
+              <div style={{ marginLeft: '25vh' }}>
+                <img src={leftArrow} className={classes.titleArrow} />
+                <Typography variant="h5" className={classes.hey}>
+                  Yup, That's Us!
+                </Typography>
+              </div>
+              <div>
+                <Container maxWidth="sm">
+                  <SpringCard width="90vh">
+                    <TitleWrapper>
+                      <Title>U_Table</Title>
+                      <SubTitle>A table for you.</SubTitle>
+                    </TitleWrapper>
+                  </SpringCard>
+                </Container>
+              </div>
             </div>
             <Carousel className={classes.carousel}>
               <Carousel.Item>
