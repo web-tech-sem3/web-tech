@@ -16,7 +16,7 @@ import suniel from '../images/suniel.jpg';
 import home1 from '../images/home1.jpg';
 import home2 from '../images/reHome2.jpg';
 import home3 from '../images/reHome3.jpg';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Carousel } from 'react-bootstrap';
 import background from '../images/background.jpg';
 import stylescss from '../styles/homepage.module.css';
@@ -93,10 +93,17 @@ const useStyles = makeStyles(theme => ({
     left: '20vw',
     marginBottom: '12vh',
     transition: 'all .6s',
+    animation: `$carouselMoveIn 3s ${theme.transitions.easing.easeIn}`,
     '&:hover': {
       transform: 'scale(1.05)',
       boxShadow: '8px 8px 60px 20px grey',
     },
+  },
+  '@keyframes carouselMoveIn': {
+    '0%': {
+      transform: 'translateX(-200%)',
+    },
+    '100%': {},
   },
 }));
 
@@ -124,6 +131,16 @@ const HomePage = () => {
     letter-spacing: 0.5em;
   `;
 
+  const move = keyframes`
+    from:{
+      filter: blur(10px)
+      transform: translateX(-200)
+    }
+    to:{
+      
+    }
+  `;
+
   // Create a Wrapper component that'll render a <section> tag with some styles
 
   const TitleWrapper = styled.section`
@@ -135,6 +152,7 @@ const HomePage = () => {
     align-content: stretch;
     align-items: baseline;
     transition: all ease 0.5s;
+    animation: ${move} 4s ease-in-out;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
   `;
 

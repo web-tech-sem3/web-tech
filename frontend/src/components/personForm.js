@@ -32,6 +32,16 @@ const useStyles = makeStyles(theme => ({
     padding: '3vh',
     marginLeft: '30vh',
     boxShadow: '0.1px 0.1px 10px 1px gray',
+    animation: '$form 2s',
+  },
+  '@keyframes form': {
+    '0%': {
+      filter: 'blur(10px)',
+      transform: 'translateX(200%)',
+    },
+    '100%': {
+      transform: 'translateX(0%)',
+    },
   },
   avatar: {
     width: '15vh',
@@ -62,7 +72,7 @@ const useStyles = makeStyles(theme => ({
     color: '#fff',
   },
   panda: {
-    animation: '$panda 10s infinite',
+    animation: '$panda 20s infinite',
   },
   '@keyframes panda': {
     '0%': {

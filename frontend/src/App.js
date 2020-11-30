@@ -15,20 +15,19 @@ import Loading from './components/loading';
 import { makeStyles, Snackbar, Zoom } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   startup: {
-    animation: '$fade 2.5s',
+    animation: `$fade 2.5s ${theme.transitions.easing.easeInOut}`,
   },
   '@keyframes fade': {
     '0%': {
       opacity: 0,
-      filter: 'blur(5px)',
     },
     '100%': {
       opacity: 1,
     },
   },
-});
+}));
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -99,6 +98,7 @@ const App = () => {
                 setUser={setUser}
                 user={user}
                 setLogoutSnackOpen={setLogoutSnackOpen}
+                logoutSnackOpen={logoutSnackOpen}
               />
             ) : null}
             <Switch>

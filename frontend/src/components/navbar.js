@@ -21,7 +21,7 @@ const Header = styled.h3`
   background: pink;
 `;
 
-const Navbar = ({ setUser, user, setLogoutSnackOpen }) => {
+const Navbar = ({ setUser, user, setLogoutSnackOpen, logoutSnackOpen }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
