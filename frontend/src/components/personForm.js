@@ -13,6 +13,7 @@ import {
   Zoom,
 } from '@material-ui/core';
 import styled from 'styled-components';
+import uni from '../images/unicorn.svg';
 import { keyframes } from 'styled-components';
 import HelpInfo from '../components/helpInfo';
 import HelpIcon from '@material-ui/icons/Help';
@@ -44,8 +45,8 @@ const useStyles = makeStyles(theme => ({
     },
   },
   avatar: {
-    width: '15vh',
-    height: '15vh',
+    width: '20vh',
+    height: '20vh',
     transition: 'all .3s ease-in-out',
     '&:hover': {
       transform: 'scale(1.04)',
@@ -64,8 +65,12 @@ const useStyles = makeStyles(theme => ({
     width: '36vh',
   },
   help: {
-    width: '5vh',
-    height: '5vh',
+    width: '12vh',
+    height: '12vh',
+    transition: 'all .6s',
+    '&:hover': {
+      transform: 'scale(1.4)',
+    },
   },
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
@@ -236,7 +241,7 @@ const PersonForm = () => {
               display: 'flex',
               alignContent: 'center',
               padding: '10px',
-              paddingLeft: '26vh',
+              paddingLeft: '24vh',
             }}
           >
             <Tooltip title="You" arrow TransitionComponent={Zoom}>
@@ -251,9 +256,9 @@ const PersonForm = () => {
               <IconButton
                 className={classes.help}
                 onClick={toggleHelp}
-                style={{ marginTop: '5vh', marginLeft: '5vh' }}
+                style={{ marginTop: '0.5vh', marginLeft: '3vh' }}
               >
-                <HelpIcon />
+                <img src={uni} />
               </IconButton>
             </Tooltip>
           </div>

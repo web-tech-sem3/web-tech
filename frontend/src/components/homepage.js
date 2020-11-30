@@ -10,6 +10,8 @@ import { ThemeProvider } from '@material-ui/styles';
 import React from 'react';
 import ak from '../images/akshay.jpg';
 import babu from '../images/babu_bhaiya.jpg';
+import leftArrow from '../images/left-arrow-sketch.svg';
+import hello from '../images/hello.svg';
 import kachraa from '../images/kachraa.jpg';
 import rajpal from '../images/rajpal.jpg';
 import suniel from '../images/suniel.jpg';
@@ -88,12 +90,42 @@ const useStyles = makeStyles(theme => ({
   footer: {
     padding: theme.spacing(6),
   },
+  hello: {
+    width: '40vh',
+    height: '40vh',
+    transform: 'rotate(30deg)',
+    transition: 'all .1s',
+    '&:hover': {
+      transform: 'rotate(0deg)',
+    },
+  },
+  alumni: {
+    fontFamily: 'Gloria Hallelujah, cursive',
+    transform: 'rotate(20deg)',
+    marginLeft: '90vh',
+    transition: 'all .2s',
+    '&:hover': {
+      transform: 'rotate(0deg)',
+    },
+  },
+  titleArrow: {
+    transform: 'flip',
+  },
+  arrow: {
+    transform: 'rotate(30deg)',
+    width: '40vh',
+    height: '40vh',
+    transition: 'all .2s',
+    '&:hover': {
+      transform: 'rotate(0deg)',
+    },
+  },
   carousel: {
     width: '60vw',
     left: '20vw',
     marginBottom: '12vh',
     transition: 'all .6s',
-    animation: `$carousel 3s ${theme.transitions.easing.easeIn}`,
+    animation: `$carousel 2s ${theme.transitions.easing.easeIn}`,
     '&:hover': {
       transform: 'scale(1.05)',
       boxShadow: '8px 8px 60px 20px grey',
@@ -174,7 +206,12 @@ const HomePage = () => {
         <React.Fragment>
           <CssBaseline />
           <main>
-            <div align="center" className={classes.heroContent}>
+            <div
+              align="center"
+              className={classes.heroContent}
+              style={{ display: 'flex' }}
+            >
+              <img src={leftArrow} />
               <Container maxWidth="sm">
                 <SpringCard width="90vh">
                   <TitleWrapper>
@@ -208,6 +245,7 @@ const HomePage = () => {
               </Carousel.Item>
             </Carousel>
             <div className={stylescss.container}>
+              <img src={hello} className={classes.hello} />
               <h1 className={stylescss.h1}>why.</h1>
               <p className={stylescss.why}>
                 These days students who are the youth of this nation seem to be
@@ -255,6 +293,10 @@ const HomePage = () => {
   All day I work on my projects and U_Table helps me prioritize"
                     image={rajpal}
                   />
+                  <img src={leftArrow} className={classes.arrow} />
+                  <Typography variant="h2" className={classes.alumni}>
+                    Our Alumni
+                  </Typography>
                 </Grid>
               </Container>
             </CardDiv>

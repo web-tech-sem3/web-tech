@@ -8,6 +8,8 @@ import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 import SpringCard from './springCard';
+import { Typography } from '@material-ui/core';
+import message from '../images/message.svg';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -45,6 +47,27 @@ const useStyles = makeStyles(theme => ({
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
+  },
+  image: {
+    width: '35vh',
+    height: '35vh',
+    animation: '$message 6s infinite',
+  },
+
+  '@keyframes message': {
+    '0%': {
+      opacity: 0,
+    },
+    '50%': {
+      opacity: 2,
+      transform: 'scale(1.2)',
+    },
+    '100%': {
+      opacity: 0,
+    },
+  },
+  title: {
+    opacity: '80%',
   },
   card: {
     height: '100%',
@@ -121,7 +144,7 @@ const Rating = () => {
         <div
           align="center"
           className={classes.heroContent}
-          style={{ paddingLeft: '5%', paddingTop: '15%' }}
+          style={{ paddingLeft: '5%' }}
         >
           <Container maxWidth="sm">
             <TitleWrapper>
@@ -130,6 +153,7 @@ const Rating = () => {
               <SubTitle>Rate Us</SubTitle>
             </TitleWrapper>
           </Container>
+          <img src={message} className={classes.image} />
         </div>
         <div
           align="center"
@@ -145,28 +169,36 @@ const Rating = () => {
           <br />
           <SpringCard>
             <Card className={classes.root}>
-              Customer Care
+              <Typography variant="h6" className={classes.title}>
+                Customer Care
+              </Typography>
               <RatingStar num={1} />
             </Card>
           </SpringCard>
           <br />
           <SpringCard>
             <Card className={classes.root}>
-              Caring
+              <Typography variant="h6" className={classes.title}>
+                Caring
+              </Typography>
               <RatingStar num={2} />
             </Card>
           </SpringCard>
           <br />
           <SpringCard>
             <Card className={classes.root}>
-              UX
+              <Typography variant="h6" className={classes.title}>
+                UX
+              </Typography>
               <RatingStar num={3} />
             </Card>
           </SpringCard>
           <br />
           <SpringCard>
             <Card className={classes.root}>
-              UI
+              <Typography variant="h6" className={classes.title}>
+                UI
+              </Typography>
               <RatingStar num={4} />
             </Card>
           </SpringCard>
