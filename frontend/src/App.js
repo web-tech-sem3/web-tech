@@ -17,12 +17,12 @@ import { Alert } from '@material-ui/lab';
 
 const useStyles = makeStyles({
   startup: {
-    animation: '$fade 3s',
+    animation: '$fade 2.5s',
   },
   '@keyframes fade': {
     '0%': {
       opacity: 0,
-      filter: 'blur(20px)',
+      filter: 'blur(5px)',
     },
     '100%': {
       opacity: 1,
