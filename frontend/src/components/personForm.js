@@ -14,13 +14,10 @@ import {
 } from '@material-ui/core';
 import styled from 'styled-components';
 import uni from '../images/unicorn.svg';
-import { keyframes } from 'styled-components';
 import HelpInfo from '../components/helpInfo';
-import HelpIcon from '@material-ui/icons/Help';
 import vidhu from '../images/vidhu.jpg';
 import background from '../images/background.jpg';
 import React, { useEffect, useState } from 'react';
-import { separateOperations } from 'graphql';
 import { Alert, Autocomplete } from '@material-ui/lab';
 import { Container } from 'react-bootstrap';
 import panda from '../images/panda.svg';
@@ -162,9 +159,9 @@ const PersonForm = () => {
       transition: all ease 0.5s;
     }
   `;
-
   const handleOccupationChange = e => {
     e.preventDefault();
+    console.log(e.target.value);
     setOccupation(e.target.value);
   };
   const handleTargetChange = e => {
@@ -173,7 +170,6 @@ const PersonForm = () => {
     setTarget(e.target.value);
   };
   const handleAgeChange = e => {
-    e.preventDefault();
     setAge(e.target.value);
   };
   const handleHourChange = e => {
@@ -273,6 +269,8 @@ const PersonForm = () => {
             <Autocomplete
               getOptionLabel={option => option.occupation}
               options={Occupations}
+              onInputChange={handleOccupationChange}
+              value={occupation}
               renderInput={params => (
                 <TextField
                   required
@@ -280,8 +278,6 @@ const PersonForm = () => {
                   variant="outlined"
                   className={classes.text}
                   label="Occupation"
-                  value={occupation}
-                  onChange={handleOccupationChange}
                 />
               )}
             />
