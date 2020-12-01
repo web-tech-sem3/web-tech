@@ -11,7 +11,7 @@ import Kanban from './kanban';
 import DashboardChart from './chart';
 import TargetDisplay from './targetDisplay';
 
-function TabPanel(props) {
+const TabPanel = props => {
   const { children, value, index, ...other } = props;
 
   return (
@@ -29,7 +29,7 @@ function TabPanel(props) {
       )}
     </div>
   );
-}
+};
 
 TabPanel.propTypes = {
   children: PropTypes.node,

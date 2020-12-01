@@ -49,9 +49,10 @@ const Dashboard = ({ user }) => {
   const classes = useStyles();
 
   useEffect(() => {
-    getTodos();
+    const d = getTodos();
+    setData(d);
   }, []);
-  /*useEffect(() => {
+  useEffect(() => {
     return async () => {
       try {
         const res = await UserService.putTodo({ userName, data });
@@ -60,15 +61,19 @@ const Dashboard = ({ user }) => {
         console.log(e);
       }
     };
-  }, []);*/
+  }, []);
 
   const handleDataChange = newData => {
     setData(newData);
   };
   const getTodos = async () => {
-    const d = await UserService.getTodo(userName);
-    console.log({ lanes: d.todo });
-    setData({ lanes: d.todo });
+    try {
+      const d = await UserService.getTodo(userName);
+      console.log({ lanes: d.todo });
+      return { lanes: d.todo };
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const SubTitle = styled.h4`

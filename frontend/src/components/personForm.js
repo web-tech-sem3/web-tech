@@ -19,7 +19,7 @@ import HelpInfo from '../components/helpInfo';
 import HelpIcon from '@material-ui/icons/Help';
 import vidhu from '../images/vidhu.jpg';
 import background from '../images/background.jpg';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { separateOperations } from 'graphql';
 import { Alert, Autocomplete } from '@material-ui/lab';
 import { Container } from 'react-bootstrap';
@@ -108,6 +108,8 @@ const Occupations = [
   },
 ];
 
+const coeff = [0.54660313, -1.32651803, 1.67769953]; //age, target, occupation
+
 const Targets = [
   {
     number: 1,
@@ -122,8 +124,6 @@ const Targets = [
     target: 'CAT',
   },
 ];
-
-const weights = [];
 
 const PersonForm = () => {
   const classes = useStyles();
@@ -164,25 +164,32 @@ const PersonForm = () => {
   `;
 
   const handleOccupationChange = e => {
+    e.preventDefault();
     setOccupation(e.target.value);
   };
   const handleTargetChange = e => {
+    e.preventDefault();
+    console.log(e.target.value);
     setTarget(e.target.value);
   };
   const handleAgeChange = e => {
+    e.preventDefault();
     setAge(e.target.value);
   };
   const handleHourChange = e => {
     setHour(e.target.value);
   };
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
   const handleSnackClose = e => {
     setSnackOpen(false);
   };
   const handleFormSubmit = e => {
     e.preventDefault();
-    setData({ age, occupation, hour, target });
+    console.log({ age, data, occupation });
+    setData(age * coeff[0] + coeff[1] * target + coeff[2] * occupation);
     setSnackOpen(true);
-    console.log(data);
   };
   const toggleHelp = e => {
     e.preventDefault();
@@ -285,6 +292,7 @@ const PersonForm = () => {
                 <TextField
                   className={classes.text}
                   required
+                  onChange={handleTargetChange}
                   {...params}
                   variant="outlined"
                   label="Target Exam"
@@ -300,15 +308,6 @@ const PersonForm = () => {
               className={classes.text}
               label="Age"
               onChange={handleAgeChange}
-            />
-            <TextField
-              value={hour}
-              variant="outlined"
-              className={classes.text}
-              label="Hour"
-              required
-              fullWidth
-              onChange={handleHourChange}
             />
             <br />
             <br />

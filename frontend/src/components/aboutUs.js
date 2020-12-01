@@ -6,23 +6,26 @@ import hansraj from '../images/hansraj.jpg';
 import tanmay from '../images/tanmay.jpg';
 import Copyright from './copyright';
 import { Typography } from '@material-ui/core';
+import FadeIn from './fadeIn';
 
 const Card = props => {
   return (
     <div>
-      <div>
-        <div className={Css.container2}>
-          <img src={props.img} alt="Avatar" className={Css.image} />
-          <div className={Css.overlay}>
-            <div className={Css.text}>
-              <h2>{props.name}</h2>
-              <p>{props.Job}</p>
-              <p>{props.para}</p>
-              <p>{props.email}</p>
+      <FadeIn>
+        <div>
+          <div className={Css.container2}>
+            <img src={props.img} alt="Avatar" className={Css.image} />
+            <div className={Css.overlay}>
+              <div className={Css.text}>
+                <h2>{props.name}</h2>
+                <p>{props.Job}</p>
+                <p>{props.para}</p>
+                <p>{props.email}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </FadeIn>
     </div>
   );
 };
@@ -48,9 +51,11 @@ const AboutUs = () => {
           timetable allowing them to complete whatever they want.
         </p>
       </div>
-      <Typography variant="h2" align="center">
-        Our Team
-      </Typography>
+      <FadeIn>
+        <Typography variant="h2" align="center">
+          Our Team
+        </Typography>
+      </FadeIn>
       <div className={Css.container}>
         <Card
           img={vidhu}
@@ -76,7 +81,7 @@ const AboutUs = () => {
         <Card
           img={tanmay}
           name="Tanmay Gairola"
-          Job="Front End"
+          Job="Full Stack"
           para="Not Happy!"
           email="Tanmay@example.com"
         />

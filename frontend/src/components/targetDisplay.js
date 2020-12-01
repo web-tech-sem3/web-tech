@@ -31,7 +31,12 @@ const TargetDisplay = ({ target }) => {
         <animated.div style={{ transform: props.xy.interpolate(trans2) }}>
           <Typography
             variant="h2"
-            style={{ opacity: '80%', marginLeft: '3vh', marginBottom: '2vh' }}
+            style={{
+              opacity: '80%',
+              marginLeft: '3vh',
+              marginBottom: '2vh',
+              fontFamily: 'Gloria Hallelujah, cursive',
+            }}
           >
             {`${target} hours`}
           </Typography>

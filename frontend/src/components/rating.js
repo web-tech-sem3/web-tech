@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
   image: {
     width: '35vh',
     height: '35vh',
-    animation: '$message 6s infinite',
+    animation: '$message 10s infinite',
   },
 
   '@keyframes message': {

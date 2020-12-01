@@ -12,7 +12,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import { Link, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import Css from '../styles/Navbar.module.css';
-import Logo from '../images/logo.png';
+import Logo from '../images/logo.svg';
 import ProfileMenu from './profileMenu';
 
 const Header = styled.h3`

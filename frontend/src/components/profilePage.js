@@ -13,18 +13,44 @@ import React, { useEffect, useState } from 'react';
 import background from '../images/background.jpg';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import MailIcon from '@material-ui/icons/Mail';
+import leftArrow from '../images/left-arrow-sketch.svg';
 import tanmay from '../images/vidhu.jpg';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import Copyright from './copyright';
 import SpringCard from './springCard';
+import Flexing from './flexing';
 
 const useStyles = makeStyles(theme => ({
   avatar: {
     borderRadius: '100%',
-    transition: 'transform .4s ease-in-out',
+    transition: 'transform .2s ease-in-out',
     '&:hover': {
-      boxShadow: '2px 2px 5px 5px grey',
+      boxShadow: '1px 1px 20px grey',
       transform: 'scale(1.1)',
+    },
+  },
+  arrow: {
+    width: '35vh',
+    height: '35vh',
+    transform: 'rotate(20deg)',
+    marginLeft: '-15vh',
+    transition: 'all .1s',
+    '&:hover': {
+      transform: 'scale(1.05) rotate(20deg)',
+    },
+    marginTop: '30vh',
+    opacity: '70%',
+  },
+  you: {
+    marginTop: '70vh',
+    fontFamily: 'Gloria Hallelujah, cursive',
+    transform: 'rotate(10deg)',
+    opacity: '90%',
+    transition: 'all .1s',
+    marginLeft: '-27vh',
+    '&:hover': {
+      transform: 'rotate(0deg)',
+      opacity: '100%',
     },
   },
   profile: {
@@ -121,6 +147,10 @@ const ProfilePage = ({ user }) => {
           User since <b>25</b> days
         </Typography>
       </div>
+      <img src={leftArrow} className={classes.arrow} />
+      <Typography variant="h5" className={classes.you}>
+        Yeah, that's you
+      </Typography>
       <Divider
         orientation="vertical"
         style={{ width: '5px', color: 'lightpink' }}

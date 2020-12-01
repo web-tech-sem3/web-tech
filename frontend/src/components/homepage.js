@@ -23,6 +23,7 @@ import { Carousel } from 'react-bootstrap';
 import background from '../images/background.jpg';
 import stylescss from '../styles/homepage.module.css';
 import SpringCard from './springCard';
+import Flexing from './flexing';
 
 const NameCard = props => {
   const classes = useStyles();
@@ -282,7 +283,9 @@ const HomePage = () => {
             </Carousel>
             <div className={stylescss.container}>
               <img src={hello} className={classes.hello} />
-              <h1 className={stylescss.h1}>why.</h1>
+              <h1 className={stylescss.h1}>
+                <Flexing>why.</Flexing>
+              </h1>
               <p className={stylescss.why}>
                 These days students who are the youth of this nation seem to be
                 in so much confusion. They may know what they want to do in life
