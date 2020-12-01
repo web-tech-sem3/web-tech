@@ -48,12 +48,10 @@ const data = {
   ],
 };
 
-const Kanban = ({ userData, userName, handleDataChange }) => {
-  const [data, setData] = useState(null);
-
+const Kanban = ({ userData, userName, handleDataChange, data }) => {
   return (
     <Board
-      data={{ lanes: data }}
+      data={data}
       editable
       style={{ background: 'transparent', paddingLeft: '5%' }}
       onDataChange={handleDataChange}

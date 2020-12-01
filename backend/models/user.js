@@ -18,15 +18,17 @@ const userSchema = mongoose.Schema({
     type: Map,
     of: String,
   },
-  todo: [
-    {
-      id: String,
-      title: String,
-      cards: [
-        { id: String, title: String, description: String, label: String },
-      ],
-    },
-  ],
+  todo: {
+    lanes: [
+      {
+        id: String,
+        title: String,
+        cards: [
+          { id: String, title: String, description: String, label: String },
+        ],
+      },
+    ],
+  },
 });
 
 userSchema.plugin(uniqueValidator);

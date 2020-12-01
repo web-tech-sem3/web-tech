@@ -54,6 +54,7 @@ router.put('/social', async (req, res) => {
 
 router.put('/todo', async (req, res) => {
   const body = req.body;
+  console.log(body);
   const result = await User.findOneAndUpdate(
     { userName: body.userName },
     { todo: body.todo }

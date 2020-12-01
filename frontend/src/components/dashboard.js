@@ -49,28 +49,36 @@ const Dashboard = ({ user }) => {
   const classes = useStyles();
 
   useEffect(() => {
+    console.log(data);
+  }, [data]);
+
+  useEffect(() => {
     const d = getTodos();
     setData(d);
   }, []);
   useEffect(() => {
-    return async () => {
+    return () => {
       try {
-        const res = await UserService.putTodo({ userName, data });
-        console.log(res);
+        console.log(data);
+        console.log({ userName, data: data });
+        UserService.putTodo({ userName, todo: data }).then(val =>
+          console.log(val)
+        );
       } catch (e) {
         console.log(e);
       }
     };
-  }, []);
+  }, [data]);
 
   const handleDataChange = newData => {
+    console.log(newData);
     setData(newData);
   };
   const getTodos = async () => {
     try {
       const d = await UserService.getTodo(userName);
       console.log({ lanes: d.todo });
-      return { lanes: d.todo };
+      setData(d.todo);
     } catch (e) {
       console.log(e);
     }
@@ -144,6 +152,7 @@ const Dashboard = ({ user }) => {
         <div style={{ width: '100%', height: '100%' }}>
           <DashboardTopNavigation
             data={data}
+            handleDataChange={handleDataChange}
             userName={userName}
             target={target}
           />

@@ -3,7 +3,8 @@ Content-Type: application/json
 
 {
    "userName":"tanmay",
-   "todo":[
+   "todo":{
+      "lanes":[
       {
          "id":"lane1",
          "title":"Planned Tasks",
@@ -36,4 +37,5 @@ Content-Type: application/json
          ]
       }
    ]
+   }
 }

@@ -19,7 +19,9 @@ const putSocials = async object => {
   return res.data;
 };
 const getTodo = async userName => {
+  console.log('insid');
   const res = await axios.get(`${baseURL}/todo/${userName}`);
+  console.log(res.data);
   return res.data;
 };
 export default { signUp, putTarget, putTodo, putSocials, getTodo };
