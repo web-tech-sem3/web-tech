@@ -12,8 +12,10 @@ import UserService from '../services/user';
 import Copyright from './copyright';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { Card, Snackbar } from '@material-ui/core';
+import { Card, Snackbar, Tooltip, Zoom } from '@material-ui/core';
+import logo from '../images/logo.svg';
 import { Alert } from '@material-ui/lab';
+import monkey from '../images/monkey.svg';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -37,9 +39,21 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(8),
     borderRadius: '2%',
     backgroundColor: 'white',
+    marginLeft: '10%',
     opacity: '95%',
     boxShadow: '2px 2px 25px',
     transition: 'transform .3s',
+    '&:hover': {
+      transform: 'scale(1.01)',
+    },
+  },
+  monkey: {
+    width: '30vh',
+    opacity: '80%',
+    height: '30vh',
+    marginTop: '25vh',
+    marginLeft: '20vh',
+    transition: 'all .2s',
     '&:hover': {
       transform: 'scale(1.03)',
     },
@@ -49,7 +63,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '100%',
     marginTop: theme.spacing(3),
   },
   submit: {
@@ -61,6 +75,7 @@ const SignUp = () => {
   const classes = useStyles();
   const [username, setUsername] = useState();
   const [name, setName] = useState();
+  const [showDialog, setShowDialog] = useState(false);
   const [password, setPassword] = useState();
   const [cPassword, setCPassword] = useState();
   const [passwordSnackOpen, setPasswordSnackOpen] = useState(false);
@@ -115,85 +130,99 @@ const SignUp = () => {
 
   return (
     <div className={classes.back}>
-      <Container component="main" maxWidth="xs" className={classes.card}>
-        <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-          <form className={classes.form} onSubmit={handleSignUp}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={12}>
-                <TextField
-                  autoComplete="fname"
-                  name="firstName"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  onChange={handleNameChange}
-                  id="firstName"
-                  label="Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="username"
-                  label="Username"
-                  onChange={handleUsernameChange}
-                  name="username"
-                  autoComplete="username"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  onChange={handlePasswordChange}
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  onChange={handleCPasswordChange}
-                  name="confirm password"
-                  label="Confirm Password"
-                  type="password"
-                  id="cpassword"
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Sign Up
-            </Button>
-            <Grid container justify="flex-end">
-              <Grid item>
-                <Link to="/login">Already have an account? Sign in</Link>
-              </Grid>
-            </Grid>
-          </form>
+      <div style={{ display: 'flex' }}>
+        <div>
+          <Tooltip title="Beta Monke" arrow TransitionComponent={Zoom}>
+            <img
+              src={monkey}
+              className={classes.monkey}
+              onMouseEnter={() => setShowDialog(true)}
+              onMouseLeave={() => setShowDialog(false)}
+            />
+          </Tooltip>
+          {showDialog ? <p>Hello</p> : null}
         </div>
-      </Container>
+        <Container component="main" maxWidth="xs" className={classes.card}>
+          <CssBaseline />
+          <div className={classes.paper}>
+            <img
+              src={logo}
+              style={{ width: '10vh', height: '10vh', marginTop: '2vh' }}
+            />
+            <Typography component="h1" variant="h5">
+              Sign up
+            </Typography>
+            <form className={classes.form} onSubmit={handleSignUp}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={12}>
+                  <TextField
+                    autoComplete="fname"
+                    name="firstName"
+                    variant="outlined"
+                    required
+                    fullWidth
+                    onChange={handleNameChange}
+                    id="firstName"
+                    label="Name"
+                    autoFocus
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    id="username"
+                    label="Username"
+                    onChange={handleUsernameChange}
+                    name="username"
+                    autoComplete="username"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    onChange={handlePasswordChange}
+                    type="password"
+                    id="password"
+                    autoComplete="current-password"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    onChange={handleCPasswordChange}
+                    name="confirm password"
+                    label="Confirm Password"
+                    type="password"
+                    id="cpassword"
+                  />
+                </Grid>
+              </Grid>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+              >
+                Sign Up
+              </Button>
+              <Grid container justify="flex-end">
+                <Grid item>
+                  <Link to="/login">Already have an account? Sign in</Link>
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+        </Container>
+      </div>
       <br />
       <Snackbar autoHideDuration={1500} open={passwordSnackOpen}>
         <Alert severity="error">Passwords Don't Match!</Alert>
@@ -204,7 +233,6 @@ const SignUp = () => {
       <Snackbar autoHideDuration={1500} open={successSnackOpen}>
         <Alert severity="success">Signed Up, Now Login!</Alert>
       </Snackbar>
-      <br />
       <Card className={classes.copyright}>
         <Copyright />
       </Card>
