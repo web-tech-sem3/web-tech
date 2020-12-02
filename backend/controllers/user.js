@@ -14,6 +14,26 @@ router.post('/', async (req, res) => {
     userName: body.userName,
     name: body.name,
     passwordHash: passwordHash,
+    todo: {
+      lanes: [
+        {
+          id: 'lane1',
+          title: 'Planned Tasks',
+          cards: [],
+        },
+        {
+          id: 'lane2',
+          title: 'In Progress',
+          cards: [],
+        },
+        {
+          id: 'lane3',
+          title: 'Completed',
+          cards: [],
+        },
+      ],
+    },
+    target: 0,
   });
   try {
     const savedUser = await newUser.save();

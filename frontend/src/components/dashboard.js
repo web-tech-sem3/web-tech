@@ -43,18 +43,18 @@ const useStyles = makeStyles(theme => ({
 
 const Dashboard = ({ user }) => {
   const [data, setData] = useState();
+  const [target, setTarget] = useState();
   const userName = user ? user.userName : null;
-  const target = user ? user.target : null;
   console.log(target, userName);
   const classes = useStyles();
 
   useEffect(() => {
-    console.log(data);
-  }, [data]);
-
-  useEffect(() => {
     const d = getTodos();
     setData(d);
+  }, []);
+  useEffect(() => {
+    const t = getTarget();
+    setTarget(t);
   }, []);
   useEffect(() => {
     return () => {
@@ -79,6 +79,14 @@ const Dashboard = ({ user }) => {
       const d = await UserService.getTodo(userName);
       console.log({ lanes: d.todo });
       setData(d.todo);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const getTarget = async () => {
+    try {
+      const d = await UserService.getTodo(userName);
+      setTarget(d.target);
     } catch (e) {
       console.log(e);
     }
