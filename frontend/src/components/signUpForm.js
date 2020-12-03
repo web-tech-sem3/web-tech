@@ -14,6 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Card, Snackbar, Tooltip, Zoom } from '@material-ui/core';
 import logo from '../images/logo.svg';
+import SignUpDialog from './signUpDialog';
 import { Alert } from '@material-ui/lab';
 import monkey from '../images/monkey.svg';
 
@@ -51,8 +52,9 @@ const useStyles = makeStyles(theme => ({
     width: '30vh',
     opacity: '80%',
     height: '30vh',
-    marginTop: '25vh',
-    marginLeft: '20vh',
+    marginTop: '30vh',
+    marginLeft: '2vh',
+    marginRight: '20vh',
     transition: 'all .2s',
     '&:hover': {
       transform: 'scale(1.03)',
@@ -131,24 +133,24 @@ const SignUp = () => {
   return (
     <div className={classes.back}>
       <div style={{ display: 'flex' }}>
-        <div>
-          <Tooltip title="Beta Monke" arrow TransitionComponent={Zoom}>
-            <img
-              src={monkey}
-              className={classes.monkey}
-              onMouseEnter={() => setShowDialog(true)}
-              onMouseLeave={() => setShowDialog(false)}
-            />
-          </Tooltip>
-          {showDialog ? <p>Hello</p> : null}
+        <div style={{ display: 'flex' }}>
+          <img
+            src={monkey}
+            className={classes.monkey}
+            onMouseEnter={() => setShowDialog(true)}
+            onMouseLeave={() => setShowDialog(false)}
+          />
+          {showDialog ? <SignUpDialog /> : null}
         </div>
         <Container component="main" maxWidth="xs" className={classes.card}>
           <CssBaseline />
           <div className={classes.paper}>
-            <img
-              src={logo}
-              style={{ width: '10vh', height: '10vh', marginTop: '2vh' }}
-            />
+            <Tooltip title="U_Table" arrow TransitionComponent={Zoom}>
+              <img
+                src={logo}
+                style={{ width: '10vh', height: '10vh', marginTop: '2vh' }}
+              />
+            </Tooltip>
             <Typography component="h1" variant="h5">
               Sign up
             </Typography>
