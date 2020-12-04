@@ -164,7 +164,7 @@ const App = () => {
                     handlePasswordChange={handlePasswordChange}
                   />
                 ) : (
-                  <PersonForm />
+                  <PersonForm user={user} />
                 )}
               </Route>
               <Route path="/signup">

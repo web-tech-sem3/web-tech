@@ -20,6 +20,7 @@ import background from '../images/background.jpg';
 import React, { useEffect, useState } from 'react';
 import { Alert, Autocomplete } from '@material-ui/lab';
 import { Container } from 'react-bootstrap';
+import UserService from '../services/user';
 import panda from '../images/panda.svg';
 
 const useStyles = makeStyles(theme => ({
@@ -122,10 +123,12 @@ const Targets = [
   },
 ];
 
-const PersonForm = () => {
+const PersonForm = ({ user }) => {
+  const username = user ? user.userName : null;
+  const t = user ? user.target : null;
   const classes = useStyles();
   const [occupation, setOccupation] = useState();
-  const [target, setTarget] = useState();
+  const [target, setTarget] = useState(t);
   const [age, setAge] = useState();
   const [hour, setHour] = useState();
   const [snackOpen, setSnackOpen] = useState(false);
@@ -160,8 +163,15 @@ const PersonForm = () => {
     }
   `;
   useEffect(() => {
-    console.log('hours', hour);
+    const put = async () => {
+      await UserService.putTarget({
+        userName: username,
+        target: hour,
+      });
+    };
+    put;
   }, [hour]);
+
   const handleOccupationChange = e => {
     e.preventDefault();
     console.log(e.target.value);
@@ -181,12 +191,17 @@ const PersonForm = () => {
   const handleSnackClose = e => {
     setSnackOpen(false);
   };
-  const handleFormSubmit = e => {
+  const handleFormSubmit = async e => {
     e.preventDefault();
     console.log({ age, data, occupation, target });
     const t = Targets.find(t => t.target === target).number;
     const o = Occupations.find(o => o.occupation === occupation).number;
     setHour(Math.ceil(age * coeff[0] + coeff[1] * t + coeff[2] * o));
+    try {
+      const r = console.log({ username, hour });
+    } catch (e) {
+      console.log(e);
+    }
     setSnackOpen(true);
   };
   const toggleHelp = e => {
