@@ -159,21 +159,21 @@ const PersonForm = () => {
       transition: all ease 0.5s;
     }
   `;
+  useEffect(() => {
+    console.log('hours', hour);
+  }, [hour]);
   const handleOccupationChange = e => {
     e.preventDefault();
     console.log(e.target.value);
-    setOccupation(e.target.value);
+    setOccupation(e.target.textContent);
   };
   const handleTargetChange = e => {
     e.preventDefault();
-    console.log(e.target.value);
-    setTarget(e.target.value);
+    console.log(e.target);
+    setTarget(e.target.textContent);
   };
   const handleAgeChange = e => {
     setAge(e.target.value);
-  };
-  const handleHourChange = e => {
-    setHour(e.target.value);
   };
   useEffect(() => {
     console.log(data);
@@ -183,8 +183,10 @@ const PersonForm = () => {
   };
   const handleFormSubmit = e => {
     e.preventDefault();
-    console.log({ age, data, occupation });
-    setData(age * coeff[0] + coeff[1] * target + coeff[2] * occupation);
+    console.log({ age, data, occupation, target });
+    const t = Targets.find(t => t.target === target).number;
+    const o = Occupations.find(o => o.occupation === occupation).number;
+    setHour(Math.ceil(age * coeff[0] + coeff[1] * t + coeff[2] * o));
     setSnackOpen(true);
   };
   const toggleHelp = e => {
@@ -269,7 +271,7 @@ const PersonForm = () => {
             <Autocomplete
               getOptionLabel={option => option.occupation}
               options={Occupations}
-              onInputChange={handleOccupationChange}
+              onChange={handleOccupationChange}
               value={occupation}
               renderInput={params => (
                 <TextField
@@ -284,6 +286,7 @@ const PersonForm = () => {
             <Autocomplete
               getOptionLabel={option => option.target}
               options={Targets}
+              onChange={handleTargetChange}
               renderInput={params => (
                 <TextField
                   className={classes.text}
