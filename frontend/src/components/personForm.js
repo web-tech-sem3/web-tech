@@ -163,13 +163,7 @@ const PersonForm = ({ user }) => {
     }
   `;
   useEffect(() => {
-    const put = async () => {
-      await UserService.putTarget({
-        userName: username,
-        target: hour,
-      });
-    };
-    put;
+    console.log('hours', hour);
   }, [hour]);
 
   const handleOccupationChange = e => {
@@ -198,7 +192,11 @@ const PersonForm = ({ user }) => {
     const o = Occupations.find(o => o.occupation === occupation).number;
     setHour(Math.ceil(age * coeff[0] + coeff[1] * t + coeff[2] * o));
     try {
-      const r = console.log({ username, hour });
+      const r = await UserService.putTarget({
+        userName: username,
+        target: hour,
+      });
+      console.log(r);
     } catch (e) {
       console.log(e);
     }
