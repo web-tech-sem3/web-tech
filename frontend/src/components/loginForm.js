@@ -110,6 +110,7 @@ const SignInSide = ({
                     <IconButton
                       aria-label="toggle password visibility"
                       onClick={toggleView}
+                      style={{ outline: 'none' }}
                     >
                       {view ? <Visibility /> : <VisibilityOff />}
                     </IconButton>

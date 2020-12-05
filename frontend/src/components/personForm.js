@@ -274,7 +274,11 @@ const PersonForm = ({ user }) => {
               <IconButton
                 className={classes.help}
                 onClick={toggleHelp}
-                style={{ marginTop: '0.5vh', marginLeft: '3vh' }}
+                style={{
+                  marginTop: '0.5vh',
+                  marginLeft: '3vh',
+                  outline: 'none',
+                }}
               >
                 <img src={uni} />
               </IconButton>

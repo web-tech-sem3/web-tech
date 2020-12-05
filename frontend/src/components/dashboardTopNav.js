@@ -67,10 +67,19 @@ const DashboardTopNavigation = ({
   return (
     <div className={classes.root}>
       <AppBar variant="outlined" position="static" color="white">
-        <Tabs value={value} onChange={handleChange} centered>
-          <Tab label="Scheduler" {...a11yProps(0)} />
-          <Tab label="ToDos" {...a11yProps(1)} />
-          <Tab label="Progress" {...a11yProps(2)} />
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          centered
+          style={{ outline: 'none' }}
+        >
+          <Tab
+            label="Scheduler"
+            {...a11yProps(0)}
+            style={{ outline: 'none' }}
+          />
+          <Tab label="ToDos" {...a11yProps(1)} style={{ outline: 'none' }} />
+          <Tab label="Progress" {...a11yProps(2)} style={{ outline: 'none' }} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
