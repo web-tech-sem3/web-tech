@@ -27,7 +27,11 @@ const ProfileMenu = ({ setUser, user, setLogoutSnackOpen }) => {
 
   return (
     <div>
-      <Button onClick={handleClick} color="secondary">
+      <Button
+        onClick={handleClick}
+        color="secondary"
+        style={{ outline: 'none' }}
+      >
         {name}
       </Button>
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>

@@ -46,6 +46,7 @@ const Navbar = ({ setUser, user, setLogoutSnackOpen, logoutSnackOpen }) => {
               }}
               style={{
                 width: 'auto',
+                outline: 'none',
               }}
             >
               <MenuIcon color="secondary" />
