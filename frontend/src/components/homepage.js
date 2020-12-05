@@ -114,7 +114,7 @@ const useStyles = makeStyles(theme => ({
     fontFamily: 'Gloria Hallelujah, cursive',
     transition: 'all .2s',
     opacity: '80%',
-    animation: `$carousel 2s ${theme.transitions.easing.easeIn}`,
+    animation: `$carousel 1.3s ${theme.transitions.easing.easeIn}`,
     transition: 'all .2s',
     '&:hover': {
       transform: 'scale(1.2, 1.2)',
@@ -125,7 +125,7 @@ const useStyles = makeStyles(theme => ({
     width: '30vh',
     height: '30vh',
     opacity: '70%',
-    animation: `$titleArrow 2s ${theme.transitions.easing.easeIn}`,
+    animation: `$titleArrow 1.3s ${theme.transitions.easing.easeIn}`,
     transition: 'all .2s',
     '&:hover': {
       transform: 'scale(-1.2, 1.2)',
@@ -146,7 +146,7 @@ const useStyles = makeStyles(theme => ({
     left: '20vw',
     marginBottom: '12vh',
     transition: 'all .6s',
-    animation: `$carousel 2s ${theme.transitions.easing.easeIn}`,
+    animation: `$carousel 1.3s ${theme.transitions.easing.easeIn}`,
     '&:hover': {
       transform: 'scale(1.05)',
       boxShadow: '8px 8px 60px 20px grey',
