@@ -65,6 +65,7 @@ const Navbar = ({ setUser, user, setLogoutSnackOpen, logoutSnackOpen }) => {
                   width: 200,
                   paddingTop: '10%',
                   paddingBottom: '10%',
+                  outline: 'none',
                 }}
               >
                 <ArrowBackIosIcon />
@@ -75,7 +76,13 @@ const Navbar = ({ setUser, user, setLogoutSnackOpen, logoutSnackOpen }) => {
 
                 <br />
                 <Link to="/home">
-                  <IconButton onClick={handleClose}>
+                  <IconButton
+                    onClick={handleClose}
+                    style={{
+                      width: 'auto',
+                      outline: 'none',
+                    }}
+                  >
                     <HomeIcon />
                     Home
                   </IconButton>
@@ -84,7 +91,13 @@ const Navbar = ({ setUser, user, setLogoutSnackOpen, logoutSnackOpen }) => {
               <p>&nbsp;</p>
               <div>
                 <Link to="/dashboard">
-                  <IconButton onClick={handleClose}>
+                  <IconButton
+                    onClick={handleClose}
+                    style={{
+                      width: 'auto',
+                      outline: 'none',
+                    }}
+                  >
                     <DashboardIcon />
                     Dashboard
                   </IconButton>
@@ -93,7 +106,13 @@ const Navbar = ({ setUser, user, setLogoutSnackOpen, logoutSnackOpen }) => {
               <p>&nbsp;</p>
               <div>
                 <Link to="/rate">
-                  <IconButton onClick={handleClose}>
+                  <IconButton
+                    onClick={handleClose}
+                    style={{
+                      width: 'auto',
+                      outline: 'none',
+                    }}
+                  >
                     <ThumbsUpDownIcon />
                     Review
                   </IconButton>
@@ -102,7 +121,13 @@ const Navbar = ({ setUser, user, setLogoutSnackOpen, logoutSnackOpen }) => {
               <p>&nbsp;</p>
               <div>
                 <Link to="/you">
-                  <IconButton onClick={handleClose}>
+                  <IconButton
+                    onClick={handleClose}
+                    style={{
+                      width: 'auto',
+                      outline: 'none',
+                    }}
+                  >
                     <PersonIcon />
                     About You
                   </IconButton>
@@ -111,7 +136,13 @@ const Navbar = ({ setUser, user, setLogoutSnackOpen, logoutSnackOpen }) => {
               <p>&nbsp;</p>
               <div>
                 <Link to="/about">
-                  <IconButton onClick={handleClose}>
+                  <IconButton
+                    onClick={handleClose}
+                    style={{
+                      width: 'auto',
+                      outline: 'none',
+                    }}
+                  >
                     <InfoIcon />
                     About Us
                   </IconButton>

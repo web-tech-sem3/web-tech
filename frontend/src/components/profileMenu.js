@@ -36,14 +36,23 @@ const ProfileMenu = ({ setUser, user, setLogoutSnackOpen }) => {
       </Button>
       <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
         <MenuItem onClick={handleClose}>Logged in as {user.userName}</MenuItem>
-        <Link to="/profile" style={{ textDecoration: 'none', color: 'black' }}>
+        <Link
+          to="/profile"
+          style={{ textDecoration: 'none', color: 'black', outline: 'none' }}
+        >
           <MenuItem onClick={handleClose}>Profile</MenuItem>
         </Link>
-        <Link to="/settings" style={{ textDecoration: 'none', color: 'black' }}>
+        <Link
+          to="/settings"
+          style={{ textDecoration: 'none', color: 'black', outline: 'none' }}
+        >
           <MenuItem onClick={handleClose}>Settings</MenuItem>
         </Link>
         <Divider />
-        <Link to="/home" style={{ textDecoration: 'none', color: 'black' }}>
+        <Link
+          to="/home"
+          style={{ textDecoration: 'none', color: 'black', outline: 'none' }}
+        >
           <MenuItem onClick={handleLogout}>Logout</MenuItem>
         </Link>
       </Menu>
