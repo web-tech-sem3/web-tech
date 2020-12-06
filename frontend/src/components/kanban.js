@@ -1,9 +1,7 @@
-import { makeStyles } from '@material-ui/core';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Board from 'react-trello';
-import UserService from '../services/user';
 
-const data = {
+/*const data = {
   lanes: [
     {
       id: 'lane1',
@@ -46,14 +44,14 @@ const data = {
       cards: [],
     },
   ],
-};
+};*/
 
-const Kanban = ({ userData, userName, handleDataChange, data }) => {
+const Kanban = ({ handleDataChange, data }) => {
   return (
     <Board
       data={data}
       editable
-      style={{ background: 'transparent', paddingLeft: '5%' }}
+      style={{ background: 'transparent' }}
       onDataChange={handleDataChange}
     />
   );

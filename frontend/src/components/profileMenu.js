@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import { Divider, Snackbar, Zoom } from '@material-ui/core';
+import { Divider } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import { Alert } from '@material-ui/lab';
 
 const ProfileMenu = ({ setUser, user, setLogoutSnackOpen }) => {
   const [anchorEl, setAnchorEl] = useState(null);

@@ -4,9 +4,7 @@ import {
   Button,
   IconButton,
   makeStyles,
-  MenuItem,
   Paper,
-  Select,
   Snackbar,
   TextField,
   Tooltip,
@@ -132,7 +130,6 @@ const PersonForm = ({ user }) => {
   const [age, setAge] = useState();
   const [hour, setHour] = useState();
   const [snackOpen, setSnackOpen] = useState(false);
-  const [data, setData] = useState();
   const [helpOverlay, setHelpOverlay] = useState(false);
   const SubTitle = styled.h4`
     color: white;
@@ -179,15 +176,12 @@ const PersonForm = ({ user }) => {
   const handleAgeChange = e => {
     setAge(e.target.value);
   };
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
   const handleSnackClose = e => {
     setSnackOpen(false);
   };
   const handleFormSubmit = async e => {
     e.preventDefault();
-    console.log({ age, data, occupation, target });
+    console.log({ age, occupation, target });
     const t = Targets.find(t => t.target === target).number;
     const o = Occupations.find(o => o.occupation === occupation).number;
     setHour(Math.ceil(age * coeff[0] + coeff[1] * t + coeff[2] * o));
@@ -280,7 +274,7 @@ const PersonForm = ({ user }) => {
                   outline: 'none',
                 }}
               >
-                <img src={uni} />
+                <img src={uni} alt="uni-boi" />
               </IconButton>
             </Tooltip>
           </div>
@@ -312,8 +306,6 @@ const PersonForm = ({ user }) => {
                   {...params}
                   variant="outlined"
                   label="Target Exam"
-                  value={target}
-                  onChange={target}
                 />
               )}
             />
