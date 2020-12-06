@@ -49,8 +49,10 @@ router.put('/target', async (req, res) => {
     {
       userName: body.userName,
     },
-    { target: body.target }
+    { target: body.target },
+    { new: true }
   );
+  console.log(result);
   res.json(result);
 });
 
