@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import background from '../images/background.jpg';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import UserService from '../services/user';
 import Copyright from './copyright';
@@ -139,6 +137,7 @@ const SignUp = () => {
             className={classes.monkey}
             onMouseEnter={() => setShowDialog(true)}
             onMouseLeave={() => setShowDialog(false)}
+            alt="monke"
           />
           {showDialog ? <SignUpDialog /> : null}
         </div>
@@ -149,6 +148,7 @@ const SignUp = () => {
               <img
                 src={logo}
                 style={{ width: '10vh', height: '10vh', marginTop: '2vh' }}
+                alt="logo"
               />
             </Tooltip>
             <Typography component="h1" variant="h5">

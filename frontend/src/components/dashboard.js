@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import TimeTable from './timeTable';
 import background from '../images/background.jpg';
 import Container from '@material-ui/core/Container';
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import DashboardTopNavigation from './dashboardTopNav';
-import { Divider, Tooltip, Zoom } from '@material-ui/core';
+import { Divider } from '@material-ui/core';
 import UserService from '../services/user';
 import TargetDisplay from './targetDisplay';
 

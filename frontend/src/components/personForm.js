@@ -159,18 +159,13 @@ const PersonForm = ({ user }) => {
       transition: all ease 0.5s;
     }
   `;
-  useEffect(() => {
-    console.log('hours', hour);
-  }, [hour]);
 
   const handleOccupationChange = e => {
     e.preventDefault();
-    console.log(e.target.value);
     setOccupation(e.target.textContent);
   };
   const handleTargetChange = e => {
     e.preventDefault();
-    console.log(e.target);
     setTarget(e.target.textContent);
   };
   const handleAgeChange = e => {
@@ -190,7 +185,6 @@ const PersonForm = ({ user }) => {
         userName: username,
         target: hour,
       });
-      console.log(r);
     } catch (e) {
       console.log(e);
     }
