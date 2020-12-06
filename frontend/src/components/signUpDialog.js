@@ -30,7 +30,7 @@ const SignUpDialog = () => {
       <img src={chatBubble} alt="monke dialog" className={classes.dialog} />
       <div className={classes.container}>
         <Typography variant="h6" className={classes.text}>
-          Hewwo Ji!
+          Yup, Signup
         </Typography>
       </div>
     </div>

@@ -57,17 +57,15 @@ const Dashboard = ({ user }) => {
     setTarget(t);
   }, []);
   useEffect(() => {
-    return () => {
-      try {
-        console.log(data);
-        console.log({ userName, data: data });
-        UserService.putTodo({ userName, todo: data }).then(val =>
-          console.log(val)
-        );
-      } catch (e) {
-        console.log(e);
-      }
-    };
+    try {
+      console.log(data);
+      console.log({ userName, data: data });
+      UserService.putTodo({ userName, todo: data }).then(val =>
+        console.log(val)
+      );
+    } catch (e) {
+      console.log(e);
+    }
   }, [data]);
 
   const handleDataChange = newData => {

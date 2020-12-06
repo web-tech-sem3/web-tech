@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: '30vh',
     marginLeft: '2vh',
     marginRight: '20vh',
-    transition: 'all .2s',
+    transition: 'all .1s',
     '&:hover': {
       transform: 'scale(1.03)',
     },

@@ -13,7 +13,6 @@ const useStyles = makeStyles({
 
 const Flexing = props => {
   const classes = useStyles();
-  console.log(props.children.split());
   return (
     <div style={{ display: 'flex' }}>
       {props.children.split('').map(c => (
