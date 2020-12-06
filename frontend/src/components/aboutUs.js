@@ -2,6 +2,7 @@ import React from 'react';
 import Css from '../styles/aboutUs.module.css';
 import vidhu from '../images/vidhu.jpg';
 import abuzar from '../images/abuzar.jpg';
+import arvind from '../images/arvind.jpg';
 import hansraj from '../images/hansraj.jpg';
 import tanmay from '../images/tanmay.jpg';
 import Copyright from './copyright';
@@ -58,7 +59,7 @@ const AboutUs = () => {
       </FadeIn>
       <div className={Css.container}>
         <Card
-          img={vidhu}
+          img={arvind}
           name="Arvind Meena"
           Job="Front End"
           para="Sad!"
