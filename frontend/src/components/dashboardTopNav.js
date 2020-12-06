@@ -9,7 +9,6 @@ import Box from '@material-ui/core/Box';
 import TimeTable from './timeTable';
 import Kanban from './kanban';
 import DashboardChart from './chart';
-import TargetDisplay from './targetDisplay';
 
 const TabPanel = props => {
   const { children, value, index, ...other } = props;

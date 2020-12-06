@@ -27,7 +27,7 @@ const Loading = () => {
       align="center"
       className={classes.loading}
     >
-      <img src={loading} />
+      <img src={loading} alt="loading" />
     </div>
   );
 };

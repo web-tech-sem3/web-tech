@@ -153,7 +153,7 @@ const Rating = () => {
               <SubTitle>Rate Us</SubTitle>
             </TitleWrapper>
           </Container>
-          <img src={message} className={classes.image} />
+          <img src={message} className={classes.image} alt="message" />
         </div>
         <div
           align="center"

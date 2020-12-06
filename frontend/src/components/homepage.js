@@ -115,7 +115,6 @@ const useStyles = makeStyles(theme => ({
     transition: 'all .2s',
     opacity: '80%',
     animation: `$carousel 1.3s ${theme.transitions.easing.easeIn}`,
-    transition: 'all .2s',
     '&:hover': {
       transform: 'scale(1.2, 1.2)',
     },
@@ -242,7 +241,11 @@ const HomePage = () => {
               style={{ display: 'flex' }}
             >
               <div style={{ marginLeft: '25vh' }}>
-                <img src={leftArrow} className={classes.titleArrow} />
+                <img
+                  src={leftArrow}
+                  className={classes.titleArrow}
+                  alt="arow"
+                />
                 <Typography variant="h5" className={classes.hey}>
                   Yup, That's Us!
                 </Typography>
@@ -282,7 +285,7 @@ const HomePage = () => {
               </Carousel.Item>
             </Carousel>
             <div className={stylescss.container}>
-              <img src={hello} className={classes.hello} />
+              <img src={hello} className={classes.hello} alt="hello" />
               <h1 className={stylescss.h1}>
                 <Flexing>why.</Flexing>
               </h1>
@@ -332,7 +335,7 @@ const HomePage = () => {
   All day I work on my projects and U_Table helps me prioritize"
                     image={rajpal}
                   />
-                  <img src={leftArrow} className={classes.arrow} />
+                  <img src={leftArrow} className={classes.arrow} alt="arrow" />
                   <Typography variant="h2" className={classes.alumni}>
                     Our Alumni
                   </Typography>

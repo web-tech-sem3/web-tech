@@ -2,14 +2,15 @@ import React, { useState, useRef } from 'react';
 import '../styles/fadein.css';
 
 const FadeIn = props => {
-  const [isVisible, setVisible] = React.useState(true);
-  const domRef = React.useRef();
+  const [isVisible, setVisible] = useState(true);
+  const domRef = useRef();
   React.useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => setVisible(entry.isIntersecting));
     });
-    observer.observe(domRef.current);
-    return () => observer.unobserve(domRef.current);
+    let c = domRef.current;
+    observer.observe(c);
+    return () => observer.unobserve(c);
   }, []);
   return (
     <div

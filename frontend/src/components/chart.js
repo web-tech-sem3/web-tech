@@ -1,9 +1,6 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
-import {
-  anchorClosest,
-  Chart,
-} from 'react-charts/dist/react-charts.development';
+import { Chart } from 'react-charts/dist/react-charts.development';
 
 const DashboardChart = () => {
   const [{ min, max }, setState] = React.useState({
