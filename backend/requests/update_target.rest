@@ -3,5 +3,5 @@ Content-Type: application/json
 
 {
   "userName": "tanmay",
-  "target": "10"
+  "target": "20"
 }
