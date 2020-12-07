@@ -160,6 +160,36 @@ const PersonForm = ({ user }) => {
     }
   `;
 
+  useEffect(() => {
+    async function g() {
+      try {
+        const h = await UserService.getTodo({ userName: username });
+        console.log(h);
+        setHour(h.target);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+
+    g();
+  }, []);
+
+  useEffect(() => {
+    async function p() {
+      try {
+        const r = await UserService.putTarget({
+          userName: username,
+          target: hour,
+        });
+        console.log(r);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    p();
+    setSnackOpen(true);
+  }, [hour]);
+
   const handleOccupationChange = e => {
     e.preventDefault();
     setOccupation(e.target.textContent);
@@ -177,18 +207,9 @@ const PersonForm = ({ user }) => {
   const handleFormSubmit = async e => {
     e.preventDefault();
     console.log({ age, occupation, target });
-    const t = Targets.find(t => t.target === target).number;
-    const o = Occupations.find(o => o.occupation === occupation).number;
+    const t = await Targets.find(t => t.target === target).number;
+    const o = await Occupations.find(o => o.occupation === occupation).number;
     setHour(Math.ceil(age * coeff[0] + coeff[1] * t + coeff[2] * o));
-    try {
-      const r = await UserService.putTarget({
-        userName: username,
-        target: hour,
-      });
-    } catch (e) {
-      console.log(e);
-    }
-    setSnackOpen(true);
   };
   const toggleHelp = e => {
     e.preventDefault();
