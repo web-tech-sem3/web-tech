@@ -12,7 +12,16 @@ import UserService from '../services/user';
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    opacity: '90%',
+  },
+  accordion: {
+    transition: 'all .4s',
+    opacity: '70%',
+    '&:hover': {
+      boxShadow: '2px 2px 10px 10px grey',
+      transform: 'scale(1.05)',
+      opacity: '100%',
+      background: '#F9DCC8',
+    },
   },
   heading: {
     fontSize: theme.typography.pxToRem(18),
@@ -38,9 +47,11 @@ const SettingsAccordion = ({ username }) => {
   const [hour, setHour] = useState(
     JSON.parse(window.localStorage.getItem('target'))
   );
+  const [github, setGithub] = useState();
   const user = JSON.parse(window.localStorage.getItem('userLoggedIn'));
   const [expanded, setExpanded] = React.useState(false);
 
+  const handleGithubSubmit = () => {};
   const handleChange = panel => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
@@ -71,12 +82,16 @@ const SettingsAccordion = ({ username }) => {
     e.preventDefault();
     setNewName(e.target.value);
   };
+  const handleGithubChange = e => {
+    e.preventDefault();
+  };
 
   return (
     <div className={classes.root}>
       <Accordion
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
+        className={classes.accordion}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>Change Name</Typography>
@@ -110,6 +125,7 @@ const SettingsAccordion = ({ username }) => {
       <Accordion
         expanded={expanded === 'panel2'}
         onChange={handleChange('panel2')}
+        className={classes.accordion}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>Change Password</Typography>
@@ -142,6 +158,7 @@ const SettingsAccordion = ({ username }) => {
       <Accordion
         expanded={expanded === 'panel3'}
         onChange={handleChange('panel3')}
+        className={classes.accordion}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>Change Target</Typography>
@@ -154,6 +171,41 @@ const SettingsAccordion = ({ username }) => {
       <Accordion
         expanded={expanded === 'panel4'}
         onChange={handleChange('panel4')}
+        className={classes.accordion}
+      >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography className={classes.heading}>Add Github</Typography>
+          <Typography className={classes.secondaryHeading}>
+            Add your github account, because, why not?
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails style={{ alignItems: 'center' }}>
+          <div style={{ align: 'center' }}>
+            <form onSubmit={handleGithubSubmit}>
+              <TextField
+                label="New Password"
+                onChange={handleGithubChange}
+                required
+                value={github}
+                variant="outlined"
+              />
+              <br />
+              <Button
+                color="secondary"
+                style={{ outline: 'none' }}
+                type="submit"
+                style={{ align: 'center' }}
+              >
+                Add
+              </Button>
+            </form>
+          </div>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion
+        expanded={expanded === 'panel5'}
+        onChange={handleChange('panel5')}
+        className={classes.accordion}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>Delete Account</Typography>
