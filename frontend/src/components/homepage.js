@@ -201,8 +201,6 @@ const HomePage = () => {
     }
   `;
 
-  // Create a Wrapper component that'll render a <section> tag with some styles
-
   const TitleWrapper = styled.section`
     padding: 4em;
     background: papayawhip;
