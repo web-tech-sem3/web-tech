@@ -14,11 +14,9 @@ import background from '../images/background.jpg';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import MailIcon from '@material-ui/icons/Mail';
 import leftArrow from '../images/left-arrow-sketch.svg';
-import tanmay from '../images/vidhu.jpg';
+import tanmay from '../images/arvind.jpg';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import Copyright from './copyright';
 import SpringCard from './springCard';
-import Flexing from './flexing';
 
 const useStyles = makeStyles(theme => ({
   avatar: {

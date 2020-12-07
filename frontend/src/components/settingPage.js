@@ -6,8 +6,8 @@ import SettingsAccordion from './settingsAccordion';
 
 const useStyles = makeStyles({
   avatar: {
-    width: '50vh',
-    height: '50vh',
+    width: '300px',
+    height: '300px',
     borderRadius: '100%',
     margin: '7vh',
     transition: 'transform .3s ease-in-out',
