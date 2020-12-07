@@ -52,7 +52,19 @@ router.put('/target', async (req, res) => {
     { target: body.target },
     { new: true }
   );
-  console.log(result);
+  res.json(result);
+});
+
+router.put('/password', async (req, res) => {
+  const body = req.body;
+  const passwordHash = await bcrypt.hash(body.password, 10);
+  const result = await User.findOneAndUpdate(
+    {
+      userName: body.userName,
+    },
+    { passwordHash },
+    { new: true }
+  );
   res.json(result);
 });
 
