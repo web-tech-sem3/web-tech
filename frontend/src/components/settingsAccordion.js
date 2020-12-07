@@ -5,15 +5,11 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Button, TextField } from '@material-ui/core';
+import { Backdrop, Button, TextField } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '80%',
-    padding: '10vh',
-  },
-  accordion: {
-    alignContent: 'center',
+    width: '100%',
   },
   heading: {
     fontSize: theme.typography.pxToRem(18),
@@ -24,11 +20,20 @@ const useStyles = makeStyles(theme => ({
     fontSize: theme.typography.pxToRem(16),
     color: theme.palette.text.secondary,
   },
+
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: '#fff',
+  },
 }));
 
 const SettingsAccordion = () => {
   const classes = useStyles();
   const [newPass, setNewPass] = useState('');
+  const [hour, setHour] = useState(
+    JSON.parse(window.localStorage.getItem('target'))
+  );
+  const [backdropOpen, setBackdropOpen] = useState(false);
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = panel => (event, isExpanded) => {
@@ -38,10 +43,17 @@ const SettingsAccordion = () => {
 
   return (
     <div className={classes.root}>
+      <Backdrop
+        open={backdropOpen}
+        transitionDuration={1000}
+        className={classes.backdrop}
+        onClick={() => setBackdropOpen(false)}
+      >
+        Hello
+      </Backdrop>
       <Accordion
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
-        className={classes.accordion}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>Change Name</Typography>
@@ -76,11 +88,7 @@ const SettingsAccordion = () => {
         expanded={expanded === 'panel2'}
         onChange={handleChange('panel2')}
       >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>Change Password</Typography>
           <Typography className={classes.secondaryHeading}>
             Change your account's password to another (possibly easier) one.
@@ -123,7 +131,6 @@ const SettingsAccordion = () => {
       <Accordion
         expanded={expanded === 'panel4'}
         onChange={handleChange('panel4')}
-        disabled
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography className={classes.heading}>Delete Account</Typography>
@@ -132,7 +139,13 @@ const SettingsAccordion = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Button>Delete Account</Button>
+          <Button
+            style={{ outline: 'none' }}
+            color="secondary"
+            onClick={() => setBackdropOpen(true)}
+          >
+            Delete Account
+          </Button>
         </AccordionDetails>
       </Accordion>
     </div>
