@@ -6,6 +6,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Backdrop, Button, TextField } from '@material-ui/core';
+import DeleteAccountDialog from './deleteAccountDialog';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -43,14 +44,6 @@ const SettingsAccordion = () => {
 
   return (
     <div className={classes.root}>
-      <Backdrop
-        open={backdropOpen}
-        transitionDuration={1000}
-        className={classes.backdrop}
-        onClick={() => setBackdropOpen(false)}
-      >
-        Hello
-      </Backdrop>
       <Accordion
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
@@ -139,13 +132,7 @@ const SettingsAccordion = () => {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Button
-            style={{ outline: 'none' }}
-            color="secondary"
-            onClick={() => setBackdropOpen(true)}
-          >
-            Delete Account
-          </Button>
+          <DeleteAccountDialog />
         </AccordionDetails>
       </Accordion>
     </div>

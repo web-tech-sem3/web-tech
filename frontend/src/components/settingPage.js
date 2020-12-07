@@ -23,7 +23,7 @@ const SettingsPage = () => {
     <div
       style={{
         backgroundImage: `url(${background})`,
-        height: '100vh',
+        height: '94vh',
         backgroundSize: 'cover',
         position: 'relative',
         backgroundPosition: 'center',
