@@ -1,20 +1,24 @@
+import { Divider } from '@material-ui/core';
 import React from 'react';
 import background from '../images/background.jpg';
-import RenameFlipCard from './renameFlipCard';
+import SettingsAccordion from './settingsAccordion';
 
 const SettingsPage = () => {
   return (
     <div
       style={{
         backgroundImage: `url(${background})`,
-        height: '130vh',
+        height: '100vh',
         backgroundSize: 'cover',
         position: 'relative',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <RenameFlipCard />
+      <div style={{ paddingTop: '10vh' }}>
+        <Divider orientation="vertical" />
+        <SettingsAccordion />
+      </div>
     </div>
   );
 };
