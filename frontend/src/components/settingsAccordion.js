@@ -5,12 +5,13 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Backdrop, Button, TextField } from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 import DeleteAccountDialog from './deleteAccountDialog';
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
+    opacity: '85%',
   },
   heading: {
     fontSize: theme.typography.pxToRem(18),
@@ -20,6 +21,7 @@ const useStyles = makeStyles(theme => ({
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(16),
     color: theme.palette.text.secondary,
+    fontFamily: 'Gloria Hallelujah, cursive',
   },
 
   backdrop: {
