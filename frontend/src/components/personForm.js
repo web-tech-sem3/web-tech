@@ -128,7 +128,9 @@ const PersonForm = ({ user }) => {
   const [occupation, setOccupation] = useState();
   const [target, setTarget] = useState(t);
   const [age, setAge] = useState();
-  const [hour, setHour] = useState();
+  const [hour, setHour] = useState(
+    JSON.parse(window.localStorage.getItem('target'))
+  );
   const [snackOpen, setSnackOpen] = useState(false);
   const [helpOverlay, setHelpOverlay] = useState(false);
   const SubTitle = styled.h4`
@@ -161,20 +163,6 @@ const PersonForm = ({ user }) => {
   `;
 
   useEffect(() => {
-    async function g() {
-      try {
-        const h = await UserService.getTodo({ userName: username });
-        console.log(h);
-        setHour(h.target);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-
-    g();
-  }, []);
-
-  useEffect(() => {
     async function p() {
       try {
         const r = await UserService.putTarget({
@@ -187,6 +175,7 @@ const PersonForm = ({ user }) => {
       }
     }
     p();
+    window.localStorage.setItem('target', JSON.stringify(hour));
     setSnackOpen(true);
   }, [hour]);
 
