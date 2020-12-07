@@ -20,12 +20,13 @@ const useStyles = makeStyles(theme => ({
       boxShadow: '2px 2px 10px 10px grey',
       transform: 'scale(1.05)',
       opacity: '100%',
-      background: '#F9DCC8',
+      background: '#ffc4d6',
     },
   },
   heading: {
     fontSize: theme.typography.pxToRem(18),
     flexBasis: '33.33%',
+    color: '#323031',
     flexShrink: 0,
   },
   secondaryHeading: {
