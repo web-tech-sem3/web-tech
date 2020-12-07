@@ -86,8 +86,9 @@ const DashboardChart = () => {
       }}
     >
       <Button
-        color="secondary"
+        color="primary"
         variant="text"
+        style={{ outline: 'none' }}
         onClick={() =>
           setState({
             min: null,
