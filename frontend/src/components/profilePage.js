@@ -86,8 +86,10 @@ const ProfilePage = ({ user }) => {
   const classes = useStyles();
   const username = user ? user.userName : '';
   const name = user ? user.name : '';
+  const [target, setTarget] = useState(
+    JSON.parse(window.localStorage.getItem('target'))
+  );
   console.log(user);
-  const target = user ? user.target : '';
 
   return (
     <div
