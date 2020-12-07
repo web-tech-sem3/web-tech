@@ -7,11 +7,12 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Button, TextField } from '@material-ui/core';
 import DeleteAccountDialog from './deleteAccountDialog';
+import UserService from '../services/user';
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    opacity: '85%',
+    opacity: '90%',
   },
   heading: {
     fontSize: theme.typography.pxToRem(18),
@@ -30,20 +31,31 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const SettingsAccordion = () => {
+const SettingsAccordion = ({ username }) => {
   const classes = useStyles();
   const [newName, setNewName] = useState('');
   const [newPass, setNewPass] = useState('');
   const [hour, setHour] = useState(
     JSON.parse(window.localStorage.getItem('target'))
   );
+  const user = JSON.parse(window.localStorage.getItem('userLoggedIn'));
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = panel => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-  const handlePasswordSubmit = e => {
+  const handlePasswordSubmit = async e => {
     e.preventDefault();
+    console.log({ username, newPass });
+    try {
+      const res = await UserService.changePassword({
+        userName: user.userName,
+        password: newPass,
+      });
+      console.log(res);
+    } catch (e) {
+      console.log(e);
+    }
     setNewPass('');
   };
   const handleNameSubmit = e => {
@@ -120,7 +132,6 @@ const SettingsAccordion = () => {
                 color="secondary"
                 style={{ outline: 'none' }}
                 type="submit"
-                onClick={e => e.preventDefault()}
               >
                 Change
               </Button>

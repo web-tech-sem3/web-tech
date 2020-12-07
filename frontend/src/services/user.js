@@ -6,6 +6,11 @@ const signUp = async object => {
   return res.data;
 };
 
+const changePassword = async object => {
+  const res = await axios.put(`${baseURL}/password`, object);
+  return res.data;
+};
+
 const putTarget = async object => {
   const res = await axios.put(`${baseURL}/target`, object);
   return res.data;
@@ -19,9 +24,15 @@ const putSocials = async object => {
   return res.data;
 };
 const getTodo = async userName => {
-  console.log('insid');
   const res = await axios.get(`${baseURL}/todo/${userName}`);
   console.log(res.data);
   return res.data;
 };
-export default { signUp, putTarget, putTodo, putSocials, getTodo };
+export default {
+  signUp,
+  putTarget,
+  putTodo,
+  putSocials,
+  getTodo,
+  changePassword,
+};

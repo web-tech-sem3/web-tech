@@ -155,7 +155,7 @@ const SettingsPage = ({ user }) => {
         style={{ width: '5px', color: 'lightpink' }}
       />
       <div style={{ padding: '2%', paddingTop: '10%' }}>
-        <SettingsAccordion />
+        <SettingsAccordion username={username} />
       </div>
     </div>
   );
