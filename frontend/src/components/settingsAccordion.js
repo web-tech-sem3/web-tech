@@ -32,17 +32,33 @@ const useStyles = makeStyles(theme => ({
 
 const SettingsAccordion = () => {
   const classes = useStyles();
+  const [newName, setNewName] = useState('');
   const [newPass, setNewPass] = useState('');
   const [hour, setHour] = useState(
     JSON.parse(window.localStorage.getItem('target'))
   );
-  const [backdropOpen, setBackdropOpen] = useState(false);
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = panel => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-  const handlePasswordSubmit = () => {};
+  const handlePasswordSubmit = e => {
+    e.preventDefault();
+    setNewPass('');
+  };
+  const handleNameSubmit = e => {
+    e.preventDefault();
+    setNewName('');
+  };
+
+  const handlePasswordChange = e => {
+    e.preventDefault();
+    setNewPass(e.target.value);
+  };
+  const handleNameChange = e => {
+    e.preventDefault();
+    setNewName(e.target.value);
+  };
 
   return (
     <div className={classes.root}>
@@ -59,11 +75,12 @@ const SettingsAccordion = () => {
         <AccordionDetails>
           {' '}
           <div style={{ align: 'center' }}>
-            <form onSubmit={handlePasswordSubmit}>
+            <form onSubmit={handleNameSubmit}>
               <TextField
                 label="New Name"
-                value={newPass}
                 variant="outlined"
+                value={newName}
+                onChange={handleNameChange}
                 required
               />
               <br />
@@ -71,7 +88,6 @@ const SettingsAccordion = () => {
                 color="secondary"
                 style={{ outline: 'none' }}
                 type="submit"
-                onClick={e => e.preventDefault()}
               >
                 Change
               </Button>
@@ -94,6 +110,7 @@ const SettingsAccordion = () => {
             <form onSubmit={handlePasswordSubmit}>
               <TextField
                 label="New Password"
+                onChange={handlePasswordChange}
                 required
                 value={newPass}
                 variant="outlined"
