@@ -184,7 +184,7 @@ const SettingsAccordion = ({ username }) => {
           <div style={{ align: 'center' }}>
             <form onSubmit={handleGithubSubmit}>
               <TextField
-                label="New Password"
+                label="Github"
                 onChange={handleGithubChange}
                 required
                 value={github}
