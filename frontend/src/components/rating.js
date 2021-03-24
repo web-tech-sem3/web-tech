@@ -206,7 +206,6 @@ const Rating = () => {
       </div>
       <br />
       <div style={{position:'absolute', bottom:'5vh', left:'45vw'}}>
-
       <Copyright />
       </div>
     </div>

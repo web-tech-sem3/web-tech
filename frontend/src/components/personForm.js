@@ -27,7 +27,6 @@ const useStyles = makeStyles(theme => ({
     borderRadius: '2vh',
     height: '86vh',
     padding: '3vh',
-    marginLeft: '30vh',
     boxShadow: '0.1px 0.1px 10px 1px gray',
     animation: '$form 2s',
   },
@@ -61,8 +60,8 @@ const useStyles = makeStyles(theme => ({
     width: '36vh',
   },
   help: {
-    width: '12vh',
-    height: '12vh',
+    width: '5vh',
+    height: '5vh',
     transition: 'all .6s',
     '&:hover': {
       transform: 'scale(1.4)',
@@ -210,7 +209,7 @@ const PersonForm = ({ user }) => {
       align="center"
       style={{
         backgroundImage: `url(${background})`,
-        height: '94vh',
+        height: '95vh',
         overflow: 'hidden',
         backgroundSize: 'cover',
         position: 'relative',
@@ -243,6 +242,7 @@ const PersonForm = ({ user }) => {
             />
           </div>
         </div>
+          <div style={{position:'absolute', right:'5vw'}}>
         <Paper className={classes.paper} elevation={4}>
           <Backdrop
             transitionDuration={1000}
@@ -278,7 +278,7 @@ const PersonForm = ({ user }) => {
                   outline: 'none',
                 }}
               >
-                <img src={uni} alt="uni-boi" />
+                <img src={uni} style={{height:'10vh', width:'10vh'}}alt="uni-boi" />
               </IconButton>
             </Tooltip>
           </div>
@@ -323,6 +323,8 @@ const PersonForm = ({ user }) => {
             />
             <br />
             <br />
+            <br/>
+            <br/>
             <Button
               variant="contained"
               color="secondary"
@@ -342,6 +344,7 @@ const PersonForm = ({ user }) => {
             </Alert>
           </Snackbar>
         </Paper>
+          </div>
       </div>
     </div>
   );

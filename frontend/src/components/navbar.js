@@ -36,7 +36,7 @@ const Navbar = ({ setUser, user, setLogoutSnackOpen, logoutSnackOpen }) => {
       <AppBar
         position="fixed"
         variant="elevation"
-        style={{ background: 'white' }}
+        style={{ background: 'white', height:'75px' }}
       >
         <Toolbar>
           <Tooltip title="Menu" arrow TransitionComponent={Zoom}>
