@@ -248,7 +248,7 @@ const HomePage = () => {
                   Yup, That's Us!
                 </Typography>
               </div>
-              <div>
+              <div style={{alignSelf:'center'}}>
                 <Container maxWidth="sm">
                   <SpringCard width="90vh">
                     <TitleWrapper>

@@ -29,6 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
   back: {
     paddingTop: 8,
+    height:'100vh',
     backgroundImage: `url(${background})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -236,10 +237,10 @@ const SignUp = () => {
       <Snackbar autoHideDuration={1500} open={successSnackOpen}>
         <Alert severity="success">Signed Up, Now Login!</Alert>
       </Snackbar>
-      <div style={{position:'absolute'}}>
-      <Card className={classes.copyright}>
+      <div style={{ background:'white', width:'100vw', position:'absolute', bottom:'0vh', height:'15vh'}}>
+        <div style={{position:'absolute', left:'45vw', bottom:'7vh',}}>
         <Copyright />
-      </Card>
+        </div>
       </div>
     </div>
   );
