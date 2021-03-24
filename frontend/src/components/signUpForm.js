@@ -23,8 +23,9 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
   },
   copyright: {
-    height: 70,
-    paddingTop: 25,
+    height: '100vh',
+    paddingTop: '0',
+
   },
   back: {
     paddingTop: 8,
@@ -235,9 +236,11 @@ const SignUp = () => {
       <Snackbar autoHideDuration={1500} open={successSnackOpen}>
         <Alert severity="success">Signed Up, Now Login!</Alert>
       </Snackbar>
+      <div style={{position:'absolute'}}>
       <Card className={classes.copyright}>
         <Copyright />
       </Card>
+      </div>
     </div>
   );
 };

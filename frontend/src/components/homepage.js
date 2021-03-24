@@ -302,7 +302,7 @@ const HomePage = () => {
             <CardDiv>
               <Container className={classes.cardGrid} maxWidth="md">
                 {/* End hero unit */}
-                <Grid container spacing={4}>
+                <Grid container spacing={10}>
                   <NameCard
                     name="Hansraj Singh"
                     message="
