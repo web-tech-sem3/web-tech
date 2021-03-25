@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   profile: {
-    width: '90vh',
+    width: '45vw',
     padding: '10%',
     height: '60vh',
     backgroundImage: 'linear-gradient(315deg, #eec0c6 0%, #ecd1d3 74%)',

@@ -44,7 +44,6 @@ const Dashboard = ({ user }) => {
   const [data, setData] = useState();
   const [target, setTarget] = useState();
   const userName = user ? user.userName : null;
-  console.log(target, userName);
   const classes = useStyles();
 
   useEffect(() => {
@@ -57,10 +56,8 @@ const Dashboard = ({ user }) => {
   }, []);
   useEffect(() => {
     try {
-      console.log(data);
-      console.log({ userName, data: data });
       UserService.putTodo({ userName, todo: data }).then(val =>
-        console.log(val)
+        console.log()
       );
     } catch (e) {
       console.log(e);
@@ -68,13 +65,11 @@ const Dashboard = ({ user }) => {
   }, [data]);
 
   const handleDataChange = newData => {
-    console.log(newData);
     setData(newData);
   };
   const getTodos = async () => {
     try {
       const d = await UserService.getTodo(userName);
-      console.log({ lanes: d.todo });
       setData(d.todo);
     } catch (e) {
       console.log(e);

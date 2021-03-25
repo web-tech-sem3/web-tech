@@ -168,7 +168,6 @@ const PersonForm = ({ user }) => {
           userName: username,
           target: hour,
         });
-        console.log(r);
       } catch (e) {
         console.log(e);
       }
@@ -195,8 +194,8 @@ const PersonForm = ({ user }) => {
   const handleFormSubmit = async e => {
     e.preventDefault();
     console.log({ age, occupation, target });
-    const t = await Targets.find(t => t.target === target).number;
-    const o = await Occupations.find(o => o.occupation === occupation).number;
+    const t = Targets.find(t => t.target === target).number;
+    const o = Occupations.find(o => o.occupation === occupation).number;
     setHour(Math.ceil(age * coeff[0] + coeff[1] * t + coeff[2] * o));
   };
   const toggleHelp = e => {
@@ -223,7 +222,7 @@ const PersonForm = ({ user }) => {
           <div style={{ marginTop: '4vh', marginLeft: '20vh' }}>
             <Container style={{ width: '65vh' }}>
               <TitleWrapper>
-                <Title>About You</Title>
+                <Title>About You</Title><br/>
                 <SubTitle>Your Form.</SubTitle>
               </TitleWrapper>
             </Container>
