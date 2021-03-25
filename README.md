@@ -1,5 +1,5 @@
 # U-Table
-![U-Table](u-table.netlify.app) is a personalised time-table and productivity manager with a contemporary UI. Recommendations are based on your current profile and targets.
+[U-Table](https://u-table.netlify.app) is a personalised time-table and productivity manager with a contemporary UI. Recommendations are based on your current profile and targets.
 ## Screenshots of the app
 ### Login Page
 ![Login Page](/assets/login.png)
