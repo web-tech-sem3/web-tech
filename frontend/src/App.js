@@ -49,7 +49,6 @@ const App = () => {
         userName: username,
         password,
       });
-      console.log(User);
       setUser(User);
       setSuccessSnackOpen(true);
       window.localStorage.setItem('userLoggedIn', JSON.stringify(User));
