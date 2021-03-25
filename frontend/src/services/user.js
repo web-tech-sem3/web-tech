@@ -25,7 +25,6 @@ const putSocials = async object => {
 };
 const getTodo = async userName => {
   const res = await axios.get(`${baseURL}/todo/${userName}`);
-  console.log(res.data);
   return res.data;
 };
 export default {
