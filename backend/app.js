@@ -25,7 +25,7 @@ mongoose
 
 app.use(cors());
 app.use(express.json());
-
+app.get("/", (req, res)=> {res.send("Hellow")})
 app.use('/api/login', loginRouter);
 app.use('/api/timeTable', timeTableRouter);
 app.use('/api/user', userRouter);
